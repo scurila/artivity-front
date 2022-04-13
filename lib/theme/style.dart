@@ -56,6 +56,8 @@ class Styles {
   static TextStyle evaluationText = TextStyle(
     fontSize: 10,
     color: greyedOutTextColor,
+  );
+
   static TextStyle accentButtonTextDark = const TextStyle(
       fontSize: 14,
       color: Colors.black
