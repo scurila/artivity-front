@@ -12,3 +12,7 @@ const String artists = " ARTISTES";
 
 
 // Login
+const String inscriptionButtonText = "Je m'inscris";
+const String loginButtonText = "Je me connecte";
+const String sloganText = "La créativité au bout des doigts !";
+const String sloganText = "La créativité au bout des doigts !";

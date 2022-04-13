@@ -16,6 +16,12 @@ class Styles {
     fontWeight: FontWeight.w500,
   );
 
+  static TextStyle sloganText = const TextStyle(
+    fontSize: 30,
+    color: Colors.black,
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle accentButtonText = const TextStyle(
     fontSize: 14,
     color: Colors.white
@@ -50,6 +56,9 @@ class Styles {
   static TextStyle evaluationText = TextStyle(
     fontSize: 10,
     color: greyedOutTextColor,
+  static TextStyle accentButtonTextDark = const TextStyle(
+      fontSize: 14,
+      color: Colors.black
   );
 
   static ThemeData get baseTheme {
