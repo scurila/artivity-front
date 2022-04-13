@@ -32,4 +32,4 @@ const String inscriptionMdp = "Mot de passe";
 const String inscriptionCU = "J'accepte les conditions d'utilisation";
 const String inscriptionData = "J'accepte l'utilisation de mes données";
 const String inscriptionBouton = "S'inscrire";
-const String inscriptionBouton = "S'inscrire";
+const String inscriptionTextField = "Ecrire ici";
