@@ -1,9 +1,12 @@
+import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class Styles {
   static Color accentColor = const Color.fromRGBO(146, 227, 169, 1);
+  static Color greyedOutColor = const Color.fromRGBO(206, 206, 206, 1);
+  static Color greyedOutTextColor = const Color.fromRGBO(127, 127, 127, 1);
 
   static String loginBackgroundPath = 'assets/images/bg.png';
   static String loginLogoPath = 'assets/images/Worldline_logo_blue_bg.png';
@@ -25,6 +28,37 @@ class Styles {
     color: Colors.white
   );
 
+  static TextStyle labelText = const TextStyle(
+    fontSize: 14,
+    color: Colors.black
+  );
+
+  static TextStyle challengeTitle = const TextStyle(
+      fontSize: 16,
+      color: Colors.black
+  );
+
+  static TextStyle challengeInvitedBy = const TextStyle(
+      fontSize: 14,
+      color: Colors.black,
+      fontWeight: FontWeight.bold
+  );
+
+  static TextStyle challengeTimeBlack = const TextStyle(
+      fontSize: 12,
+      color: Colors.black,
+  );
+
+  static TextStyle challengeTimePink = const TextStyle(
+      fontSize: 14,
+      color: Color.fromRGBO(255, 23, 68, 0.68),
+  );
+
+  static TextStyle evaluationText = TextStyle(
+    fontSize: 10,
+    color: greyedOutTextColor,
+  );
+
   static TextStyle accentButtonTextDark = const TextStyle(
       fontSize: 14,
       color: Colors.black
@@ -39,5 +73,31 @@ class Styles {
 
   static BoxBorder get noBorder {
     return Border.all(color: Colors.white, width: 0.0);
+  }
+
+  static String getChallengeTypePicture(String challengeType) {
+    if (challengeType == CHALLENGE_TYPE_DESSIN) {
+      return "assets/images/defi_dessin.svg";
+    } else if (challengeType == CHALLENGE_TYPE_AUDIO) {
+      return "assets/images/defi_audio.svg";
+    } else if (challengeType == CHALLENGE_TYPE_ECRITURE) {
+      return "assets/images/defi_ecriture.svg";
+    } else {
+      // photo
+      return "assets/images/defi_photo.svg";
+    }
+  }
+
+  static String getChallengeTypeLabel(String challengeType) {
+    if (challengeType == CHALLENGE_TYPE_DESSIN) {
+      return invitationDefiDessinTitle;
+    } else if (challengeType == CHALLENGE_TYPE_AUDIO) {
+      return invitationDefiAudioTitle;
+    } else if (challengeType == CHALLENGE_TYPE_ECRITURE) {
+      return invitationDefiTexteTitle;
+    } else {
+      // photo
+      return invitationDefiPhotoTitle;
+    }
   }
 }
