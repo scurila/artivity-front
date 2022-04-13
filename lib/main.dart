@@ -1,4 +1,5 @@
 import 'package:artivity_front/screens/accueil/Accueil.dart';
+import 'package:artivity_front/screens/inscription/Inscription.dart';
 import 'package:artivity_front/screens/ouverture/Ouverture.dart';
 import 'package:artivity_front/screens/widgets/BackExitProtection.dart';
 import 'package:artivity_front/theme/style.dart';
