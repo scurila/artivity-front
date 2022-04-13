@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
       theme: Styles.baseTheme,
       home: const BackExitProtection(child: Accueil()),
       //home: const BackExitProtection(child: Ouverture()),
+      //home: const BackExitProtection(child: Inscription()),
     );
   }
 }
