@@ -24,5 +24,18 @@ const String loginButtonText = "Je me connecte";
 const String sloganText = "La créativité au bout des doigts !";
 
 
+
 // Connexion
 const String ouvertureHeadbarText = "Connexion";
+
+// Inscription
+const String inscriptionHeader = "Formulaire d'inscription";
+const String inscriptionPseudo = "Pseudo";
+const String inscriptionAge = "Âge";
+const String inscriptionMail = "Adresse mail";
+const String inscriptionMdp = "Mot de passe";
+const String inscriptionCU = "J'accepte les conditions d'utilisation";
+const String inscriptionData = "J'accepte l'utilisation de mes données";
+const String inscriptionBouton = "S'inscrire";
+const String inscriptionTextField = "Ecrire ici";
+
