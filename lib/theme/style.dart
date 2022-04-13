@@ -1,3 +1,4 @@
+import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -72,5 +73,31 @@ class Styles {
 
   static BoxBorder get noBorder {
     return Border.all(color: Colors.white, width: 0.0);
+  }
+
+  static String getChallengeTypePicture(String challengeType) {
+    if (challengeType == CHALLENGE_TYPE_DESSIN) {
+      return "assets/images/defi_dessin.svg";
+    } else if (challengeType == CHALLENGE_TYPE_AUDIO) {
+      return "assets/images/defi_audio.svg";
+    } else if (challengeType == CHALLENGE_TYPE_ECRITURE) {
+      return "assets/images/defi_ecriture.svg";
+    } else {
+      // photo
+      return "assets/images/defi_photo.svg";
+    }
+  }
+
+  static String getChallengeTypeLabel(String challengeType) {
+    if (challengeType == CHALLENGE_TYPE_DESSIN) {
+      return invitationDefiDessinTitle;
+    } else if (challengeType == CHALLENGE_TYPE_AUDIO) {
+      return invitationDefiAudioTitle;
+    } else if (challengeType == CHALLENGE_TYPE_ECRITURE) {
+      return invitationDefiTexteTitle;
+    } else {
+      // photo
+      return invitationDefiPhotoTitle;
+    }
   }
 }

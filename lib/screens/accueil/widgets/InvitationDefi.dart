@@ -5,7 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class InvitationDefi extends StatelessWidget {
-  const InvitationDefi({Key? key}) : super(key: key);
+  InvitationDefi({Key? key, required this.challengeType, required this.invitedBy, required this.executionTime, required this.leftTime, required this.eval, required this.artists}) : super(key: key);
+  String challengeType;
+  String invitedBy;
+  String executionTime;
+  String leftTime;
+  int eval;
+  String artists;
 
   @override
   Widget build(BuildContext context) {
@@ -22,20 +28,20 @@ class InvitationDefi extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SvgPicture.asset('assets/images/defi_dessin.svg', width: 130,),
+                  SvgPicture.asset(Styles.getChallengeTypePicture(challengeType), width: 130,),
                 ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 24),
-              child: Text(invitationDefiDessinTitle, style: Styles.challengeTitle, textAlign: TextAlign.left,),
+              child: Text(Styles.getChallengeTypeLabel(challengeType), style: Styles.challengeTitle, textAlign: TextAlign.left,),
             ),
-            Text(invitedBy + " Élodie C.", style: Styles.challengeInvitedBy,),
+            Text(invitedByText + invitedBy, style: Styles.challengeInvitedBy,),
             Row(
               children: [
-                Text("5" + minutes, style: Styles.challengeTimeBlack),
+                Text(executionTime + minutes, style: Styles.challengeTimeBlack),
                 const Text(" • "),
-                Text(timeLeft + "22h" + " !", style: Styles.challengeTimePink,),
+                Text(timeLeft + leftTime + " !", style: Styles.challengeTimePink,),
               ],
             ),
             Padding(
@@ -43,12 +49,12 @@ class InvitationDefi extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Icon(Icons.star, color: Styles.accentColor, size: 14,),
-                  Icon(Icons.star, color: Styles.accentColor, size: 14),
-                  Icon(Icons.star, color: Styles.accentColor, size: 14),
-                  Icon(Icons.star, color: Styles.accentColor, size: 14),
-                  Icon(Icons.star, color: Styles.greyedOutColor, size: 14),
-                  Text(" "+ "12345" + artists, style: Styles.evaluationText, )
+                  Icon(Icons.star, color: (eval >= 1? Styles.accentColor : Styles.greyedOutColor), size: 14,),
+                  Icon(Icons.star, color: (eval >= 2? Styles.accentColor : Styles.greyedOutColor), size: 14),
+                  Icon(Icons.star, color: (eval >= 3? Styles.accentColor : Styles.greyedOutColor), size: 14),
+                  Icon(Icons.star, color: (eval >= 4? Styles.accentColor : Styles.greyedOutColor), size: 14),
+                  Icon(Icons.star, color: (eval >= 5? Styles.accentColor : Styles.greyedOutColor), size: 14),
+                  Text(" " + artists + artists, style: Styles.evaluationText, )
                 ],
               ),
             )
