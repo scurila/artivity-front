@@ -26,7 +26,10 @@ const String sloganText = "La créativité au bout des doigts !";
 
 
 // Connexion
-const String ouvertureHeadbarText = "Connexion";
+const String connexionHeadbarText = "Connexion";
+const String connexionButtonText = "Se connecter";
+const String connexionPasInscritText = "Pas encore inscrit ?";
+
 
 // Inscription
 const String inscriptionHeader = "Formulaire d'inscription";
