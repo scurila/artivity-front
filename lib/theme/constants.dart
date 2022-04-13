@@ -18,7 +18,11 @@ const String timeLeft = "Il te reste ";
 const String artists = " ARTISTES";
 
 
-// Login
+// Ouverture
 const String inscriptionButtonText = "Je m'inscris";
 const String loginButtonText = "Je me connecte";
 const String sloganText = "La créativité au bout des doigts !";
+
+
+// Connexion
+const String ouvertureHeadbarText = "Connexion";
