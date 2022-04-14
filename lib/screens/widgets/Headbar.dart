@@ -35,7 +35,12 @@ class Headbar extends StatelessWidget {
             leading:  leftContainer,
             title:Text(text, textAlign: TextAlign.center, style: textStyle,),centerTitle: true,
             actions: [
-              if(expanding)IconButton(onPressed: onPressed, icon: const Icon(Icons.arrow_downward,color: Colors.black)),
+              if(expanding)(Container(
+              padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+              child: IconButton(
+                  onPressed: onPressed,
+                  icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)
+              ),)),
               rightContainer,
             ],
 
