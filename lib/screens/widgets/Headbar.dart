@@ -14,8 +14,8 @@ class Headbar extends StatelessWidget {
   final TextStyle textStyle;
   final String text;
   final Color color;
-  final Container leftContainer;
-  final Container rightContainer;
+  final Widget leftContainer;
+  final Widget rightContainer;
 
   @override
   Widget build(BuildContext context) {

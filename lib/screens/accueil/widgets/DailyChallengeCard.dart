@@ -21,7 +21,7 @@ class DailyChallengeCard extends StatelessWidget {
           backgroundColor: Styles.accentColor,
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 300,
+            height: 325,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -42,6 +42,7 @@ class DailyChallengeCard extends StatelessWidget {
                 Text(challengeTitle, style: Styles.challengeTitleBig),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +62,7 @@ class DailyChallengeCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SvgPicture.asset('assets/images/daily.svg', width: 80,)
+                    Image.asset('assets/images/daily.png', height: 100,)
                   ],
                 )
               ],

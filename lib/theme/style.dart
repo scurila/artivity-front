@@ -12,6 +12,7 @@ class Styles {
   static String loginBackgroundPath = 'assets/images/bg.png';
   static String loginLogoPath = 'assets/images/Worldline_logo_blue_bg.png';
 
+  static const TextStyle pageTitleText = const TextStyle(
     fontSize: 20,
     color: Colors.black,
     fontWeight: FontWeight.w500,
@@ -74,6 +75,8 @@ class Styles {
     fontSize: 14,
     color: Colors.white,
     fontWeight: FontWeight.bold
+  );
+
   static TextStyle pasInscritText = const TextStyle(
       fontSize: 11,
       decoration: TextDecoration.underline,
