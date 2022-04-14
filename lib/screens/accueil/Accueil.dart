@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/accueil/widgets/CreationCard.dart';
 import 'package:artivity_front/screens/accueil/widgets/DailyChallengeCard.dart';
 import 'package:artivity_front/screens/accueil/widgets/InvitationDefi.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
@@ -35,7 +36,7 @@ class Accueil extends StatelessWidget {
           SizedBox(child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: createChallengeButtonText, onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 16, 10, 16),), width: MediaQuery.of(context).size.width
             ,),
           Container(
-            height: MediaQuery.of(context).size.height - 176,
+            height: MediaQuery.of(context).size.height - 179,
             child: Scrollbar(
               child: SingleChildScrollView(
                 child: Column(
@@ -65,7 +66,30 @@ class Accueil extends StatelessWidget {
                       ),
                     ),
                     DailyChallengeCard(eval: 4, artists: "193", challengeType: CHALLENGE_TYPE_PHOTO, challengeTitle: "Montre moi ton coucher de soleil !",),
-                    DailyChallengeCard(eval: 4, artists: "193", challengeType: CHALLENGE_TYPE_PHOTO, challengeTitle: "Montre moi ton coucher de soleil !",),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(12, 6, 12, 16),
+                      width: MediaQuery.of(context).size.width,
+                      child: Text(creationsTitle, style: Styles.labelText, textAlign: TextAlign.left,),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+                      child: Column( // cards
+                        children: [
+                          Row(
+                            children: [
+                              CreationCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                              CreationCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              CreationCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                              CreationCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                            ],
+                          )
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
