@@ -15,7 +15,8 @@ const String invitationDefiTexteTitle = "Défi d'écriture";
 const String invitedByText = "Invité par ";
 const String minutes = " min";
 const String timeLeft = "Il te reste ";
-const String artists = " ARTISTES";
+const String artistsLabel = " ARTISTES";
+const String dailyChallengeTitle = "💡 Le défi du jour";
 
 
 // Ouverture
