@@ -10,6 +10,8 @@ class Headbar extends StatelessWidget {
     this.textStyle = Styles.pageTitleText,
     this.color= Colors.white,
     this.expanding = false,
+    this.onPressed,
+
 
 }): super(key: key);
   final TextStyle textStyle;
@@ -18,6 +20,7 @@ class Headbar extends StatelessWidget {
   final Container leftContainer;
   final Container rightContainer;
   final bool expanding;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +34,10 @@ class Headbar extends StatelessWidget {
             leading:  leftContainer,
             title:Text(text, textAlign: TextAlign.center, style: textStyle,),centerTitle: true,
             actions: [
+              if(expanding)IconButton(onPressed: onPressed, icon: const Icon(Icons.arrow_downward,color: Colors.black)),
               rightContainer,
             ],
+
           ),
         ),
 
