@@ -22,10 +22,10 @@ class Connexion extends StatelessWidget {
           child: Column(
             children: [
               Headbar(
-                  leftContainer: Container(child: ReturnButton(onPressed: () {})),
+                  leftContainer: ReturnButton(onPressed: () {}),
                   text: connexionHeadbarText,
-                  //rightContainer: Container(child: Icon(Icons.arrow_forward))),
                   rightContainer: Container()),
+                  //rightContainer: Container(), expanding: true, onPressed: (){}),//test headbar
               Container(
                //width: MediaQuery.of(context).size.width-50,
                 margin: const EdgeInsets.symmetric(horizontal: 10),
