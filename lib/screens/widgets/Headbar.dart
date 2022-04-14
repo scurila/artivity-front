@@ -9,11 +9,13 @@ class Headbar extends StatelessWidget {
     required this.text,
     this.textStyle = Styles.pageTitleText,
     this.color= Colors.white,
+    this.expanding = false,
 
 }): super(key: key);
   final TextStyle textStyle;
   final String text;
   final Color color;
+  final bool expanding;
   final Widget leftContainer;
   final Widget rightContainer;
 
