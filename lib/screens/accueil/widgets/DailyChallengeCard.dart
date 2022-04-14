@@ -19,9 +19,10 @@ class DailyChallengeCard extends StatelessWidget {
       child: ReusableCard(
           borderRadius: 9,
           backgroundColor: Styles.accentColor,
+          padding: EdgeInsets.only(left: 15, right: 15, bottom: 0, top: 8),
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 300,
+            height: 276,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -36,7 +37,7 @@ class DailyChallengeCard extends StatelessWidget {
                         style: Styles.dailyChallengeTitleText,
                       ),
                     ),
-                    SvgPicture.asset('assets/images/daily_photo.svg', width: 170,),
+                    SvgPicture.asset('assets/images/daily_photo.svg', width: 160,),
                   ],
                 ),
                 Text(challengeTitle, style: Styles.challengeTitleBig),
@@ -62,7 +63,7 @@ class DailyChallengeCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Image.asset('assets/images/daily.png', height: 100,)
+                    Image.asset('assets/images/daily.png', height: 90,)
                   ],
                 )
               ],

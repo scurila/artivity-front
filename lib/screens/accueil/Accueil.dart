@@ -1,6 +1,7 @@
 import 'package:artivity_front/screens/accueil/widgets/CreationCard.dart';
 import 'package:artivity_front/screens/accueil/widgets/DailyChallengeCard.dart';
 import 'package:artivity_front/screens/accueil/widgets/InvitationDefi.dart';
+import 'package:artivity_front/screens/widgets/Footer.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReusableCard.dart';
 import 'package:artivity_front/screens/widgets/ReusableFilledButton.dart';
@@ -16,6 +17,7 @@ class Accueil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      bottomNavigationBar: const Footer(),
       body: Column(
         children: [
           Container(
@@ -26,17 +28,17 @@ class Accueil extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset('assets/images/ARTHUR.png', width: 48,),
-                Text(bienvenueHeader + "William" + ' !', style: Styles.pageTitleText,),
+                const Text(bienvenueHeader + "William" + ' !', style: Styles.pageTitleText,),
                 IconButton(onPressed: () {
 
-                }, icon: const Icon(Icons.search_rounded))
+                }, icon: const Icon(Icons.message))
               ],
             ),
           ),
-          SizedBox(child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: createChallengeButtonText, onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 16, 10, 16),), width: MediaQuery.of(context).size.width
+          SizedBox(child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: createChallengeButtonText, onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),), width: MediaQuery.of(context).size.width
             ,),
           Container(
-            height: MediaQuery.of(context).size.height - 179,
+            height: MediaQuery.of(context).size.height - 179 - 56,
             child: Scrollbar(
               child: SingleChildScrollView(
                 child: Column(
