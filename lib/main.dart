@@ -1,5 +1,6 @@
 import 'package:artivity_front/screens/Connexion/Connexion.dart';
 import 'package:artivity_front/screens/accueil/Accueil.dart';
+import 'package:artivity_front/screens/creation/creation.dart';
 import 'package:artivity_front/screens/inscription/Inscription.dart';
 import 'package:artivity_front/screens/ouverture/Ouverture.dart';
 import 'package:artivity_front/screens/widgets/BackExitProtection.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
       theme: Styles.baseTheme,
       //home: const BackExitProtection(child: Accueil()),
 
-      home: const BackExitProtection(child: Connexion()),
+      home: const BackExitProtection(child: Creation()),
       //home: const BackExitProtection(child: Ouverture()),
       //home: const BackExitProtection(child: Inscription()),
 

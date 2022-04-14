@@ -42,3 +42,6 @@ const String inscriptionData = "J'accepte l'utilisation de mes données";
 const String inscriptionBouton = "S'inscrire";
 const String inscriptionTextField = "Ecrire ici";
 
+//Creation
+const String ecrireCommentaire = "Ecrire un commentaire";
+
