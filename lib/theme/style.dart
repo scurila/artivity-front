@@ -7,6 +7,7 @@ class Styles {
   static Color accentColor = const Color.fromRGBO(146, 227, 169, 1);
   static Color accentColorLight = const Color.fromRGBO(146, 227, 169, 0.3);
   static Color greyedOutColor = const Color.fromRGBO(206, 206, 206, 1);
+  static Color greyedColor = const Color.fromRGBO(219, 219, 219, 1);
   static Color greyedOutTextColor = const Color.fromRGBO(127, 127, 127, 1);
 
   static String loginBackgroundPath = 'assets/images/bg.png';

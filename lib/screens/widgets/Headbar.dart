@@ -9,6 +9,7 @@ class Headbar extends StatelessWidget {
     required this.text,
     this.textStyle = Styles.pageTitleText,
     this.color= Colors.white,
+    this.expanding = false,
 
 }): super(key: key);
   final TextStyle textStyle;
@@ -16,6 +17,7 @@ class Headbar extends StatelessWidget {
   final Color color;
   final Container leftContainer;
   final Container rightContainer;
+  final bool expanding;
 
   @override
   Widget build(BuildContext context) {
