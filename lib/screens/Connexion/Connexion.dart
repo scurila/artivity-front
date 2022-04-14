@@ -1,0 +1,93 @@
+import 'package:artivity_front/screens/widgets/Headbar.dart';
+import 'package:artivity_front/screens/widgets/ReturnButton.dart';
+import 'package:artivity_front/theme/constants.dart';
+import 'package:flutter/material.dart';
+
+import '../../theme/style.dart';
+import '../widgets/ReusableFilledButton.dart';
+
+class Connexion extends StatelessWidget {
+  const Connexion({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+        type: MaterialType.transparency,
+        child: Container(
+
+          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+          decoration: const BoxDecoration(color: Colors.white),
+          child: Column(
+            children: [
+              Headbar(
+                  leftContainer: Container(child: ReturnButton(onPressed: () {})),
+                  text: connexionHeadbarText,
+                  //rightContainer: Container(child: Icon(Icons.arrow_forward))),
+                  rightContainer: Container()),
+              Container(
+               //width: MediaQuery.of(context).size.width-50,
+                margin: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
+                decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: BorderRadius.all(Radius.circular(15)),
+                ),
+                child: Column(
+                  children: [
+                    Row(
+
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(inscriptionPseudo.toUpperCase(),style: Styles.labelText),
+                        SizedBox(height: 40, width: 150,child:TextField( decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            focusColor: Styles.accentColor,
+                            border: InputBorder.none
+                        ),)),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(inscriptionMdp.toUpperCase(),style: Styles.labelText),
+                        SizedBox(height: 40, width: 150,child:TextField( decoration: InputDecoration(
+                          fillColor: Colors.white,
+                          filled: true,
+                          focusColor: Styles.accentColor,
+                          border: InputBorder.none,
+                        ),)),
+                      ],
+                    ),
+                    SizedBox(height: 40),
+                    SizedBox(
+                      child: ReusableFilledButton(
+                        textStyle: Styles.accentButtonText,
+                        text: connexionButtonText.toUpperCase(),
+                        onPressed: () {},
+                        color: Styles.accentColor,
+                        border: Styles.noBorder,
+                        margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                    ),
+                    SizedBox(height: 20),
+                    Text(connexionPasInscritText.toUpperCase(),style: Styles.pasInscritText),
+                  ],
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.fromLTRB(6, 58, 6, 0),
+                child: Image.asset(
+                  'assets/images/Artivity.png',
+                  width: 150,
+                  height: 150,
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+}
+

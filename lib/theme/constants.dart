@@ -19,7 +19,27 @@ const String artistsLabel = " ARTISTES";
 const String dailyChallengeTitle = "💡 Le défi du jour";
 
 
-// Login
+// Ouverture
 const String inscriptionButtonText = "Je m'inscris";
 const String loginButtonText = "Je me connecte";
 const String sloganText = "La créativité au bout des doigts !";
+
+
+
+// Connexion
+const String connexionHeadbarText = "Connexion";
+const String connexionButtonText = "Se connecter";
+const String connexionPasInscritText = "Pas encore inscrit ?";
+
+
+// Inscription
+const String inscriptionHeader = "Formulaire d'inscription";
+const String inscriptionPseudo = "Pseudo";
+const String inscriptionAge = "Âge";
+const String inscriptionMail = "Adresse mail";
+const String inscriptionMdp = "Mot de passe";
+const String inscriptionCU = "J'accepte les conditions d'utilisation";
+const String inscriptionData = "J'accepte l'utilisation de mes données";
+const String inscriptionBouton = "S'inscrire";
+const String inscriptionTextField = "Ecrire ici";
+

@@ -5,13 +5,13 @@ import 'package:flutter/services.dart';
 
 class Styles {
   static Color accentColor = const Color.fromRGBO(146, 227, 169, 1);
+  static Color accentColorLight = const Color.fromRGBO(146, 227, 169, 0.3);
   static Color greyedOutColor = const Color.fromRGBO(206, 206, 206, 1);
   static Color greyedOutTextColor = const Color.fromRGBO(127, 127, 127, 1);
 
   static String loginBackgroundPath = 'assets/images/bg.png';
   static String loginLogoPath = 'assets/images/Worldline_logo_blue_bg.png';
 
-  static TextStyle pageTitleText = const TextStyle(
     fontSize: 20,
     color: Colors.black,
     fontWeight: FontWeight.w500,
@@ -74,6 +74,10 @@ class Styles {
     fontSize: 14,
     color: Colors.white,
     fontWeight: FontWeight.bold
+  static TextStyle pasInscritText = const TextStyle(
+      fontSize: 11,
+      decoration: TextDecoration.underline,
+      color: Colors.black
   );
 
   static ThemeData get baseTheme {
