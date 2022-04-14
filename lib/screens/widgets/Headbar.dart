@@ -51,25 +51,3 @@ class Headbar extends StatelessWidget {
     );
   }
 }
-//scaffold avec 3 container
-
-/*child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            ,
-            Text(text, textAlign: TextAlign.center, style: textStyle,
-            ),
-            rightContainer,
-            ],
-        ),*/
-
-//,
-
-/*     child: Scaffold(
-          body: Center(
-            child : Text(text, textAlign: TextAlign.center, style: textStyle,
-             ),
-          )
-
-        )*/
