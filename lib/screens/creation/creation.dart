@@ -37,8 +37,8 @@ class Creation extends StatelessWidget {
                         child: Container(
                           child: Image.asset(
                             'assets/images/cat.png',
-                            width: 150,
-                            height: 150,
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            height: MediaQuery.of(context).size.height * 0.4,
                           ),
                         )
                       )],
@@ -48,30 +48,31 @@ class Creation extends StatelessWidget {
                       //crossAxisAlignment: CrossAxisAlignment.center,
                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Expanded(
-                            child: Container(
+                       // Expanded(
+                            /*child: */Container(
                               child: Image.asset(
                                 'assets/images/ARTHUR.png',
                                 width: 60,
                                 height: 60,
                               ),
                             ),
-                        ),
+                       // ),
 
                         Text("Willy Wonka \n 13/04/2021",style: Styles.labelText),
-                        SizedBox(height: 20, width: 20,child:TextField( decoration: InputDecoration(
+                        SizedBox(height: 10, width: 50,child:TextField( decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
                           focusColor: Styles.accentColor,
                           border: InputBorder.none,
                         ),)),
+
                         IconButton(icon: Icon(Icons.favorite,),iconSize: 40,
-                          color: Colors.red,
-                          splashColor: Colors.purple,
+                          color: Colors.grey,
+                          splashColor: Colors.black,
                           onPressed: () {},),
                         Text("200",style: Styles.labelText),
 
-                        SizedBox(height: 20, width: 50,child:TextField( decoration: InputDecoration(
+                        SizedBox(height: 10, width: 50,child:TextField( decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
                           focusColor: Styles.accentColor,
@@ -85,14 +86,14 @@ class Creation extends StatelessWidget {
                 ),
               ),
               Container(
-                  height: 200.0,
+                  height: MediaQuery.of(context).size.width * 0.4,
                 child: ListView(
                 padding: const EdgeInsets.all(8),
 
                 children: <Widget>[
                   Container(
-                    height: 50,
-                    color: Colors.amber[600],
+                    height: MediaQuery.of(context).size.width * 0.1,
+                    color: Colors.white,
                     child: Row(
                       children: [
                         Image.asset(
@@ -105,8 +106,8 @@ class Creation extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 50,
-                    color: Colors.amber[500],
+                    height: MediaQuery.of(context).size.width * 0.1,
+                    color: Colors.white,
                       child: Row(
                           children:[
                             Image.asset(
@@ -119,8 +120,8 @@ class Creation extends StatelessWidget {
                       ),
                   ),
                   Container(
-                    height: 50,
-                    color: Colors.amber[500],
+                    height: MediaQuery.of(context).size.width * 0.1,
+                    color: Colors.white,
                     child: Row(
                       children:[
                         Image.asset(
@@ -133,8 +134,8 @@ class Creation extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 50,
-                    color: Colors.amber[500],
+                    height: MediaQuery.of(context).size.width * 0.1,
+                    color: Colors.white,
                     child: Row(
                       children:[
                         Image.asset(
@@ -147,8 +148,8 @@ class Creation extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 50,
-                    color: Colors.amber[500],
+                    height: MediaQuery.of(context).size.width * 0.1,
+                    color: Colors.white,
                     child: Row(
                        children:[
                          Image.asset('assets/images/ARTHUR.png',
@@ -167,12 +168,18 @@ class Creation extends StatelessWidget {
         ),
               Container(
                 height: 50,
-                color: Colors.amber[100],
+                color: Colors.white,
                 child: Row(
                   children:[
+                    SizedBox(height: 10, width: MediaQuery.of(context).size.width * 0.5,child:TextField( decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      filled: true,
+                      focusColor: Styles.accentColor,
+                      border: InputBorder.none,
+                    ),)),
                     ReusableTextField(child: Text(ecrireCommentaire, style: Styles.accentButtonText,),),
                     Image.asset('assets/images/ARTHUR.png',
-                      width: 60,
+                      width: MediaQuery.of(context).size.width * 0.15,
                       height: 60,
                     )
                   ],
