@@ -29,7 +29,7 @@ class Inscription extends StatelessWidget {
 
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10),
-              padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
+              padding: const EdgeInsets.fromLTRB(30, 30, 30, 24),
               decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: BorderRadius.all(Radius.circular(20)),),
               child: Column(
                 children: [
@@ -53,13 +53,24 @@ class Inscription extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                   ),
                   SizedBox(height: 20),
-                  Text(inscriptionDejaInscrit.toUpperCase(),style: Styles.pasInscritText),
+                  Text(inscriptionDejaInscrit.toUpperCase(), style: Styles.pasInscritText),
                 ],
               ),
             ),
+
+            Container(
+              padding: const EdgeInsets.fromLTRB(6, 6, 6, 0),
+              child: Image.asset(
+                'assets/images/Artivity.png',
+                width: MediaQuery.of(context).size.width*3/10,
+                height: MediaQuery.of(context).size.height*2/10,
+              ),
+            ),
+
           ],
         ),
       ),
+
     );
   }
 }
