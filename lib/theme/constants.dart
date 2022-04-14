@@ -45,3 +45,10 @@ const String inscriptionData = "J'accepte l'utilisation de mes données";
 const String inscriptionBouton = "S'inscrire";
 const String inscriptionDejaInscrit = "Déjà inscrit?";
 
+
+//DefiLitteraire
+const String defiLitteraireText = "Défi littéraire";
+
+// Présentation defi
+const String presentationDefiCommentaires = "Commentaires artistes";
+const String presentationDefiDescription = "Description";

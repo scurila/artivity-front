@@ -92,6 +92,11 @@ class Styles {
     );
   }
 
+  static TextStyle challengeDescription = const TextStyle(
+      fontSize: 16,
+      color: Colors.black
+  );
+
   static BoxBorder get noBorder {
     return Border.all(color: Colors.white, width: 0.0);
   }

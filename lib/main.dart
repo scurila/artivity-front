@@ -1,4 +1,7 @@
 import 'package:artivity_front/screens/accueil/Accueil.dart';
+import 'package:artivity_front/screens/inscription/Inscription.dart';
+import 'package:artivity_front/screens/ouverture/Ouverture.dart';
+import 'package:artivity_front/screens/presentation_defi/PresentationDefi.dart';
 import 'package:artivity_front/screens/widgets/BackExitProtection.dart';
 import 'package:artivity_front/theme/style.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +30,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Artivity',
       theme: Styles.baseTheme,
-      home: const BackExitProtection(child: Accueil()),
+      //home: const BackExitProtection(child: Accueil()),
+      //home: const BackExitProtection(child: Connexion()),
+      home: const BackExitProtection(child: PresentationDefi()),
+      //home: const BackExitProtection(child: Ouverture()),
+      //home: const BackExitProtection(child: Inscription()),
+
     );
   }
 }
