@@ -1,6 +1,8 @@
+import 'package:artivity_front/screens/widgets/FormTextFieldRow.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/theme/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
@@ -20,46 +22,21 @@ class Connexion extends StatelessWidget {
           child: Column(
             children: [
               Headbar(
-                  leftContainer: Container(child: ReturnButton(onPressed: () {})),
+                  leftContainer: ReturnButton(onPressed: () {}),
                   text: connexionHeadbarText,
-                  //rightContainer: Container(child: Icon(Icons.arrow_forward))),
                   rightContainer: Container()),
+                  //rightContainer: Container(), expanding: true, onPressed: (){}),//test headbar
               Container(
                //width: MediaQuery.of(context).size.width-50,
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
-                decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: BorderRadius.all(Radius.circular(15)),
+                decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
                 child: Column(
                   children: [
-                    Row(
-
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(inscriptionPseudo.toUpperCase(),style: Styles.labelText),
-                        SizedBox(height: 40, width: 150,child:TextField( decoration: InputDecoration(
-                            fillColor: Colors.white,
-                            filled: true,
-                            focusColor: Styles.accentColor,
-                            border: InputBorder.none
-                        ),)),
-                      ],
-                    ),
+                    FormTextFieldRow(text: inscriptionPseudo),
                     SizedBox(height: 20),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(inscriptionMdp.toUpperCase(),style: Styles.labelText),
-                        SizedBox(height: 40, width: 150,child:TextField( decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusColor: Styles.accentColor,
-                          border: InputBorder.none,
-                        ),)),
-                      ],
-                    ),
+                    FormTextFieldRow(text: inscriptionMdp),
                     SizedBox(height: 40),
                     SizedBox(
                       child: ReusableFilledButton(

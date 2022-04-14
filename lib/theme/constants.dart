@@ -15,7 +15,10 @@ const String invitationDefiTexteTitle = "Défi d'écriture";
 const String invitedByText = "Invité par ";
 const String minutes = " min";
 const String timeLeft = "Il te reste ";
-const String artists = " ARTISTES";
+const String artistsLabel = " ARTISTES";
+const String dailyChallengeTitle = "💡 Le défi du jour";
+const String creationsTitle = "Créations mises en avant";
+const String creationOf = "Une création de ";
 
 
 // Ouverture
@@ -40,7 +43,7 @@ const String inscriptionMdp = "Mot de passe";
 const String inscriptionCU = "J'accepte les conditions d'utilisation";
 const String inscriptionData = "J'accepte l'utilisation de mes données";
 const String inscriptionBouton = "S'inscrire";
-const String inscriptionTextField = "Ecrire ici";
+const String inscriptionDejaInscrit = "Déjà inscrit?";
 
 // Présentation defi
 const String presentationDefiCommentaires = "Commentaires artistes";
