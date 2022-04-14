@@ -22,7 +22,7 @@ class Creation extends StatelessWidget {
           child: Column(
             children: [
               Headbar(
-                  leftContainer: Container(child: ReturnButton(onPressed: () {})),
+                  leftContainer: Container(child: ReturnButton()),
                   text: "Un chaton dans la rue",
                  // rightContainer: Container(child: Icon(Icons.arrow_forward))),
                   rightContainer: Container()),
