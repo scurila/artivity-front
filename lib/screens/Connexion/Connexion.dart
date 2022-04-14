@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
 import '../accueil/Accueil.dart';
+import '../loggedInScreen/LoggedInScreen.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class Connexion extends StatelessWidget {
@@ -46,7 +47,7 @@ class Connexion extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const Accueil()), // temporaire stp procure API
+                            MaterialPageRoute(builder: (context) => const LoggedInScreen()), // temporaire stp procure API
                           );
                         },
                         color: Styles.accentColor,

@@ -89,6 +89,12 @@ class Styles {
     return ThemeData(
       scaffoldBackgroundColor: Colors.white,
       brightness: Brightness.light,
+      pageTransitionsTheme: const PageTransitionsTheme(
+          builders: {
+            TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+            TargetPlatform.iOS: CupertinoPageTransitionsBuilder()
+          }
+      ),
     );
   }
 
