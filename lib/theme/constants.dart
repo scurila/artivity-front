@@ -45,6 +45,9 @@ const String inscriptionData = "J'accepte l'utilisation de mes données";
 const String inscriptionBouton = "S'inscrire";
 const String inscriptionDejaInscrit = "Déjà inscrit?";
 
+//Creation
+const String ecrireCommentaire = "Ecrire un commentaire";
+
 
 //DefiLitteraire
 const String defiLitteraireText = "Défi littéraire";

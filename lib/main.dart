@@ -1,4 +1,5 @@
 import 'package:artivity_front/screens/accueil/Accueil.dart';
+import 'package:artivity_front/screens/creation/creation.dart';
 import 'package:artivity_front/screens/inscription/Inscription.dart';
 import 'package:artivity_front/screens/ouverture/Ouverture.dart';
 import 'package:artivity_front/screens/presentation_defi/PresentationDefi.dart';
@@ -31,9 +32,9 @@ class MyApp extends StatelessWidget {
       title: 'Artivity',
       theme: Styles.baseTheme,
       //home: const BackExitProtection(child: Accueil()),
-      //home: const BackExitProtection(child: Connexion()),
-      //home: const BackExitProtection(child: PresentationDefi()),
-      home: const BackExitProtection(child: Ouverture()),
+
+      home: const BackExitProtection(child: Creation()),
+      //home: const BackExitProtection(child: Ouverture()),
       //home: const BackExitProtection(child: Inscription()),
 
     );
