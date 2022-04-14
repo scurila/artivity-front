@@ -25,7 +25,7 @@ class Inscription extends StatelessWidget {
                 child: Column(
                   children: [
                     Headbar(
-                        leftContainer: Container(child: ReturnButton(onPressed: () {})),
+                        leftContainer: Container(child: ReturnButton()),
                         text: inscriptionHeader,
                         rightContainer: Container()
                     ),

@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
+import '../accueil/Accueil.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class Connexion extends StatelessWidget {
@@ -22,7 +23,7 @@ class Connexion extends StatelessWidget {
           child: Column(
             children: [
               Headbar(
-                  leftContainer: ReturnButton(onPressed: () {}),
+                  leftContainer: ReturnButton(),
                   text: connexionHeadbarText,
                   rightContainer: Container()),
                   //rightContainer: Container(), expanding: true, onPressed: (){}),//test headbar
@@ -42,7 +43,12 @@ class Connexion extends StatelessWidget {
                       child: ReusableFilledButton(
                         textStyle: Styles.accentButtonText,
                         text: connexionButtonText.toUpperCase(),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Accueil()), // temporaire stp procure API
+                          );
+                        },
                         color: Styles.accentColor,
                         border: Styles.noBorder,
                         margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
