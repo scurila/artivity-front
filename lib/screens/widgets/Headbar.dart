@@ -23,7 +23,7 @@ class Headbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: MediaQuery.of(context).size.width,
-        height: 150,
+        height: MediaQuery.of(context).size.height*15/100,
         child: Scaffold(
           appBar: AppBar(
             elevation: 0,
