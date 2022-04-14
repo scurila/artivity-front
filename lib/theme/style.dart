@@ -40,6 +40,12 @@ class Styles {
       color: Colors.black
   );
 
+  static TextStyle challengeTitleBig = const TextStyle(
+      fontSize: 20,
+      color: Colors.black,
+    fontWeight: FontWeight.bold
+  );
+
   static TextStyle challengeInvitedBy = const TextStyle(
       fontSize: 14,
       color: Colors.black,
@@ -64,6 +70,12 @@ class Styles {
   static TextStyle accentButtonTextDark = const TextStyle(
       fontSize: 14,
       color: Colors.black
+  );
+
+  static TextStyle dailyChallengeTitleText = const TextStyle(
+    fontSize: 14,
+    color: Colors.white,
+    fontWeight: FontWeight.bold
   );
 
   static TextStyle pasInscritText = const TextStyle(
@@ -93,6 +105,19 @@ class Styles {
     } else {
       // photo
       return "assets/images/defi_photo.svg";
+    }
+  }
+
+  static String getDailyChallengeTypePicture(String challengeType) {
+    if (challengeType == CHALLENGE_TYPE_DESSIN) {
+      return "assets/images/daily_dessin.svg";
+    } else if (challengeType == CHALLENGE_TYPE_AUDIO) {
+      return "assets/images/daily_audio.svg";
+    } else if (challengeType == CHALLENGE_TYPE_ECRITURE) {
+      return "assets/images/daily_ecriture.svg";
+    } else {
+      // photo
+      return "assets/images/daily_photo.svg";
     }
   }
 

@@ -17,10 +17,11 @@ class Headbar extends StatelessWidget {
   final TextStyle textStyle;
   final String text;
   final Color color;
-  final Container leftContainer;
-  final Container rightContainer;
   final bool expanding;
   final void Function()? onPressed;
+  final Widget leftContainer;
+  final Widget rightContainer;
+
 
   @override
   Widget build(BuildContext context) {
