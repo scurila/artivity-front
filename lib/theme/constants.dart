@@ -48,3 +48,4 @@ const String inscriptionDejaInscrit = "Déjà inscrit?";
 // Présentation defi
 const String presentationDefiCommentaires = "Commentaires artistes";
 const String presentationDefiDescription = "Description";
+const String presentationDefiCommencer = "Commencer défi !";
