@@ -21,7 +21,7 @@ class DailyChallengeCard extends StatelessWidget {
           backgroundColor: Styles.accentColor,
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 325,
+            height: 300,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

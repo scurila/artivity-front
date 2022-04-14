@@ -17,6 +17,8 @@ const String minutes = " min";
 const String timeLeft = "Il te reste ";
 const String artistsLabel = " ARTISTES";
 const String dailyChallengeTitle = "💡 Le défi du jour";
+const String creationsTitle = "Créations mises en avant";
+const String creationOf = "Une création de ";
 
 
 // Ouverture
