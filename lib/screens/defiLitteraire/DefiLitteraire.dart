@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/widgets/EditBarDefi.dart';
 import 'package:artivity_front/theme/style.dart';
 import 'package:flutter/material.dart';
 
@@ -36,52 +37,43 @@ class DefiLitteraire extends StatelessWidget {
                   Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
                   SizedBox(height: 10),
                   Container(height: MediaQuery.of(context).size.height*60/100, width: MediaQuery.of(context).size.width*85/100,
-                      child: Column(children:[
-                        /*Text(uneditableText1, style: Styles.challengeTimePink),
-                        SizedBox(height: MediaQuery.of(context).size.height*60/100, width: MediaQuery.of(context).size.width*85/100, child: TextField( maxLines: 100, decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusColor: Styles.accentColor,
-                          border: InputBorder.none,
-                        ),)),
-                        Text(uneditableText2, style: Styles.challengeTimePink),*/
-                      ]),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border:Border.all(color: Colors.black)
+                      ),
+                    child: Scrollbar(
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children:[
+                            Text(uneditableText1, style: Styles.challengeTimePink),
+                            Container(
+                              width: MediaQuery.of(context).size.width*85/100,
+                                child: TextField(maxLines: null,
+                                  keyboardType: TextInputType.multiline, decoration: InputDecoration(
+                                  fillColor: Colors.white,
+                                  filled: true,
+                                  focusColor: Styles.accentColor,
+                                  border: InputBorder.none,
+                                ),)
+                            ),
+                            Text(uneditableText2, style: Styles.challengeTimePink),
+                              Container(
+                                  width: MediaQuery.of(context).size.width*85/100,
+                                  child: TextField(maxLines: null,
+                                    keyboardType: TextInputType.multiline, decoration: InputDecoration(
+                                      fillColor: Colors.white,
+                                      filled: true,
+                                      focusColor: Styles.accentColor,
+                                      border: InputBorder.none,
+                                    ),)
+                              ),
+                      ])
+                        )
+                    ),
 
                   ),
 
-
-                  /*SizedBox(height: MediaQuery.of(context).size.height*60/100, width: MediaQuery.of(context).size.width*85/100, child: TextField( maxLines: 100, decoration: InputDecoration(
-                    fillColor: Colors.white,
-                    filled: true,
-                    focusColor: Styles.accentColor,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                    ),
-                    focusedBorder: new OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Styles.accentColor
-                      ),
-                    ),
-                  ),)),*/
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-
-                      IconButton(onPressed: (){}, icon: Icon(Icons.delete_outline)),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back)),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward)),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.upload_file)),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.download)),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.send)),
-                    ],
-                  )
-                  /*
-                  Row(),//ligne de boutons
-
-                  Row()//barre du bas*/
-
-
+                  EditBarDefi(),
                 ]
             ),
         )
