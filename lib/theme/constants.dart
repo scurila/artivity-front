@@ -60,3 +60,6 @@ const String presentationDefiCommentaires = "Commentaires artistes";
 const String presentationDefiDescription = "Description";
 const String presentationDefiCommencer = "Commencer défi !";
 
+//DefiAudio
+const String defiAudioText = "Défi audio";
+
