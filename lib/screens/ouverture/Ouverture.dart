@@ -61,7 +61,7 @@ class Ouverture extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(6, 58, 6, 0),
               child: Image.asset(
                 'assets/images/Artivity1.png',
-                width: 230,
+                width: MediaQuery.of(context).size.height*0.2,
               ),
             ),
           ],
