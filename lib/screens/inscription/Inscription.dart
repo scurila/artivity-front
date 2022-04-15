@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/Connexion/Connexion.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/constants.dart';
@@ -80,7 +81,7 @@ class _InscriptionState extends State<Inscription> {
                                   print(CUIsSwitched);
                                 });
                               },
-                              activeTrackColor: Colors.lightGreenAccent,
+                              activeTrackColor: Styles.accentColorLight,
                               activeColor: Colors.green,
                             ),
                             const Flexible(child: Text(inscriptionCU),),
@@ -99,7 +100,7 @@ class _InscriptionState extends State<Inscription> {
                                   print(DataIsSwitched);
                                 });
                               },
-                              activeTrackColor: Colors.lightGreenAccent,
+                              activeTrackColor: Styles.accentColorLight,
                               activeColor: Colors.green,
                             ),
                             const Flexible(child: Text(inscriptionData),),
@@ -107,7 +108,12 @@ class _InscriptionState extends State<Inscription> {
                         ),
                         const SizedBox(height: 20),
 
-                        Text(inscriptionDejaInscrit.toUpperCase(), style: Styles.pasInscritText),
+                        InkWell(child: Text(inscriptionDejaInscrit.toUpperCase(), style: Styles.pasInscritText), onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Connexion()),
+                          );
+                        },),
                       ],
                     ),
                   ),
