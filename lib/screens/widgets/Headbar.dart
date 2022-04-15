@@ -11,8 +11,6 @@ class Headbar extends StatelessWidget {
     this.color= Colors.white,
     this.expanding = false,
     this.onPressed,
-
-
 }): super(key: key);
   final TextStyle textStyle;
   final String text;
@@ -25,10 +23,10 @@ class Headbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    /*Container(
         padding: const EdgeInsets.fromLTRB(12, 18, 12, 0),
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height*13/100,
+        //height: MediaQuery.of(context).size.height*13/100,
         child: Scaffold(
           appBar: AppBar(
             elevation: 0,
@@ -49,6 +47,20 @@ class Headbar extends StatelessWidget {
         ),
 
 
+    );*/
+
+    return Container(
+      padding: const EdgeInsets.fromLTRB(12, 38, 12, 0),
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          leftContainer,
+          Text(text, style: Styles.pageTitleText,),
+          rightContainer
+        ],
+      ),
     );
   }
 }
