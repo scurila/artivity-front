@@ -26,8 +26,9 @@ class Headbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        padding: const EdgeInsets.fromLTRB(12, 18, 12, 0),
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height*15/100,
+        height: MediaQuery.of(context).size.height*13/100,
         child: Scaffold(
           appBar: AppBar(
             elevation: 0,
