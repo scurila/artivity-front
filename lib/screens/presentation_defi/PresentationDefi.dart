@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/defiLitteraire/DefiLitteraire.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/screens/presentation_defi/widgets/Defi.dart';
@@ -225,10 +226,12 @@ class PresentationDefi extends StatelessWidget {
                     ),
                     ),
                   ),
-              ),
-            ],
+
           ),
-        ));
+      ]
+        ),
+    ),
+    );
   }
 }
 
