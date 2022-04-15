@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/widgets/EditBarDefi.dart';
 import 'package:artivity_front/theme/style.dart';
 import 'package:flutter/material.dart';
 
@@ -27,17 +28,52 @@ class DefiLitteraire extends StatelessWidget {
                       children: [
                         Text(title.toUpperCase(), textAlign: TextAlign.center,style: Styles.challengeTitle),
                         IconButton(onPressed: (){}, icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
+
                     ]
                   ),
                   Container(height: 2,width: 100,
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                    decoration: const BoxDecoration(color: Colors.black),)
-                  /*Text(),//timer
-                  TextField(),//zone d'écriture
-                  Row(),//ligne de boutons
-                  Row()//barre du bas*/
+                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    decoration: const BoxDecoration(color: Colors.black),),
+                  Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
+                  SizedBox(height: 10),
+                  Container(height: MediaQuery.of(context).size.height*60/100, width: MediaQuery.of(context).size.width*85/100,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border:Border.all(color: Colors.black)
+                      ),
+                    child: Scrollbar(
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children:[
+                            Text(uneditableText1, style: Styles.challengeTimePink),
+                            Container(
+                              width: MediaQuery.of(context).size.width*85/100,
+                                child: TextField(maxLines: null,
+                                  keyboardType: TextInputType.multiline, decoration: InputDecoration(
+                                  fillColor: Colors.white,
+                                  filled: true,
+                                  focusColor: Styles.accentColor,
+                                  border: InputBorder.none,
+                                ),)
+                            ),
+                            Text(uneditableText2, style: Styles.challengeTimePink),
+                              Container(
+                                  width: MediaQuery.of(context).size.width*85/100,
+                                  child: TextField(maxLines: null,
+                                    keyboardType: TextInputType.multiline, decoration: InputDecoration(
+                                      fillColor: Colors.white,
+                                      filled: true,
+                                      focusColor: Styles.accentColor,
+                                      border: InputBorder.none,
+                                    ),)
+                              ),
+                      ])
+                        )
+                    ),
 
+                  ),
 
+                  EditBarDefi(),
                 ]
             ),
         )

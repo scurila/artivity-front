@@ -26,7 +26,7 @@ class FormTextFieldRow extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(5.0)),
                 borderSide: BorderSide(color: Styles.greyedColor),
               ),
-            focusedBorder: new UnderlineInputBorder(
+            focusedBorder: new OutlineInputBorder(
               borderSide: BorderSide(
                   color: Styles.accentColor
               ),

@@ -28,7 +28,7 @@ class PresentationDefi extends StatelessWidget {
                   text: "William Shakespeare",
                   rightContainer: Container()),
               Container(
-                height: MediaQuery.of(context).size.height - 123,
+                height: MediaQuery.of(context).size.height - 123 - 40,
                   child: Scrollbar(
                     child: SingleChildScrollView(
                       child: Column(
@@ -70,7 +70,7 @@ class PresentationDefi extends StatelessWidget {
                                                   child: Image.asset('assets/images/ARTHUR.png', width: 48,),
                                                 ),
                                                 Container(
-                                                  width: MediaQuery.of(context).size.width - 80,
+                                                  width: MediaQuery.of(context).size.width - 90,
                                                   margin: const EdgeInsets.symmetric(horizontal: 10),
                                                   padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                                   decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -97,7 +97,7 @@ class PresentationDefi extends StatelessWidget {
                                                     child: Image.asset('assets/images/ARTHUR.png', width: 48,),
                                                   ),
                                                   Container(
-                                                    width: MediaQuery.of(context).size.width - 80,
+                                                    width: MediaQuery.of(context).size.width - 90,
                                                     margin: const EdgeInsets.symmetric(horizontal: 10),
                                                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                                     decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -124,7 +124,7 @@ class PresentationDefi extends StatelessWidget {
                                                     child: Image.asset('assets/images/ARTHUR.png', width: 48,),
                                                   ),
                                                   Container(
-                                                    width: MediaQuery.of(context).size.width - 80,
+                                                    width: MediaQuery.of(context).size.width - 90,
                                                     margin: const EdgeInsets.symmetric(horizontal: 10),
                                                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                                     decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -150,7 +150,7 @@ class PresentationDefi extends StatelessWidget {
                                                     child: Image.asset('assets/images/ARTHUR.png', width: 48,),
                                                   ),
                                                   Container(
-                                                    width: MediaQuery.of(context).size.width - 80,
+                                                    width: MediaQuery.of(context).size.width - 90,
                                                     margin: const EdgeInsets.symmetric(horizontal: 10),
                                                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                                     decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -215,7 +215,12 @@ class PresentationDefi extends StatelessWidget {
                             child: ReusableFilledButton(
                               textStyle: Styles.accentButtonText,
                               text: presentationDefiCommencer.toUpperCase(),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'")),
+                                );
+                              },
                               color: Styles.accentColor,
                               border: Styles.noBorder,
                               margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
