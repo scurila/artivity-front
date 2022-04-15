@@ -5,8 +5,10 @@ class FormTextFieldRow extends StatelessWidget {
   const FormTextFieldRow({
     Key? key,
     required this.text,
+    required this.obscured,
   }) : super(key: key);
   final String text;
+  final bool obscured;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,10 @@ class FormTextFieldRow extends StatelessWidget {
                   color: Styles.accentColor
               ),
             ),
-          ),)),
+          ),
+            obscureText: obscured,
+            obscuringCharacter: '*',
+          )),
         ],
       ),
     );
