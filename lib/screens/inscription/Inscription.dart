@@ -23,11 +23,7 @@ class Inscription extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Headbar(
-                      leftContainer: Container(child: ReturnButton()),
-                      text: inscriptionHeader,
-                      rightContainer: Container()
-                  ),
+
 
                   Container( // Boîte verte
                     margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -63,9 +59,9 @@ class Inscription extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: <Widget>[
                             Checkbox(value: false, onChanged: (bool? value) {}, ),
-                            const Text(inscriptionCU),
+                            Flexible(child: Text(inscriptionCU),),
                           ],
                         ),
 
@@ -74,7 +70,7 @@ class Inscription extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Checkbox(value: false, onChanged: (bool? value) {}, ),
-                            const Text(inscriptionData),
+                            const Text(inscriptionData, softWrap: true,),
                           ],
                         ),
                         const SizedBox(height: 20),
