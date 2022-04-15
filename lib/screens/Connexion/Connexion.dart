@@ -27,7 +27,7 @@ class Connexion extends StatelessWidget {
               Headbar(
                   leftContainer: ReturnButton(),
                   text: connexionHeadbarText,
-                  rightContainer: Container()),
+                  rightContainer: Container(width: 48,)),
                   //rightContainer: Container(), expanding: true, onPressed: (){}),//test headbar
               Container(
                //width: MediaQuery.of(context).size.width-50,
