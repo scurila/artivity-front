@@ -3,6 +3,8 @@ const String CHALLENGE_TYPE_ECRITURE = "ECRITURE";
 const String CHALLENGE_TYPE_AUDIO = "AUDIO";
 const String CHALLENGE_TYPE_PHOTO = "PHOTO";
 
+const String backendServerBase = "http://vps.dblasko.fr:5000/api";
+
 
 // Accueil
 const String bienvenueHeader = "Bienvenue, ";

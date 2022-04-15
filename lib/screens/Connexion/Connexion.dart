@@ -1,25 +1,49 @@
 import 'package:artivity_front/screens/widgets/FormTextFieldRow.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
+import 'package:artivity_front/services/UserBackendService.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
-import '../accueil/Accueil.dart';
 import '../loggedInScreen/LoggedInScreen.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class Connexion extends StatelessWidget {
   const Connexion({Key? key}) : super(key: key);
 
+  showAlertDialog(BuildContext context) {
+    Widget okButton = TextButton(
+      child: Text("OK"),
+      onPressed: () {
+         Navigator.of(context).pop();
+      },
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Échec"),
+      content: Text("Données de correction invalides."),
+      actions: [
+        okButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
         type: MaterialType.transparency,
         child: Container(
-
-          //padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
             children: [
@@ -27,7 +51,6 @@ class Connexion extends StatelessWidget {
                   leftContainer: ReturnButton(),
                   text: connexionHeadbarText,
                   rightContainer: Container(width: 48,)),
-                  //rightContainer: Container(), expanding: true, onPressed: (){}),//test headbar
               Container(
                //width: MediaQuery.of(context).size.width-50,
                 margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -44,11 +67,16 @@ class Connexion extends StatelessWidget {
                       child: ReusableFilledButton(
                         textStyle: Styles.accentButtonText,
                         text: connexionButtonText.toUpperCase(),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const LoggedInScreen()), // temporaire stp procure API
-                          );
+                        onPressed: () async {
+                          try {
+                            await UserBackendService.login("dany", "toto");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const LoggedInScreen()), // temporaire stp procure API
+                            );
+                          } catch (_) {
+                            showAlertDialog(context);
+                          }
                         },
                         color: Styles.accentColor,
                         border: Styles.noBorder,
