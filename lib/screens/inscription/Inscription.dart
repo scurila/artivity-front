@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/Connexion/Connexion.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/constants.dart';
@@ -7,8 +8,16 @@ import '../widgets/Headbar.dart';
 import '../widgets/ReturnButton.dart';
 import '../widgets/ReusableFilledButton.dart';
 
-class Inscription extends StatelessWidget {
+class Inscription extends StatefulWidget {
   const Inscription({Key? key}) : super(key: key);
+
+  @override
+  State<Inscription> createState() => _InscriptionState();
+}
+
+class _InscriptionState extends State<Inscription> {
+  bool CUIsSwitched = false;
+  bool DataIsSwitched = false;
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +45,13 @@ class Inscription extends StatelessWidget {
                     child: Column(
                       children: [
                         // Champs de texte avec labels
-                        const FormTextFieldRow(text: inscriptionPseudo),
+                        const FormTextFieldRow(text: inscriptionPseudo, obscured: false,),
                         const SizedBox(height: 20),
-                        const FormTextFieldRow(text: inscriptionAge),
+                        const FormTextFieldRow(text: inscriptionAge, obscured: false,),
                         const SizedBox(height: 20),
-                        const FormTextFieldRow(text: inscriptionMail),
+                        const FormTextFieldRow(text: inscriptionMail, obscured: false,),
                         const SizedBox(height: 20),
-                        const FormTextFieldRow(text: inscriptionMdp),
+                        const FormTextFieldRow(text: inscriptionMdp, obscured: true,),
                         const SizedBox(height: 20),
 
                         // Bouton inscription
@@ -63,23 +72,48 @@ class Inscription extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Checkbox(value: false, onChanged: (bool? value) {}, ),
-                            const Text(inscriptionCU),
+                          children: <Widget>[
+                            Switch(
+                              value: CUIsSwitched,
+                              onChanged: (value) {
+                                setState(() {
+                                  CUIsSwitched = value;
+                                  print(CUIsSwitched);
+                                });
+                              },
+                              activeTrackColor: Styles.accentColorLight,
+                              activeColor: Colors.green,
+                            ),
+                            const Flexible(child: Text(inscriptionCU),),
                           ],
                         ),
 
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Checkbox(value: false, onChanged: (bool? value) {}, ),
-                            const Text(inscriptionData),
+                          children: <Widget>[
+                            Switch(
+                              value: DataIsSwitched,
+                              onChanged: (value) {
+                                setState(() {
+                                  DataIsSwitched = value;
+                                  print(DataIsSwitched);
+                                });
+                              },
+                              activeTrackColor: Styles.accentColorLight,
+                              activeColor: Colors.green,
+                            ),
+                            const Flexible(child: Text(inscriptionData),),
                           ],
                         ),
                         const SizedBox(height: 20),
 
-                        Text(inscriptionDejaInscrit.toUpperCase(), style: Styles.pasInscritText),
+                        InkWell(child: Text(inscriptionDejaInscrit.toUpperCase(), style: Styles.pasInscritText), onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Connexion()),
+                          );
+                        },),
                       ],
                     ),
                   ),

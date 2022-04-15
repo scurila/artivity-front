@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/inscription/Inscription.dart';
 import 'package:artivity_front/screens/widgets/FormTextFieldRow.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
@@ -26,7 +27,7 @@ class Connexion extends StatelessWidget {
               Headbar(
                   leftContainer: ReturnButton(),
                   text: connexionHeadbarText,
-                  rightContainer: Container()),
+                  rightContainer: Container(width: 48,)),
                   //rightContainer: Container(), expanding: true, onPressed: (){}),//test headbar
               Container(
                //width: MediaQuery.of(context).size.width-50,
@@ -36,9 +37,9 @@ class Connexion extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    FormTextFieldRow(text: inscriptionPseudo),
+                    FormTextFieldRow(text: inscriptionPseudo, obscured: false,),
                     SizedBox(height: 20),
-                    FormTextFieldRow(text: inscriptionMdp),
+                    FormTextFieldRow(text: inscriptionMdp, obscured: true,),
                     SizedBox(height: 40),
                     SizedBox(
                       child: ReusableFilledButton(
@@ -57,7 +58,12 @@ class Connexion extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                     ),
                     SizedBox(height: 20),
-                    Text(connexionPasInscritText.toUpperCase(),style: Styles.pasInscritText),
+                    InkWell(child: Text(connexionPasInscritText.toUpperCase(),style: Styles.pasInscritText), onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Inscription()),
+                      );
+                    },),
                   ],
                 ),
               ),
