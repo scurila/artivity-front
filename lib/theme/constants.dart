@@ -45,7 +45,14 @@ const String inscriptionData = "J'accepte l'utilisation de mes données";
 const String inscriptionBouton = "S'inscrire";
 const String inscriptionDejaInscrit = "Déjà inscrit?";
 
+
+//DefiLitteraire
+const String defiLitteraireText = "Défi littéraire";
+
 // Présentation defi
 const String presentationDefiCommentaires = "Commentaires artistes";
 const String presentationDefiDescription = "Description";
+<<<<<<< HEAD
 const String presentationDefiCommencer = "Commencer défi !";
+=======
+>>>>>>> 0d43cc79d639643f7ee0ca08e13d20fb3596b302
