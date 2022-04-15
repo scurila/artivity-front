@@ -108,6 +108,11 @@ class Styles {
       color: Colors.black
   );
 
+  static TextStyle notificationDescription = const TextStyle(
+      fontSize: 12,
+      color: Colors.black
+  );
+
   static BoxBorder get noBorder {
     return Border.all(color: Colors.white, width: 0.0);
   }
