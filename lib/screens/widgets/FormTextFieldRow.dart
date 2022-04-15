@@ -42,6 +42,7 @@ class FormTextFieldRow extends StatelessWidget {
                 bottom:  20,  // HERE THE IMPORTANT PART
               )
           ),
+            textInputAction: TextInputAction.next,
             obscureText: obscured,
             obscuringCharacter: '*',
           )),
