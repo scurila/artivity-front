@@ -68,6 +68,11 @@ class Styles {
     color: greyedOutTextColor,
   );
 
+  static TextStyle TimerText = TextStyle(
+    fontSize: 18,
+    color: greyedOutTextColor
+  );
+
   static TextStyle accentButtonTextDark = const TextStyle(
       fontSize: 14,
       color: Colors.black

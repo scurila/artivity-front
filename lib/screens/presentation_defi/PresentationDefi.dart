@@ -215,7 +215,12 @@ class PresentationDefi extends StatelessWidget {
                             child: ReusableFilledButton(
                               textStyle: Styles.accentButtonText,
                               text: presentationDefiCommencer.toUpperCase(),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'")),
+                                );
+                              },
                               color: Styles.accentColor,
                               border: Styles.noBorder,
                               margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
