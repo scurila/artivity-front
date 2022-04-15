@@ -7,8 +7,16 @@ import '../widgets/Headbar.dart';
 import '../widgets/ReturnButton.dart';
 import '../widgets/ReusableFilledButton.dart';
 
-class Inscription extends StatelessWidget {
+class Inscription extends StatefulWidget {
   const Inscription({Key? key}) : super(key: key);
+
+  @override
+  State<Inscription> createState() => _InscriptionState();
+}
+
+class _InscriptionState extends State<Inscription> {
+  bool CUIsSwitched = false;
+  bool DataIsSwitched = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +31,11 @@ class Inscription extends StatelessWidget {
             children: [
               Column(
                 children: [
-
+                  Headbar(
+                      leftContainer: Container(child: ReturnButton()),
+                      text: inscriptionHeader,
+                      rightContainer: Container()
+                  ),
 
                   Container( // Boîte verte
                     margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -32,13 +44,13 @@ class Inscription extends StatelessWidget {
                     child: Column(
                       children: [
                         // Champs de texte avec labels
-                        const FormTextFieldRow(text: inscriptionPseudo),
+                        const FormTextFieldRow(text: inscriptionPseudo, obscured: false,),
                         const SizedBox(height: 20),
-                        const FormTextFieldRow(text: inscriptionAge),
+                        const FormTextFieldRow(text: inscriptionAge, obscured: false,),
                         const SizedBox(height: 20),
-                        const FormTextFieldRow(text: inscriptionMail),
+                        const FormTextFieldRow(text: inscriptionMail, obscured: false,),
                         const SizedBox(height: 20),
-                        const FormTextFieldRow(text: inscriptionMdp),
+                        const FormTextFieldRow(text: inscriptionMdp, obscured: true,),
                         const SizedBox(height: 20),
 
                         // Bouton inscription
@@ -60,17 +72,37 @@ class Inscription extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Checkbox(value: false, onChanged: (bool? value) {}, ),
-                            Flexible(child: Text(inscriptionCU),),
+                            Switch(
+                              value: CUIsSwitched,
+                              onChanged: (value) {
+                                setState(() {
+                                  CUIsSwitched = value;
+                                  print(CUIsSwitched);
+                                });
+                              },
+                              activeTrackColor: Colors.lightGreenAccent,
+                              activeColor: Colors.green,
+                            ),
+                            const Flexible(child: Text(inscriptionCU),),
                           ],
                         ),
 
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Checkbox(value: false, onChanged: (bool? value) {}, ),
-                            const Text(inscriptionData, softWrap: true,),
+                          children: <Widget>[
+                            Switch(
+                              value: DataIsSwitched,
+                              onChanged: (value) {
+                                setState(() {
+                                  DataIsSwitched = value;
+                                  print(DataIsSwitched);
+                                });
+                              },
+                              activeTrackColor: Colors.lightGreenAccent,
+                              activeColor: Colors.green,
+                            ),
+                            const Flexible(child: Text(inscriptionData),),
                           ],
                         ),
                         const SizedBox(height: 20),

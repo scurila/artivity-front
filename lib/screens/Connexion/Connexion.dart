@@ -36,9 +36,9 @@ class Connexion extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    FormTextFieldRow(text: inscriptionPseudo),
+                    FormTextFieldRow(text: inscriptionPseudo, obscured: false,),
                     SizedBox(height: 20),
-                    FormTextFieldRow(text: inscriptionMdp),
+                    FormTextFieldRow(text: inscriptionMdp, obscured: true,),
                     SizedBox(height: 40),
                     SizedBox(
                       child: ReusableFilledButton(
