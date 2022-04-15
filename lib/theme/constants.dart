@@ -53,9 +53,15 @@ const String ecrireCommentaire = "Ecrire un commentaire";
 
 //DefiLitteraire
 const String defiLitteraireText = "Défi littéraire";
+const String timer = "2:32";
+const String uneditableText1 = "Ce texte n'est pas éditable";
+const String uneditableText2 = "Ce texte n'est pas éditable non plus";
 
 // Présentation defi
 const String presentationDefiCommentaires = "Commentaires artistes";
 const String presentationDefiDescription = "Description";
 const String presentationDefiCommencer = "Commencer défi !";
+
+//DefiAudio
+const String defiAudioText = "Défi audio";
 

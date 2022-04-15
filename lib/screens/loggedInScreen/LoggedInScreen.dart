@@ -1,5 +1,6 @@
 import 'package:artivity_front/screens/presentation_defi/PresentationDefi.dart';
 import 'package:flutter/material.dart';
+import 'package:artivity_front/screens/Communaute/Communaute.dart';
 
 import '../../theme/style.dart';
 import '../accueil/Accueil.dart';
@@ -13,7 +14,7 @@ class LoggedInScreen extends StatefulWidget {
 class _LoggedInScreenState extends State<LoggedInScreen> {
   static const List<Widget> _pages = [
     Accueil(),
-    PresentationDefi(),
+    Communaute(),
     PresentationDefi(),
     PresentationDefi(),
     PresentationDefi(), // todo

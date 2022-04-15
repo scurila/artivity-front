@@ -68,6 +68,11 @@ class Styles {
     color: greyedOutTextColor,
   );
 
+  static TextStyle TimerText = TextStyle(
+    fontSize: 18,
+    color: greyedOutTextColor
+  );
+
   static TextStyle accentButtonTextDark = const TextStyle(
       fontSize: 14,
       color: Colors.black
@@ -100,6 +105,11 @@ class Styles {
 
   static TextStyle challengeDescription = const TextStyle(
       fontSize: 16,
+      color: Colors.black
+  );
+
+  static TextStyle notificationDescription = const TextStyle(
+      fontSize: 12,
       color: Colors.black
   );
 
