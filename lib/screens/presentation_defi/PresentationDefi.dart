@@ -33,7 +33,8 @@ class PresentationDefi extends StatelessWidget {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                // ----- Type défi + infos -----
+                          SizedBox(height: 20),
+                          // ----- Type défi + infos -----
                           Container(
                             margin: const EdgeInsets.symmetric(horizontal: 10),
                             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -56,7 +57,7 @@ class PresentationDefi extends StatelessWidget {
 
                           // ----- Commentaires + scrollbar -----
                           Container(
-                            height: 100,
+                            height: 120,
                             child: Scrollbar(
                               child: SingleChildScrollView(
                                     child: Column(
