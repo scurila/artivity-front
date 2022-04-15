@@ -24,7 +24,7 @@ class PresentationDefi extends StatelessWidget {
 
               // ----- App bar -----
               Headbar(
-                  leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,),
+                  leftContainer: Image.asset('assets/images/ARTHUR.png', height: 48,),
                   text: "William Shakespeare",
                   rightContainer: Container()),
               Container(
