@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/presentation_defi/PresentationDefi.dart';
 import 'package:artivity_front/screens/widgets/ReusableCard.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:artivity_front/theme/style.dart';
@@ -15,52 +16,61 @@ class InvitationDefi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 2),
-      child: ReusableCard(
-        borderRadius: 9,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: 160,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+    return InkWell(
+      borderRadius: BorderRadius.circular(9),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const PresentationDefi()),
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 2),
+        child: ReusableCard(
+          borderRadius: 9,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 160,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(Styles.getChallengeTypePicture(challengeType), width: 130,),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 24),
+                child: Text(Styles.getChallengeTypeLabel(challengeType), style: Styles.challengeTitle, textAlign: TextAlign.left,),
+              ),
+              Text(invitedByText + invitedBy, style: Styles.challengeInvitedBy,),
+              Row(
                 children: [
-                  SvgPicture.asset(Styles.getChallengeTypePicture(challengeType), width: 130,),
+                  Text(executionTime + minutes, style: Styles.challengeTimeBlack),
+                  const Text(" • "),
+                  Text(timeLeft + leftTime + " !", style: Styles.challengeTimePink,),
                 ],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 24),
-              child: Text(Styles.getChallengeTypeLabel(challengeType), style: Styles.challengeTitle, textAlign: TextAlign.left,),
-            ),
-            Text(invitedByText + invitedBy, style: Styles.challengeInvitedBy,),
-            Row(
-              children: [
-                Text(executionTime + minutes, style: Styles.challengeTimeBlack),
-                const Text(" • "),
-                Text(timeLeft + leftTime + " !", style: Styles.challengeTimePink,),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(Icons.star, color: (eval >= 1? Styles.accentColor : Styles.greyedOutColor), size: 14,),
-                  Icon(Icons.star, color: (eval >= 2? Styles.accentColor : Styles.greyedOutColor), size: 14),
-                  Icon(Icons.star, color: (eval >= 3? Styles.accentColor : Styles.greyedOutColor), size: 14),
-                  Icon(Icons.star, color: (eval >= 4? Styles.accentColor : Styles.greyedOutColor), size: 14),
-                  Icon(Icons.star, color: (eval >= 5? Styles.accentColor : Styles.greyedOutColor), size: 14),
-                  Text(" " + artists + artistsLabel, style: Styles.evaluationText, )
-                ],
-              ),
-            )
-            //EvaluationRow()
-          ],
-        )
+              Padding(
+                padding: const EdgeInsets.only(top: 12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(Icons.star, color: (eval >= 1? Styles.accentColor : Styles.greyedOutColor), size: 14,),
+                    Icon(Icons.star, color: (eval >= 2? Styles.accentColor : Styles.greyedOutColor), size: 14),
+                    Icon(Icons.star, color: (eval >= 3? Styles.accentColor : Styles.greyedOutColor), size: 14),
+                    Icon(Icons.star, color: (eval >= 4? Styles.accentColor : Styles.greyedOutColor), size: 14),
+                    Icon(Icons.star, color: (eval >= 5? Styles.accentColor : Styles.greyedOutColor), size: 14),
+                    Text(" " + artists + artistsLabel, style: Styles.evaluationText, )
+                  ],
+                ),
+              )
+              //EvaluationRow()
+            ],
+          )
+        ),
       ),
     );
   }

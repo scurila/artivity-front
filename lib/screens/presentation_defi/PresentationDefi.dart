@@ -20,6 +20,8 @@ class PresentationDefi extends StatelessWidget {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
             children: [
+
+              // ----- App bar -----
               Container(
                 padding: const EdgeInsets.fromLTRB(12, 5, 12, 0),
                 width: MediaQuery.of(context).size.width,
@@ -35,9 +37,9 @@ class PresentationDefi extends StatelessWidget {
                   ],
                 ),
               ),
-
               SizedBox(height: 30),
 
+              // ----- Type défi + infos -----
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -49,8 +51,9 @@ class PresentationDefi extends StatelessWidget {
                   ],
                 ),
               ),
-
               SizedBox(height: 20),
+
+              // ----- Commentaires -----
               Container(
                 padding: EdgeInsets.only(left: 20.0),
                 width: MediaQuery.of(context).size.width,
@@ -71,6 +74,8 @@ class PresentationDefi extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+
+              // ----- Description ------
               Container(
                   padding: EdgeInsets.only(left: 20.0),
                   width: MediaQuery.of(context).size.width,
@@ -82,10 +87,6 @@ class PresentationDefi extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                 decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
-                  //width: MediaQuery.of(context).size.width - 5,
-                  //margin: const EdgeInsets.symmetric(horizontal: 10),
-                  //padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  //decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
                 ),
                 child: Column(
                   children: [
@@ -107,6 +108,20 @@ class PresentationDefi extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(height: 15),
+
+              // ----- Bouton commencer défi -----
+              SizedBox(
+                child: ReusableFilledButton(
+                  textStyle: Styles.accentButtonText,
+                  text: presentationDefiCommencer.toUpperCase(),
+                  onPressed: () {},
+                  color: Styles.accentColor,
+                  border: Styles.noBorder,
+                  margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
+                ),
+                width: MediaQuery.of(context).size.width,
               ),
             ],
           ),

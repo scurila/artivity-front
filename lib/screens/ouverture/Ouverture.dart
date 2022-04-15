@@ -1,3 +1,5 @@
+import 'package:artivity_front/screens/Connexion/Connexion.dart';
+import 'package:artivity_front/screens/inscription/Inscription.dart';
 import 'package:flutter/material.dart';
 import 'package:artivity_front/screens/widgets/ReusableFilledButton.dart';
 import '../../theme/constants.dart';
@@ -27,7 +29,12 @@ class Ouverture extends StatelessWidget {
               child: ReusableFilledButton(
                 textStyle: Styles.accentButtonTextDark,
                 text: inscriptionButtonText.toUpperCase(),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Inscription()),
+                  );
+                },
                 color: Colors.white,
                 border: Styles.noBorder,
                 margin: EdgeInsets.fromLTRB(60, 80, 60, 26),
@@ -38,7 +45,12 @@ class Ouverture extends StatelessWidget {
               child: ReusableFilledButton(
                 textStyle: Styles.accentButtonTextDark,
                 text: loginButtonText.toUpperCase(),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Connexion()),
+                  );
+                },
                 color: Colors.white,
                 border: Styles.noBorder,
                 margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
