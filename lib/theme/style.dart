@@ -9,11 +9,12 @@ class Styles {
   static Color greyedOutColor = const Color.fromRGBO(206, 206, 206, 1);
   static Color greyedColor = const Color.fromRGBO(219, 219, 219, 1);
   static Color greyedOutTextColor = const Color.fromRGBO(127, 127, 127, 1);
+  static Color greyedNavbarButton = const Color.fromRGBO(169, 169, 169, 1);
 
   static String loginBackgroundPath = 'assets/images/bg.png';
   static String loginLogoPath = 'assets/images/Worldline_logo_blue_bg.png';
 
-  static const TextStyle pageTitleText = const TextStyle(
+  static const TextStyle pageTitleText = TextStyle(
     fontSize: 20,
     color: Colors.black,
     fontWeight: FontWeight.w500,
@@ -88,6 +89,12 @@ class Styles {
     return ThemeData(
       scaffoldBackgroundColor: Colors.white,
       brightness: Brightness.light,
+      pageTransitionsTheme: const PageTransitionsTheme(
+          builders: {
+            TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+            TargetPlatform.iOS: CupertinoPageTransitionsBuilder()
+          }
+      ),
     );
   }
 
