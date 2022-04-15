@@ -19,7 +19,7 @@ class Connexion extends StatelessWidget {
         type: MaterialType.transparency,
         child: Container(
 
-          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+          //padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
             children: [

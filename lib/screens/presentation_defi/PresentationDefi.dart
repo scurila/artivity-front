@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/defiLitteraire/DefiLitteraire.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/screens/presentation_defi/widgets/Defi.dart';
@@ -86,7 +87,7 @@ class PresentationDefi extends StatelessWidget {
                 width: MediaQuery.of(context).size.width - 5,
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
+                decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
                 child: Column(
                   children: [
@@ -95,7 +96,7 @@ class PresentationDefi extends StatelessWidget {
                       padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(20),
                       ),
                       child: Column(
                           children: [
@@ -116,7 +117,12 @@ class PresentationDefi extends StatelessWidget {
                 child: ReusableFilledButton(
                   textStyle: Styles.accentButtonText,
                   text: presentationDefiCommencer.toUpperCase(),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'")),
+                    );
+                  },
                   color: Styles.accentColor,
                   border: Styles.noBorder,
                   margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
