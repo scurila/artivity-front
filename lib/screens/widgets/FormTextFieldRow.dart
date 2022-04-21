@@ -6,10 +6,11 @@ class FormTextFieldRow extends StatelessWidget {
     Key? key,
     required this.text,
     required this.obscured,
-
+    required this.controller
   }) : super(key: key);
   final String text;
   final bool obscured;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +46,7 @@ class FormTextFieldRow extends StatelessWidget {
             textInputAction: TextInputAction.next,
             obscureText: obscured,
             obscuringCharacter: '*',
+            controller: controller,
           )),
         ],
       ),

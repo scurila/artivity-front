@@ -37,7 +37,7 @@ class Ouverture extends StatelessWidget {
                 },
                 color: Colors.white,
                 border: Styles.noBorder,
-                margin: EdgeInsets.fromLTRB(60, 80, 60, 26),
+                margin: const EdgeInsets.fromLTRB(60, 80, 60, 26),
               ),
               width: MediaQuery.of(context).size.width,
             ),
@@ -48,12 +48,12 @@ class Ouverture extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Connexion()),
+                    MaterialPageRoute(builder: (context) => Connexion()),
                   );
                 },
                 color: Colors.white,
                 border: Styles.noBorder,
-                margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
+                margin: const EdgeInsets.fromLTRB(60, 0, 60, 0),
               ),
               width: MediaQuery.of(context).size.width,
             ),
