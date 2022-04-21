@@ -25,7 +25,7 @@ class Connexion extends StatelessWidget {
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
       title: Text("Échec"),
-      content: Text("Données de correction invalides."),
+      content: Text("Données de connection invalides."),
       actions: [
         okButton,
       ],
@@ -70,12 +70,13 @@ class Connexion extends StatelessWidget {
                         text: connexionButtonText.toUpperCase(),
                         onPressed: () async {
                           try {
-                            await UserBackendService.login("dany", "toto");
+                            await UserBackendService.login("danny", "toto");
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => const LoggedInScreen()), // temporaire stp procure API
                             );
-                          } catch (_) {
+                          } catch (e) {
+                            print(e);
                             showAlertDialog(context);
                           }
                         },
