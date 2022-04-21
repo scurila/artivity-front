@@ -18,6 +18,7 @@ class Inscription extends StatefulWidget {
 class _InscriptionState extends State<Inscription> {
   bool CUIsSwitched = false;
   bool DataIsSwitched = false;
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -47,13 +48,13 @@ class _InscriptionState extends State<Inscription> {
                         child: Column(
                           children: [
                             // Champs de texte avec labels
-                            const FormTextFieldRow(text: inscriptionPseudo, obscured: false,),
+                            FormTextFieldRow(text: inscriptionPseudo, obscured: false, controller: controller,),
                             const SizedBox(height: 20),
-                            const FormTextFieldRow(text: inscriptionAge, obscured: false,),
+                            FormTextFieldRow(text: inscriptionAge, obscured: false, controller: controller,),
                             const SizedBox(height: 20),
-                            const FormTextFieldRow(text: inscriptionMail, obscured: false,),
+                            FormTextFieldRow(text: inscriptionMail, obscured: false, controller: controller,),
                             const SizedBox(height: 20),
-                            const FormTextFieldRow(text: inscriptionMdp, obscured: true,),
+                            FormTextFieldRow(text: inscriptionMdp, obscured: true, controller: controller,),
                             const SizedBox(height: 20),
 
                             // Bouton inscription
@@ -113,7 +114,7 @@ class _InscriptionState extends State<Inscription> {
                             InkWell(child: Text(inscriptionDejaInscrit.toUpperCase(), style: Styles.pasInscritText), onTap: (){
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => const Connexion()),
+                                MaterialPageRoute(builder: (context) => Connexion()),
                               );
                             },),
                           ],

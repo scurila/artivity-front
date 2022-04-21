@@ -12,7 +12,10 @@ import '../loggedInScreen/LoggedInScreen.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class Connexion extends StatelessWidget {
-  const Connexion({Key? key}) : super(key: key);
+  Connexion({Key? key}) : super(key: key);
+
+  final controllerLogin = TextEditingController();
+  final controllerPwd = TextEditingController();
 
   showAlertDialog(BuildContext context) {
     Widget okButton = TextButton(
@@ -60,9 +63,9 @@ class Connexion extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    FormTextFieldRow(text: inscriptionPseudo, obscured: false,),
+                    FormTextFieldRow(text: inscriptionPseudo, obscured: false, controller: controllerLogin,),
                     SizedBox(height: 20),
-                    FormTextFieldRow(text: inscriptionMdp, obscured: true,),
+                    FormTextFieldRow(text: inscriptionMdp, obscured: true, controller: controllerPwd,),
                     SizedBox(height: 40),
                     SizedBox(
                       child: ReusableFilledButton(
@@ -70,7 +73,8 @@ class Connexion extends StatelessWidget {
                         text: connexionButtonText.toUpperCase(),
                         onPressed: () async {
                           try {
-                            await UserBackendService.login("danny", "toto");
+
+                            await UserBackendService.login(controllerLogin.text, controllerPwd.text);
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => const LoggedInScreen()), // temporaire stp procure API
