@@ -21,7 +21,7 @@ class InvitationDefi extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const PresentationDefi()),
+          MaterialPageRoute(builder: (context) => PresentationDefi(type:challengeType)),
         );
       },
       child: Container(
