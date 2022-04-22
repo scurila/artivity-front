@@ -34,6 +34,8 @@ class ReusableRoundButton extends StatelessWidget {
       ),
       margin: margin,
       child: MaterialButton(
+        height: size,
+        minWidth: size,
         child: image,
         onPressed: onPressed,
         color: (gradient != null)? null : color,

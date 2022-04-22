@@ -65,3 +65,8 @@ const String presentationDefiCommencer = "Commencer défi !";
 //DefiAudio
 const String defiAudioText = "Défi audio";
 
+//DefiVideo
+const String defiVideoText = "Défi vidéo";
+
+//DefiPhoto
+const String defiPhotoText = "Défi photo";

@@ -7,8 +7,8 @@ import '../../theme/style.dart';
 import '../widgets/EditBarDefi.dart';
 import '../widgets/Headbar.dart';
 
-class DefiAudio extends StatelessWidget {
-  const DefiAudio({
+class DefiVideo extends StatelessWidget {
+  const DefiVideo({
     Key? key,
     required this.title,
   }) : super(key: key);
@@ -22,7 +22,7 @@ class DefiAudio extends StatelessWidget {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiAudioText, rightContainer: Container()),
+                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiVideoText, rightContainer: Container()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -39,8 +39,10 @@ class DefiAudio extends StatelessWidget {
                   decoration: const BoxDecoration(color: Colors.black),),
 
                 Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
+
                 SizedBox(height: MediaQuery.of(context).size.height*0.1),
-                ReusableRoundButton(size: 100, image: Icon(Icons.mic_none, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+
+                ReusableRoundButton(size: 100, image: Icon(Icons.camera, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                 SizedBox(height: MediaQuery.of(context).size.height*0.075),
                 ReusableRoundButton(size: 100, image: Icon(Icons.play_arrow, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                 SizedBox(height: MediaQuery.of(context).size.height*0.075),
@@ -54,7 +56,6 @@ class DefiAudio extends StatelessWidget {
                     ReusableRoundButton(size: 80, image: Icon(Icons.send, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                   ],
                 ),
-
 
               ]
           ),
