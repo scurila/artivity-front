@@ -1,4 +1,5 @@
 import 'package:artivity_front/screens/presentation_defi/PresentationDefi.dart';
+import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:artivity_front/screens/Communaute/Communaute.dart';
 
@@ -12,12 +13,14 @@ class LoggedInScreen extends StatefulWidget {
 }
 
 class _LoggedInScreenState extends State<LoggedInScreen> {
-  static const List<Widget> _pages = [
+  static List<Widget> _pages = [
     Accueil(),
     Communaute(),
-    PresentationDefi(),
-    PresentationDefi(),
-    PresentationDefi(), // todo
+    PresentationDefi(type: CHALLENGE_TYPE_ECRITURE),
+    PresentationDefi(type: CHALLENGE_TYPE_DESSIN),
+    PresentationDefi(type: CHALLENGE_TYPE_PHOTO),
+    PresentationDefi(type: CHALLENGE_TYPE_VIDEO),
+    PresentationDefi(type: CHALLENGE_TYPE_AUDIO), // todo
   ];
 
   int _selectedIndex = 0;

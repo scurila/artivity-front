@@ -1,3 +1,6 @@
+import 'package:artivity_front/screens/defiAudio/DefiAudio.dart';
+import 'package:artivity_front/screens/defiPhoto/DefiPhoto.dart';
+import 'package:artivity_front/screens/defiVideo/DefiVideo.dart';
 import 'package:artivity_front/screens/defiLitteraire/DefiLitteraire.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
@@ -9,7 +12,11 @@ import '../../theme/style.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class PresentationDefi extends StatelessWidget {
-  const PresentationDefi({Key? key}) : super(key: key);
+  PresentationDefi({
+    Key? key,
+    required this.type,
+  }) : super(key: key);
+  final String type;
 
   @override
   Widget build(BuildContext context) {
@@ -216,10 +223,38 @@ class PresentationDefi extends StatelessWidget {
                               textStyle: Styles.accentButtonText,
                               text: presentationDefiCommencer.toUpperCase(),
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'")),
-                                );
+                                //TODO : defi par type
+                                if(type == CHALLENGE_TYPE_ECRITURE){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'")),
+                                  );
+                                }
+                                /*if(type == CHALLENGE_TYPE_DESSIN){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiDessin(title: "Dessine moi un mouton")),
+                                  );
+                                }*/
+                                if(type == CHALLENGE_TYPE_AUDIO){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiAudio(title: "Ambiance sonore feu de bois")),
+                                  );
+                                }
+                                if(type == CHALLENGE_TYPE_VIDEO){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiVideo(title: "Video emotion")),
+                                  );
+                                }
+                                if(type == CHALLENGE_TYPE_PHOTO){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiPhoto(title: "Clair obscur")),
+                                  );
+                                }
+
                               },
                               color: Styles.accentColor,
                               border: Styles.noBorder,

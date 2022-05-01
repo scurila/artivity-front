@@ -20,7 +20,7 @@ class DailyChallengeCard extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const PresentationDefi()), // todo : temp
+          MaterialPageRoute(builder: (context) =>  PresentationDefi(type: challengeType)), // todo : temp
         );
       },
       child: Container(

@@ -1,5 +1,8 @@
 import 'package:artivity_front/screens/accueil/Accueil.dart';
 import 'package:artivity_front/screens/creation/creation.dart';
+import 'package:artivity_front/screens/defiAudio/DefiAudio.dart';
+import 'package:artivity_front/screens/defiPhoto/DefiPhoto.dart';
+import 'package:artivity_front/screens/defiVideo/DefiVideo.dart';
 import 'package:artivity_front/screens/inscription/Inscription.dart';
 import 'package:artivity_front/screens/ouverture/Ouverture.dart';
 import 'package:artivity_front/screens/presentation_defi/PresentationDefi.dart';

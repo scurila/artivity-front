@@ -1,7 +1,8 @@
 const String CHALLENGE_TYPE_DESSIN = "DESSIN";
-const String CHALLENGE_TYPE_ECRITURE = "ECRITURE";
+const String CHALLENGE_TYPE_ECRITURE = "LITTERAIRE";
 const String CHALLENGE_TYPE_AUDIO = "AUDIO";
 const String CHALLENGE_TYPE_PHOTO = "PHOTO";
+const String CHALLENGE_TYPE_VIDEO = "VIDEO";
 
 const String backendServerBase = "http://vps.dblasko.fr:5000/api";
 
@@ -58,10 +59,15 @@ const String uneditableText1 = "Ce texte n'est pas éditable";
 const String uneditableText2 = "Ce texte n'est pas éditable non plus";
 
 // Présentation defi
-const String presentationDefiCommentaires = "Commentaires artistes";
+const String presentationDefiCommentaires = "Commentaires";
 const String presentationDefiDescription = "Description";
 const String presentationDefiCommencer = "Commencer défi !";
 
 //DefiAudio
 const String defiAudioText = "Défi audio";
 
+//DefiVideo
+const String defiVideoText = "Défi vidéo";
+
+//DefiPhoto
+const String defiPhotoText = "Défi photo";

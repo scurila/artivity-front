@@ -40,7 +40,7 @@ class FormTextFieldRow extends StatelessWidget {
             ),
               contentPadding: EdgeInsets.only(
                 left: 10,
-                bottom:  20,  // HERE THE IMPORTANT PART
+                bottom:  20,
               )
           ),
             textInputAction: TextInputAction.next,

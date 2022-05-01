@@ -1,4 +1,4 @@
-import 'package:artivity_front/screens/Connexion/Connexion.dart';
+import 'package:artivity_front/screens/connexion/Connexion.dart';
 import 'package:artivity_front/screens/inscription/Inscription.dart';
 import 'package:flutter/material.dart';
 import 'package:artivity_front/screens/widgets/ReusableFilledButton.dart';
