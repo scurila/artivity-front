@@ -26,6 +26,7 @@ class PresentationDefi extends StatelessWidget {
           width: MediaQuery.of(context).size.width - 5,
           padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
           decoration: const BoxDecoration(color: Colors.white),
+
           child: Column(
             children: [
 
@@ -227,7 +228,7 @@ class PresentationDefi extends StatelessWidget {
                                 if(type == CHALLENGE_TYPE_ECRITURE){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'")),
+                                    MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'", description: "Pour ceux qui ont la ref ;)",)),
                                   );
                                 }
                                 /*if(type == CHALLENGE_TYPE_DESSIN){
@@ -239,19 +240,19 @@ class PresentationDefi extends StatelessWidget {
                                 if(type == CHALLENGE_TYPE_AUDIO){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const DefiAudio(title: "Ambiance sonore feu de bois")),
+                                    MaterialPageRoute(builder: (context) => const DefiAudio(title: "Ambiance sonore feu de bois", description: "",)),
                                   );
                                 }
                                 if(type == CHALLENGE_TYPE_VIDEO){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const DefiVideo(title: "Video emotion")),
+                                    MaterialPageRoute(builder: (context) => const DefiVideo(title: "Video emotion", description: "Sometimes the best caption, is no caption at all...",)),
                                   );
                                 }
                                 if(type == CHALLENGE_TYPE_PHOTO){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const DefiPhoto(title: "Clair obscur")),
+                                    MaterialPageRoute(builder: (context) => const DefiPhoto(title: "Clair obscur", description: "Rembrandt représente",)),
                                   );
                                 }
 
@@ -267,9 +268,8 @@ class PresentationDefi extends StatelessWidget {
                     ),
                     ),
                   ),
+          ),]
 
-          ),
-      ]
         ),
     ),
     );
