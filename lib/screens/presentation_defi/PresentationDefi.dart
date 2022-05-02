@@ -26,6 +26,7 @@ class PresentationDefi extends StatelessWidget {
           width: MediaQuery.of(context).size.width - 5,
           padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
           decoration: const BoxDecoration(color: Colors.white),
+
           child: Column(
             children: [
 
@@ -267,9 +268,8 @@ class PresentationDefi extends StatelessWidget {
                     ),
                     ),
                   ),
+          ),]
 
-          ),
-      ]
         ),
     ),
     );
