@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/widgets/Popup.dart';
 import 'package:artivity_front/screens/widgets/ReusableRoundButton.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,8 +12,10 @@ class DefiAudio extends StatelessWidget {
   const DefiAudio({
     Key? key,
     required this.title,
+    required this.description,
   }) : super(key: key);
   final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,12 @@ class DefiAudio extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(title.toUpperCase(), textAlign: TextAlign.center,style: Styles.challengeTitle),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
+                      IconButton(onPressed: (){
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Popup(title: title, description: description,),
+                        );
+                      }, icon: const Icon(Icons.expand_circle_down_outlined, color: Colors.black)),
 
                     ]
                 ),

@@ -71,3 +71,8 @@ const String defiVideoText = "Défi vidéo";
 
 //DefiPhoto
 const String defiPhotoText = "Défi photo";
+
+//Popup
+const String titrePopup = "Détails du défi";
+const String enoncePopup = "Enoncé: ";
+const String descriptionPopup = "Description: ";
