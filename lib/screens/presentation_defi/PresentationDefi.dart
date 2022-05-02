@@ -227,7 +227,7 @@ class PresentationDefi extends StatelessWidget {
                                 if(type == CHALLENGE_TYPE_ECRITURE){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'")),
+                                    MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'", description: "Pour ceux qui ont la ref ;)",)),
                                   );
                                 }
                                 /*if(type == CHALLENGE_TYPE_DESSIN){
@@ -245,13 +245,13 @@ class PresentationDefi extends StatelessWidget {
                                 if(type == CHALLENGE_TYPE_VIDEO){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const DefiVideo(title: "Video emotion")),
+                                    MaterialPageRoute(builder: (context) => const DefiVideo(title: "Video emotion", description: "Sometimes the best caption, is no caption at all...",)),
                                   );
                                 }
                                 if(type == CHALLENGE_TYPE_PHOTO){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const DefiPhoto(title: "Clair obscur")),
+                                    MaterialPageRoute(builder: (context) => const DefiPhoto(title: "Clair obscur", description: "Rembrandt représente",)),
                                   );
                                 }
 

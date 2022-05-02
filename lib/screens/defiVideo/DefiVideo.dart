@@ -6,13 +6,16 @@ import 'package:flutter/material.dart';
 import '../../theme/style.dart';
 import '../widgets/EditBarDefi.dart';
 import '../widgets/Headbar.dart';
+import '../widgets/Popup.dart';
 
 class DefiVideo extends StatelessWidget {
   const DefiVideo({
     Key? key,
     required this.title,
+    required this.description,
   }) : super(key: key);
   final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,12 @@ class DefiVideo extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(title.toUpperCase(), textAlign: TextAlign.center,style: Styles.challengeTitle),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
+                      IconButton(onPressed: (){
+                        showDialog(
+                        context: context,
+                        builder: (BuildContext context) => Popup(title: title, description: description,),
+                        ); },
+                          icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
 
                     ]
                 ),

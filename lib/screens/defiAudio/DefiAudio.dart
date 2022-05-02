@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
-import '../widgets/EditBarDefi.dart';
 import '../widgets/Headbar.dart';
 
 class DefiAudio extends StatelessWidget {
@@ -36,8 +35,8 @@ class DefiAudio extends StatelessWidget {
                         showDialog(
                           context: context,
                           builder: (BuildContext context) => Popup(title: title, description: description,),
-                        );
-                      }, icon: const Icon(Icons.expand_circle_down_outlined, color: Colors.black)),
+                        ); },
+                          icon: const Icon(Icons.expand_circle_down_outlined, color: Colors.black)),
 
                     ]
                 ),
