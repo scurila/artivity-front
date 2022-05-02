@@ -1,6 +1,7 @@
 import 'package:artivity_front/screens/accueil/Accueil.dart';
 import 'package:artivity_front/screens/creation/creation.dart';
 import 'package:artivity_front/screens/defiAudio/DefiAudio.dart';
+import 'package:artivity_front/screens/defiDessin/DefiDessin.dart';
 import 'package:artivity_front/screens/defiPhoto/DefiPhoto.dart';
 import 'package:artivity_front/screens/defiVideo/DefiVideo.dart';
 import 'package:artivity_front/screens/inscription/Inscription.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Artivity',
       theme: Styles.baseTheme,
-      home: const BackExitProtection(child: Ouverture()),
+      home: const BackExitProtection(child: DefiDessin(title: 'Jean',)),
     );
   }
 }
