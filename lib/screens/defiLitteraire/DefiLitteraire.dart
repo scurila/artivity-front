@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 
 import '../../theme/constants.dart';
 import '../widgets/Headbar.dart';
+import '../widgets/Popup.dart';
 
 class DefiLitteraire extends StatelessWidget {
   const DefiLitteraire({
     Key? key,
     required this.title,
+    required this.description,
   }) : super(key: key);
   final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,12 @@ class DefiLitteraire extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(title.toUpperCase(), textAlign: TextAlign.center,style: Styles.challengeTitle),
-                        IconButton(onPressed: (){}, icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
+                        IconButton(onPressed: (){
+                          showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Popup(title: title, description: description,),
+                          ); },
+                            icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
 
                     ]
                   ),
