@@ -19,18 +19,13 @@ class Popup extends StatelessWidget {
 
       content: Column(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text(enoncePopup),
-              Text(title),
-              const Text(''),
-              const Text(descriptionPopup),
-              Text(description),
-            ],
-          ),
+          const Text(enoncePopup),
+          Text(title),
+          const Text(''),
+          const Text(descriptionPopup),
+          Text(description),
         ],
       ),
 

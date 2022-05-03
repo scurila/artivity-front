@@ -23,7 +23,7 @@ class DefiAudio extends StatelessWidget {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiAudioText, rightContainer: Container()),
+                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiAudio, rightContainer: Container()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,

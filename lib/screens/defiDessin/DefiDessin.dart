@@ -57,7 +57,7 @@ class _DefiDessinState extends State<DefiDessin> {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiPhotoText, rightContainer: Container(width: 48, height: 48,)),
+                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiDessin, rightContainer: Container(width: 48, height: 48,)),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,7 +68,8 @@ class _DefiDessinState extends State<DefiDessin> {
                         showDialog(
                           context: context,
                           builder: (BuildContext context) => Popup(title: widget.title, description: widget.description,),
-                        ); }, icon: const Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
+                        ); },
+                          icon: const Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
 
                     ]
                 ),

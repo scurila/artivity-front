@@ -24,7 +24,7 @@ class DefiPhoto extends StatelessWidget {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiPhotoText, rightContainer: Container()),
+                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiPhoto, rightContainer: Container()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
