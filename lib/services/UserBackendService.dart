@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:artivity_front/services/objects/Challenge.dart';
 import 'package:artivity_front/services/objects/ContentAccueil.dart';
 import 'package:artivity_front/theme/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 
@@ -34,6 +35,9 @@ class UserBackendService {
 
         ContentAccueil content;
         Challenge c;
+        List<Challenge> invitations;
+
+        // LOAD DAILY CHALLENGE
         final response = await http.get(Uri.parse(backendServerBase + '/challenge/daily'),
           headers: <String, String>{
             'Authorization': "Bearer "+currentToken,
@@ -45,6 +49,21 @@ class UserBackendService {
         } else {
           throw Exception('LoadingDailyChallengeError');
         }
+
+        // LOAD INVITATIONS
+        final responseInvitations = await http.get(Uri.parse(backendServerBase+"users/challenges/invites/received"),
+          headers: <String, String>{
+          'Authorization': "Bearer "+currentToken,
+        },);
+        if (responseInvitations.statusCode == 200) {
+          print(responseInvitations.body);
+          // TODO
+        } else {
+          throw Exception('LoadingInvitationsError');
+        }
+
+
+
         content= ContentAccueil(dailyChallenge: c);
         return content;
 
