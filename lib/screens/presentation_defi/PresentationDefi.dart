@@ -3,7 +3,6 @@ import 'package:artivity_front/screens/defiPhoto/DefiPhoto.dart';
 import 'package:artivity_front/screens/defiVideo/DefiVideo.dart';
 import 'package:artivity_front/screens/defiLitteraire/DefiLitteraire.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
-import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/screens/presentation_defi/widgets/Defi.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
@@ -135,7 +134,7 @@ class PresentationDefi extends StatelessWidget {
                                                     width: MediaQuery.of(context).size.width - 90,
                                                     margin: const EdgeInsets.symmetric(horizontal: 10),
                                                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                                    decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(const Radius.circular(15)),
+                                                    decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(Radius.circular(15)),
                                                     ),
                                                     child: Column(
                                                       children: [

@@ -1,10 +1,8 @@
 import 'package:artivity_front/screens/widgets/ReusableRoundButton.dart';
 import 'package:artivity_front/theme/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
-import '../widgets/EditBarDefi.dart';
 import '../widgets/Headbar.dart';
 import '../widgets/Popup.dart';
 

@@ -22,14 +22,14 @@ class CreationDefi1 extends StatelessWidget {
 
           Row(
             children: const [
-              TypeDefiCard(title: defiDessin, description: descriptionDefiDessin, imgUrl: 'assets/images/defi_dessin.svg',),
-              TypeDefiCard(title: defiEcriture, description: descriptionDefiEcriture, imgUrl: 'assets/images/defi_ecriture.svg',),
+              TypeDefiCard(title: defiDessin, description: descriptionDefiDessin, imgUrl: "assets/images/defi_dessin.svg",),
+              TypeDefiCard(title: defiEcriture, description: descriptionDefiEcriture, imgUrl: "assets/images/defi_ecriture.svg",),
             ],
           ),
           Row(
             children: const [
-              TypeDefiCard(title: defiAudio, description: descriptionDefiAudio, imgUrl: 'assets/images/defi_audio.svg',),
-              TypeDefiCard(title: defiPhoto, description: descriptionDefiPhoto, imgUrl: 'assets/images/defi_photo.svg',),
+              TypeDefiCard(title: defiAudio, description: descriptionDefiAudio, imgUrl: "assets/images/defi_audio.svg",),
+              TypeDefiCard(title: defiPhoto, description: descriptionDefiPhoto, imgUrl: "assets/images/defi_photo.svg",),
             ],
           ),
           

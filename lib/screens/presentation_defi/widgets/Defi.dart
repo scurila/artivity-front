@@ -1,4 +1,3 @@
-import 'package:artivity_front/screens/widgets/ReusableCard.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:artivity_front/theme/style.dart';
 import 'package:flutter/material.dart';
@@ -6,12 +5,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class Defi extends StatelessWidget {
   Defi({Key? key, required this.challengeType, required this.invitedBy, required this.executionTime, required this.leftTime, required this.eval, required this.artists}) : super(key: key);
-  String challengeType;
-  String invitedBy;
-  String executionTime;
-  String leftTime;
-  int eval;
-  String artists;
+  final String challengeType;
+  final String invitedBy;
+  final String executionTime;
+  final String leftTime;
+  final int eval;
+  final String artists;
 
   static String descriptionDefiInvitation = "  t’a invité à participer à un défi de ";
   static String descriptionDefiCollaboratifJoin = " Rejoins ses autres amis ";
