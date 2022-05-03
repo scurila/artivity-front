@@ -2,7 +2,6 @@ import 'package:artivity_front/screens/accueil/widgets/CreationCard.dart';
 import 'package:artivity_front/screens/accueil/widgets/DailyChallengeCard.dart';
 import 'package:artivity_front/screens/accueil/widgets/InvitationDefi.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
-import 'package:artivity_front/screens/widgets/ReusableCard.dart';
 import 'package:artivity_front/screens/widgets/ReusableFilledButton.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';

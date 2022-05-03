@@ -76,3 +76,14 @@ const String defiPhotoText = "Défi photo";
 const String titrePopup = "Détails du défi";
 const String enoncePopup = "Enoncé: ";
 const String descriptionPopup = "Description: ";
+
+//CreationDefi1
+const String defiAudio = "Défi audio";
+const String descriptionDefiAudio = "Chanter, raconter, imiter... Crée du son!";
+const String defiDessin = "Défi dessin";
+const String descriptionDefiDessin = "Dessiner, avec ou sans contraintes!";
+const String defiEcriture = "Défi écriture";
+const String descriptionDefiEcriture = "De la poésie, de la prose... De la créativité à l'écrit!";
+const String defiPhoto = "Défi photo";
+const String descriptionDefiPhoto = "Fais découvrir le monde sous ton angle!";
+const String boutonDefiAleatoire = "Défi aléatoire!";
