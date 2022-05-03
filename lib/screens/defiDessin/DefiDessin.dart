@@ -86,7 +86,6 @@ class _DefiDessinState extends State<DefiDessin> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       IconButton(onPressed: () async {
-                        // todo : camera
                         final ImagePicker _picker = ImagePicker();
                         // Pick an image
                         final XFile? image = await _picker.pickImage(source: ImageSource.camera);
@@ -94,23 +93,19 @@ class _DefiDessinState extends State<DefiDessin> {
                           currentBgFile = File(image!.path);
                           gKey = GlobalKey<ImagePainterState>(); // refresh
                         });
-
-
                       }, icon: Icon(Icons.camera_alt_outlined)),
                       IconButton(onPressed: () async {
-                        // todo : Upload
+
                         final ImagePicker _picker = ImagePicker();
                         // Pick an image
                         final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
                         // todo : check if submitted
                         setState(() {
                           currentBgFile = File(image!.path);
-                          //currentBgPath = "assets/images/ARTHUR.png";
                           gKey = GlobalKey<ImagePainterState>(); // refresh
                         });
                       }, icon: Icon(Icons.upload_file)),
                       IconButton(onPressed: (){
-                        // todo : save
                           saveImage();
                       }, icon: Icon(Icons.download)),
                       IconButton(onPressed: (){
