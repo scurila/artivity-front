@@ -11,6 +11,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
+import '../../theme/constants.dart';
 
 import '../../theme/style.dart';
 import '../widgets/Headbar.dart';
@@ -43,7 +44,7 @@ class _DefiAudioState extends State<DefiAudio> {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiAudioText, rightContainer: Container(width: 48, height: 48,)),
+                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiAudio, rightContainer: Container(width: 48, height: 48,)),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,

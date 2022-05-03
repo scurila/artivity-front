@@ -5,6 +5,8 @@ import 'package:artivity_front/theme/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'screens/defiDessin/DefiDessin.dart';
+
 void main() {
   runApp(const MyApp());
 }
