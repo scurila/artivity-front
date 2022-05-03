@@ -21,7 +21,7 @@ class Communaute extends StatelessWidget {
 
               // ----- App bar -----
               Headbar(
-                  leftContainer: const ReturnButton(),
+                  leftContainer: ReturnButton(),
                   text: "Communauté",
                   rightContainer: Image.asset('assets/images/friends.png', width:48/*height: 10,*/)),
               Container(

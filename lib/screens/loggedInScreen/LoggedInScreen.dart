@@ -16,11 +16,11 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
   static final List<Widget> _pages = [
     const Accueil(),
     const Communaute(),
-    const PresentationDefi(type: CHALLENGE_TYPE_ECRITURE),
-    const PresentationDefi(type: CHALLENGE_TYPE_DESSIN),
-    const PresentationDefi(type: CHALLENGE_TYPE_PHOTO),
-    const PresentationDefi(type: CHALLENGE_TYPE_VIDEO),
-    const PresentationDefi(type: CHALLENGE_TYPE_AUDIO), // todo
+    PresentationDefi(type: CHALLENGE_TYPE_ECRITURE),
+    PresentationDefi(type: CHALLENGE_TYPE_DESSIN),
+    PresentationDefi(type: CHALLENGE_TYPE_PHOTO),
+    PresentationDefi(type: CHALLENGE_TYPE_VIDEO),
+    PresentationDefi(type: CHALLENGE_TYPE_AUDIO), // todo
   ];
 
   int _selectedIndex = 0;

@@ -51,7 +51,7 @@ class Connexion extends StatelessWidget {
           child: Column(
             children: [
               Headbar(
-                  leftContainer: const ReturnButton(),
+                  leftContainer: ReturnButton(),
                   text: connexionHeadbarText,
                   rightContainer: Container(width: 48,)),
               Container(
