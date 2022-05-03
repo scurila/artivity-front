@@ -13,27 +13,37 @@ class CreationDefi1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      type: MaterialType.transparency,
       child: Column(
         children: [
           Container(
-            child: Headbar(leftContainer: Container(child: const ReturnButton()), rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: '✏️ Création d’un défi')
-          ),
+            child: Column(
+              children: [
+                Container(
+                  child: Headbar(leftContainer: Container(child: const ReturnButton()), rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: '✏️ Création d’un défi')
+                ),
 
-          Row(
-            children: const [
-              TypeDefiCard(title: defiDessin, description: descriptionDefiDessin, imgUrl: "assets/images/defi_dessin.svg",),
-              TypeDefiCard(title: defiEcriture, description: descriptionDefiEcriture, imgUrl: "assets/images/defi_ecriture.svg",),
-            ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: const [
+                    TypeDefiCard(title: defiDessin, description: descriptionDefiDessin, challengeType: CHALLENGE_TYPE_DESSIN,),
+                    TypeDefiCard(title: defiEcriture, description: descriptionDefiEcriture, challengeType: CHALLENGE_TYPE_ECRITURE,),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: const [
+                    TypeDefiCard(title: defiAudio, description: descriptionDefiAudio, challengeType: CHALLENGE_TYPE_AUDIO,),
+                    TypeDefiCard(title: defiPhoto, description: descriptionDefiPhoto, challengeType: CHALLENGE_TYPE_PHOTO,),
+                  ],
+                ),
+
+                SizedBox(
+                    width: MediaQuery.of(context).size.width - 50,
+                    child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: boutonDefiAleatoire, onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),)
+                ),
+              ],
+            ),
           ),
-          Row(
-            children: const [
-              TypeDefiCard(title: defiAudio, description: descriptionDefiAudio, imgUrl: "assets/images/defi_audio.svg",),
-              TypeDefiCard(title: defiPhoto, description: descriptionDefiPhoto, imgUrl: "assets/images/defi_photo.svg",),
-            ],
-          ),
-          
-          ReusableFilledButton(textStyle: Styles.accentButtonText, text: boutonDefiAleatoire, onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),)
         ],
       ),
     );

@@ -38,9 +38,7 @@ class Accueil extends StatelessWidget {
           ),*/
           Headbar(
               leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,),
-              rightContainer: IconButton(onPressed: () {
-
-              }, icon: const Icon(Icons.message)),
+              rightContainer: IconButton(onPressed: () {}, icon: const Icon(Icons.message)),
               text: bienvenueHeader + "William" + ' !',
           ),
           SizedBox(child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: createChallengeButtonText, onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),), width: MediaQuery.of(context).size.width
