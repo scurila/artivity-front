@@ -1,6 +1,7 @@
 import 'package:artivity_front/screens/defiLitteraire/DefiLitteraire.dart';
 import 'package:artivity_front/screens/presentation_defi/widgets/Defi.dart';
 import 'package:artivity_front/screens/accueil/widgets/CreationCard.dart';
+import 'package:artivity_front/screens/communaute/widgets/DefiCard.dart';
 
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
@@ -35,55 +36,61 @@ class Communaute extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(
                         children: [
-                          SizedBox(height: 20),
-                          // ----- Texte -----
-                          Container(
-                              padding: EdgeInsets.only(left: 20.0),
-                              width: MediaQuery.of(context).size.width,
-                              child: Text("Défis en cours",textAlign: TextAlign.left ,style: Styles.challengeDescription)
-                          ),
-                          SizedBox(height: 10),
 
+                          SizedBox(height: 10),
+                          // ----- Défis en cours -----
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                child: Image.asset('assets/images/inspiration.png', height: 30,),
+                              ),
+                              Container(
+                                  padding: EdgeInsets.only(left: 10.0),
+                                  child: Text("Défis en cours",textAlign: TextAlign.left ,style: Styles.challengeDescription)
+                              ),
+                            ],
+                          ),
+
+                          SizedBox(height: 10),
+                          // ----- Defis en cours -----
                           Container(
                             margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                            decoration: BoxDecoration(color: Styles.accentColor,borderRadius: BorderRadius.all(Radius.circular(15))),
                             child: Column( // cards
                               children: [
                                 Row(
                                   children: [
-                                    CreationCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
-                                    CreationCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                    DefiCard(title: "Un chaton dans la rue", imgUrl: "assets/images/creation_placeholder.png"),
+                                    DefiCard(title: "Abstrait", imgUrl: "assets/images/abstrait.png"),
                                   ],
                                 ),
                                 Row(
                                   children: [
-                                    CreationCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
-                                    CreationCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                    DefiCard(title: "Un mouton dans le pré", imgUrl: "assets/images/mouton.png"),
+                                    //CreationCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
                                   ],
                                 )
                               ],
                             ),
                           ),
 
-                          // ----- Type défi + infos -----
-                          /*Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 10),
-                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                            decoration: BoxDecoration(color: Styles.accentColor,borderRadius: BorderRadius.all(Radius.circular(15)),
-                            ),
-                            child: Column(
-                              children: [
-                                Defi(challengeType: CHALLENGE_TYPE_ECRITURE, invitedBy: "Chris D.", executionTime: "2", leftTime: "2h", eval: 2, artists: "122345",),
-                              ],
-                            ),
-                          ),*/
                           SizedBox(height: 20),
-
                           // ----- Texte -----
-                          Container(
-                              padding: EdgeInsets.only(left: 20.0),
-                              width: MediaQuery.of(context).size.width,
-                              child: Text("Notifications",textAlign: TextAlign.left ,style: Styles.challengeDescription)
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                child: Image.asset('assets/images/notification.png', height: 25,),
+                              ),
+                              Container(
+                                  padding: EdgeInsets.only(left: 10.0),
+                                  child: Text("Notifications",textAlign: TextAlign.left ,style: Styles.challengeDescription)
+                              ),
+                            ],
                           ),
+
                           SizedBox(height: 10),
 
                           // ----- Notifications + scrollbar -----
@@ -93,110 +100,70 @@ class Communaute extends StatelessWidget {
                               child: SingleChildScrollView(
                                 child: Column(
                                     children: [
-                                      // Notification
-                                      Row(
+
+                                      Container(
+                                        width: MediaQuery.of(context).size.width - 20,
+                                        margin: const EdgeInsets.symmetric(horizontal: 10),
+                                        padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                                        decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),),
+                                        child: Row(
                                           children: [
                                             Container(
-                                              padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                                               child: Image.asset('assets/images/ARTHUR.png', width: 48,),
                                             ),
                                             Container(
-                                              width: MediaQuery.of(context).size.width - 90,
-                                              margin: const EdgeInsets.symmetric(horizontal: 10),
-                                              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                              decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  //Image.asset('assets/images/ARTHUR.png', width: 48,),
-                                                  Container(
-                                                      padding: EdgeInsets.only(left: 5.0),
-                                                      width: MediaQuery.of(context).size.width,
-                                                      child: Text("Albus D. t’as envoyé un message.",textAlign: TextAlign.left ,style: Styles.notificationDescription)
-                                                  ),
-                                                ],
-                                              ),
+                                                padding: EdgeInsets.only(left: 5.0),
+                                                width: MediaQuery.of(context).size.width - 87,
+                                                child: Text( "Albus D. t’as envoyé un message.",textAlign: TextAlign.left ,style: Styles.notificationDescription)
                                             ),
-                                          ]
+                                          ],
+                                        ),
                                       ),
 
-                                      // ----- Notification -----
-                                      Row(
-                                          children: [
-                                            Container(
-                                              padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                                              child: Image.asset('assets/images/ARTHUR.png', width: 48,),
-                                            ),
-                                            Container(
-                                              width: MediaQuery.of(context).size.width - 90,
-                                              margin: const EdgeInsets.symmetric(horizontal: 10),
-                                              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                              decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  //Image.asset('assets/images/ARTHUR.png', width: 48,),
-                                                  Container(
-                                                      padding: EdgeInsets.only(left: 5.0),
-                                                      width: MediaQuery.of(context).size.width,
-                                                      child: Text("Barbra S. t’as invité à un défi poésie collaborative. Rejoins son équipe ! Sois créatif !",textAlign: TextAlign.left ,style: Styles.notificationDescription)
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ]
-                                      ),
+                                      SizedBox(height: 10),
 
                                       // ----- Notification -----
-                                      Row(
+                                      Container(
+                                        width: MediaQuery.of(context).size.width,
+                                        margin: const EdgeInsets.symmetric(horizontal: 10),
+                                        padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                                        decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
+                                        ),
+                                        child: Row(
                                           children: [
                                             Container(
-                                              padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                                               child: Image.asset('assets/images/ARTHUR.png', width: 48,),
                                             ),
                                             Container(
-                                              width: MediaQuery.of(context).size.width - 90,
-                                              margin: const EdgeInsets.symmetric(horizontal: 10),
-                                              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                              decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                      padding: EdgeInsets.only(left: 5.0),
-                                                      width: MediaQuery.of(context).size.width,
-                                                      child: Text("Il te reste une heure pour le défi de dessin abstrait.",textAlign: TextAlign.left ,style: Styles.notificationDescription)
-                                                  ),
-                                                ],
-                                              ),
+                                                padding: EdgeInsets.only(left: 5.0),
+                                                width: MediaQuery.of(context).size.width - 87,
+                                                child: Text(" Barbra S. t’as invité à un défi poésie collaborative. Rejoins son équipe ! Sois créatif ! ",textAlign: TextAlign.left ,style: Styles.notificationDescription),
                                             ),
-                                          ]
+                                          ],
+                                        ),
                                       ),
 
+                                      SizedBox(height: 10),
+
                                       // ----- Notification -----
-                                      Row(
+                                      Container(
+                                        width: MediaQuery.of(context).size.width - 20,
+                                        //height: 100,
+                                        margin: const EdgeInsets.symmetric(horizontal: 10),
+                                        padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                                        decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),),
+                                        child: Row(
                                           children: [
                                             Container(
-                                              padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                                               child: Image.asset('assets/images/ARTHUR.png', width: 48,),
                                             ),
                                             Container(
-                                              width: MediaQuery.of(context).size.width - 90,
-                                              margin: const EdgeInsets.symmetric(horizontal: 10),
-                                              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                              decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                      padding: EdgeInsets.only(left: 5.0),
-                                                      width: MediaQuery.of(context).size.width,
-                                                      child: Text(" Il te reste 30 minutes pour le défi littéraire",textAlign: TextAlign.left ,style: Styles.notificationDescription)
-                                                  ),
-                                                ],
-                                              ),
+                                                padding: EdgeInsets.only(left: 5.0),
+                                                width: MediaQuery.of(context).size.width - 87,
+                                                child: Text(" Il te reste 30 minutes pour le défi littéraire",textAlign: TextAlign.left ,style: Styles.notificationDescription)
                                             ),
-                                          ]
+                                          ],
+                                        ),
                                       ),
                                     ]
                                 ),
