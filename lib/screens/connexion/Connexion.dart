@@ -6,6 +6,7 @@ import 'package:artivity_front/services/UserBackendService.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../../services/objects/Challenge.dart';
 import '../../theme/style.dart';
 import '../loggedInScreen/LoggedInScreen.dart';
 import '../widgets/ReusableFilledButton.dart';
@@ -74,9 +75,10 @@ class Connexion extends StatelessWidget {
                           try {
 
                             await UserBackendService.login(controllerLogin.text, controllerPwd.text);
+                            Challenge dailyChallenge = await UserBackendService.loadDailyChallenge();
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const LoggedInScreen()), // temporaire stp procure API
+                              MaterialPageRoute(builder: (context) =>  LoggedInScreen(dailyChallenge: dailyChallenge)), // temporaire stp procure API
                             );
                           } catch (e) {
                             print(e);

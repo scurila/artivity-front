@@ -3,13 +3,19 @@ import 'package:artivity_front/screens/accueil/widgets/DailyChallengeCard.dart';
 import 'package:artivity_front/screens/accueil/widgets/InvitationDefi.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReusableFilledButton.dart';
+import 'package:artivity_front/services/objects/Challenge.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
 
 class Accueil extends StatelessWidget {
-  const Accueil({Key? key}) : super(key: key);
+  Accueil({
+    Key? key,
+    required this.dailyChallenge,
+  }) : super(key: key);
+  Challenge dailyChallenge;
+
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +75,11 @@ class Accueil extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const DailyChallengeCard(eval: 4, artists: "193", challengeType: CHALLENGE_TYPE_PHOTO, challengeTitle: "Montre moi ton coucher de soleil !",),
+
+                    //DailyChallengeCard(eval: 4, artists: "193", challengeType: CHALLENGE_TYPE_PHOTO, challengeTitle: "Montre moi ton coucher de soleil !",),
+
+                    DailyChallengeCard(eval:dailyChallenge.rating , artists: dailyChallenge.answer_count.toString(), challengeType: dailyChallenge.typeForFront, challengeTitle: dailyChallenge.title),
+
                     Container(
                       margin: const EdgeInsets.fromLTRB(12, 6, 12, 16),
                       width: MediaQuery.of(context).size.width,
