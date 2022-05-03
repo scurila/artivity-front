@@ -91,10 +91,11 @@ class Creation extends StatelessWidget {
                   height: MediaQuery.of(context).size.width * 0.4,
                 child: ListView(
                   children: [
-                    for (var i = 0; i < 10; i++)
+                    for (var i = 0; i < 10; i++)...[
                     Container(
                       height: MediaQuery.of(context).size.width * 0.1,
                       color: Colors.white,
+
                       child: Row(
                         children:[
                           Image.asset(
@@ -117,9 +118,14 @@ class Creation extends StatelessWidget {
                                        ),
                                     ),
                                   ),
+
                                 ],
                               ),
+
+
                              ),
+                    const SizedBox(width: 10, height:10)
+  ]
                               ],
 
 
