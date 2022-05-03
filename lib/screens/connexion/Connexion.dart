@@ -3,6 +3,7 @@ import 'package:artivity_front/screens/widgets/FormTextFieldRow.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/services/UserBackendService.dart';
+import 'package:artivity_front/services/objects/ContentAccueil.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -75,10 +76,10 @@ class Connexion extends StatelessWidget {
                           try {
 
                             await UserBackendService.login(controllerLogin.text, controllerPwd.text);
-                            Challenge dailyChallenge = await UserBackendService.loadDailyChallenge();
+                            ContentAccueil contentAccueil = await UserBackendService.loadContentAccueil();
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) =>  LoggedInScreen(dailyChallenge: dailyChallenge)), // temporaire stp procure API
+                              MaterialPageRoute(builder: (context) =>  LoggedInScreen(contentAccueil: contentAccueil)), // temporaire stp procure API
                             );
                           } catch (e) {
                             print(e);

@@ -1,40 +1,27 @@
 import 'package:artivity_front/screens/presentation_defi/PresentationDefi.dart';
+import 'package:artivity_front/services/objects/ContentAccueil.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:artivity_front/screens/Communaute/Communaute.dart';
 
-import '../../services/UserBackendService.dart';
 import '../../services/objects/Challenge.dart';
 import '../../theme/style.dart';
 import '../accueil/Accueil.dart';
 class LoggedInScreen extends StatefulWidget {
    LoggedInScreen({Key? key,
-    required this.dailyChallenge,
+     required this.contentAccueil
   }) : super(key: key);
-  final Challenge dailyChallenge;
+  final ContentAccueil contentAccueil;
 
   @override
   State<LoggedInScreen> createState() => _LoggedInScreenState();
 }
 
 
-/*loadDailyChallenge() async {
-  try {
-    await UserBackendService.loadDailyChallenge();
-    print('loading daily challenge');
-  } catch (e) {
-    print(e);
-  }
-}*/
-
 class _LoggedInScreenState extends State<LoggedInScreen> {
 
-  //late Challenge dailyChallenge = loadDailyChallenge();
-
-
   late List<Widget> _pages = [
-     Accueil(dailyChallenge: widget.dailyChallenge),
-    //Accueil(dailyChallenge: Challenge(id: 0, title: "abcd", subject: "aa", type: "audio", start_time: 0, end_time: 10, timelimit: 9, user_created: ' ', rating: 3, answer_count: 2, typeForFront: "CHALLENGE_TYPE_AUDIO"), ),
+    Accueil(dailyChallenge: widget.contentAccueil.dailyChallenge),
     Communaute(),
     PresentationDefi(type: CHALLENGE_TYPE_ECRITURE),
     PresentationDefi(type: CHALLENGE_TYPE_DESSIN),
