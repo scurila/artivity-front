@@ -1,21 +1,28 @@
 import 'package:artivity_front/screens/presentation_defi/PresentationDefi.dart';
+import 'package:artivity_front/services/objects/ContentAccueil.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:artivity_front/screens/Communaute/Communaute.dart';
 
+import '../../services/objects/Challenge.dart';
 import '../../theme/style.dart';
 import '../accueil/Accueil.dart';
 class LoggedInScreen extends StatefulWidget {
-  const LoggedInScreen({Key? key}) : super(key: key);
+   LoggedInScreen({Key? key,
+     required this.contentAccueil
+  }) : super(key: key);
+  final ContentAccueil contentAccueil;
 
   @override
   State<LoggedInScreen> createState() => _LoggedInScreenState();
 }
 
+
 class _LoggedInScreenState extends State<LoggedInScreen> {
-  static final List<Widget> _pages = [
-    const Accueil(),
-    const Communaute(),
+
+  late List<Widget> _pages = [
+    Accueil(dailyChallenge: widget.contentAccueil.dailyChallenge),
+    Communaute(),
     PresentationDefi(type: CHALLENGE_TYPE_ECRITURE),
     PresentationDefi(type: CHALLENGE_TYPE_DESSIN),
     PresentationDefi(type: CHALLENGE_TYPE_PHOTO),
@@ -25,11 +32,17 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
 
   int _selectedIndex = 0;
 
+
+
+
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+
+
 
   @override
   Widget build(BuildContext context) {
