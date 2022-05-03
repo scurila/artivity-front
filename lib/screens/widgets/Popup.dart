@@ -15,22 +15,17 @@ class Popup extends StatelessWidget {
     return AlertDialog(
       title: const Text(titrePopup),
       scrollable: true,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
 
       content: Column(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text(enoncePopup),
-              Text(title),
-              const Text(''),
-              const Text(descriptionPopup),
-              Text(description),
-            ],
-          ),
+          const Text(enoncePopup),
+          Text(title),
+          const Text(''),
+          const Text(descriptionPopup),
+          Text(description),
         ],
       ),
 

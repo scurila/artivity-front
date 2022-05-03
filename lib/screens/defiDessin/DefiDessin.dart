@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:artivity_front/screens/widgets/EditBarDefi.dart';
+import 'package:artivity_front/screens/widgets/Popup.dart';
 import 'package:artivity_front/theme/style.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -8,7 +8,6 @@ import 'package:gallery_saver/gallery_saver.dart';
 import 'package:image_painter/image_painter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:open_file/open_file.dart';
 
 import '../../theme/constants.dart';
 import '../defiAudio/widget/drawing.dart';
@@ -18,8 +17,10 @@ class DefiDessin extends StatefulWidget {
   const DefiDessin({
     Key? key,
     required this.title,
+    required this.description,
   }) : super(key: key);
   final String title;
+  final String description;
 
   @override
   State<DefiDessin> createState() => _DefiDessinState();
@@ -27,7 +28,7 @@ class DefiDessin extends StatefulWidget {
 
 class _DefiDessinState extends State<DefiDessin> {
   String currentBgPath = "assets/images/background.png";
-  File? currentBgFile = null;
+  File? currentBgFile;
   GlobalKey<ImagePainterState> gKey = GlobalKey<ImagePainterState>();
 
   void saveImage() async {
@@ -56,14 +57,19 @@ class _DefiDessinState extends State<DefiDessin> {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiPhotoText, rightContainer: Container(width: 48, height: 48,)),
+                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiDessin, rightContainer: Container(width: 48, height: 48,)),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(widget.title.toUpperCase(), textAlign: TextAlign.center,style: Styles.challengeTitle),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
+                      IconButton(onPressed: (){
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Popup(title: widget.title, description: widget.description,),
+                        ); },
+                          icon: const Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
 
                     ]
                 ),
@@ -71,7 +77,7 @@ class _DefiDessinState extends State<DefiDessin> {
                   margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(color: Colors.black),),
                 Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
 
                 Container(
@@ -104,13 +110,13 @@ class _DefiDessinState extends State<DefiDessin> {
                           currentBgFile = File(image!.path);
                           gKey = GlobalKey<ImagePainterState>(); // refresh
                         });
-                      }, icon: Icon(Icons.upload_file)),
+                      }, icon: const Icon(Icons.upload_file)),
                       IconButton(onPressed: (){
                           saveImage();
-                      }, icon: Icon(Icons.download)),
+                      }, icon: const Icon(Icons.download)),
                       IconButton(onPressed: (){
                         // todo : submit
-                      }, icon: Icon(Icons.send)),
+                      }, icon: const Icon(Icons.send)),
                     ],
                   ),
                 ),

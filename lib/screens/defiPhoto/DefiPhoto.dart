@@ -1,6 +1,5 @@
 import 'package:artivity_front/screens/widgets/ReusableRoundButton.dart';
 import 'package:artivity_front/theme/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
@@ -24,7 +23,7 @@ class DefiPhoto extends StatelessWidget {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiPhotoText, rightContainer: Container()),
+                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiPhoto, rightContainer: Container()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,7 +35,7 @@ class DefiPhoto extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) => Popup(title: title, description: description,),
                         ); },
-                          icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
+                          icon: const Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
 
                     ]
                 ),
@@ -49,18 +48,18 @@ class DefiPhoto extends StatelessWidget {
 
                 SizedBox(height: MediaQuery.of(context).size.height*0.1),
 
-                ReusableRoundButton(size: 100, image: Icon(Icons.photo_camera, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                ReusableRoundButton(size: 100, image: const Icon(Icons.photo_camera, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                 SizedBox(height: MediaQuery.of(context).size.height*0.075),
-                ReusableRoundButton(size: 100, image: Icon(Icons.play_arrow, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                ReusableRoundButton(size: 100, image: const Icon(Icons.play_arrow, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                 SizedBox(height: MediaQuery.of(context).size.height*0.075),
 
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ReusableRoundButton(size: 80, image: Icon(Icons.download, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
-                    ReusableRoundButton(size: 80, image: Icon(Icons.upload_file, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
-                    ReusableRoundButton(size: 80, image: Icon(Icons.send, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.download, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.upload_file, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.send, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                   ],
                 ),
 

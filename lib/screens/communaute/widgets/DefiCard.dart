@@ -1,13 +1,12 @@
 import 'package:artivity_front/screens/widgets/ReusableCard.dart';
 import 'package:flutter/material.dart';
 
-import '../../../theme/constants.dart';
 import '../../../theme/style.dart';
 
 class DefiCard extends StatelessWidget {
-  DefiCard({Key? key, required this.title, required this.imgUrl}) : super(key: key);
-  String title;
-  String imgUrl;
+  const DefiCard({Key? key, required this.title, required this.imgUrl}) : super(key: key);
+  final String title;
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {

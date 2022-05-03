@@ -35,7 +35,7 @@ class DefiLitteraire extends StatelessWidget {
                           context: context,
                           builder: (BuildContext context) => Popup(title: title, description: description,),
                           ); },
-                            icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
+                            icon: const Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
 
                     ]
                   ),
@@ -43,7 +43,7 @@ class DefiLitteraire extends StatelessWidget {
                     margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                     decoration: const BoxDecoration(color: Colors.black),),
                   Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Container(height: MediaQuery.of(context).size.height*60/100, width: MediaQuery.of(context).size.width*85/100,
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -81,7 +81,7 @@ class DefiLitteraire extends StatelessWidget {
 
                   ),
 
-                  EditBarDefi(),
+                  const EditBarDefi(),
                 ]
             ),
         )

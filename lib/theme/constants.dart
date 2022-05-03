@@ -63,16 +63,21 @@ const String presentationDefiCommentaires = "Commentaires";
 const String presentationDefiDescription = "Description";
 const String presentationDefiCommencer = "Commencer défi !";
 
-//DefiAudio
-const String defiAudioText = "Défi audio";
-
 //DefiVideo
 const String defiVideoText = "Défi vidéo";
-
-//DefiPhoto
-const String defiPhotoText = "Défi photo";
 
 //Popup
 const String titrePopup = "Détails du défi";
 const String enoncePopup = "Enoncé: ";
 const String descriptionPopup = "Description: ";
+
+//CreationDefi1
+const String defiAudio = "Défi audio";
+const String descriptionDefiAudio = "Chanter, raconter, imiter... Crée du son!";
+const String defiDessin = "Défi dessin";
+const String descriptionDefiDessin = "Dessiner, avec ou sans contraintes!";
+const String defiEcriture = "Défi écriture";
+const String descriptionDefiEcriture = "De la poésie, de la prose... De la créativité à l'écrit!";
+const String defiPhoto = "Défi photo";
+const String descriptionDefiPhoto = "Fais découvrir le monde sous ton angle!";
+const String boutonDefiAleatoire = "Défi aléatoire!";
