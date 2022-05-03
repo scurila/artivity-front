@@ -5,11 +5,11 @@ import '../../../theme/constants.dart';
 import '../../../theme/style.dart';
 
 class CreationCard extends StatelessWidget {
-  CreationCard({Key? key, required this.title, required this.author, required this.date, required this.imgUrl}) : super(key: key);
-  String title;
-  String author;
-  String date;
-  String imgUrl;
+  const CreationCard({Key? key, required this.title, required this.author, required this.date, required this.imgUrl}) : super(key: key);
+  final String title;
+  final String author;
+  final String date;
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {

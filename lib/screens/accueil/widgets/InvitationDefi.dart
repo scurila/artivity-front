@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class InvitationDefi extends StatelessWidget {
-  InvitationDefi({Key? key, required this.challengeType, required this.invitedBy, required this.executionTime, required this.leftTime, required this.eval, required this.artists}) : super(key: key);
-  String challengeType;
-  String invitedBy;
-  String executionTime;
-  String leftTime;
-  int eval;
-  String artists;
+  const InvitationDefi({Key? key, required this.challengeType, required this.invitedBy, required this.executionTime, required this.leftTime, required this.eval, required this.artists}) : super(key: key);
+  final String challengeType;
+  final String invitedBy;
+  final String executionTime;
+  final String leftTime;
+  final int eval;
+  final String artists;
 
   @override
   Widget build(BuildContext context) {

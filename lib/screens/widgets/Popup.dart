@@ -15,7 +15,7 @@ class Popup extends StatelessWidget {
     return AlertDialog(
       title: const Text(titrePopup),
       scrollable: true,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
 
       content: Column(
         mainAxisSize: MainAxisSize.min,

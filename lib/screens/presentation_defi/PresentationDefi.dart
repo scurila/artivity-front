@@ -12,7 +12,7 @@ import '../../theme/style.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class PresentationDefi extends StatelessWidget {
-  PresentationDefi({
+  const PresentationDefi({
     Key? key,
     required this.type,
   }) : super(key: key);
@@ -41,12 +41,12 @@ class PresentationDefi extends StatelessWidget {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          SizedBox(height: 20),
+                          const SizedBox(height: 20),
                           // ----- Type défi + infos -----
                           Container(
                             margin: const EdgeInsets.symmetric(horizontal: 10),
                             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                            decoration: BoxDecoration(color: Styles.accentColor,borderRadius: BorderRadius.all(Radius.circular(15)),
+                            decoration: BoxDecoration(color: Styles.accentColor,borderRadius: const BorderRadius.all(Radius.circular(15)),
                             ),
                             child: Column(
                               children: [
@@ -54,14 +54,14 @@ class PresentationDefi extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(height: 20),
+                          const SizedBox(height: 20),
 
                           Container(
-                            padding: EdgeInsets.only(left: 20.0),
+                            padding: const EdgeInsets.only(left: 20.0),
                             width: MediaQuery.of(context).size.width,
                               child: Text("Commentaires artiste",textAlign: TextAlign.left ,style: Styles.challengeDescription)
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
 
                           // ----- Commentaires + scrollbar -----
                           Container(
@@ -81,13 +81,13 @@ class PresentationDefi extends StatelessWidget {
                                                   width: MediaQuery.of(context).size.width - 90,
                                                   margin: const EdgeInsets.symmetric(horizontal: 10),
                                                   padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                                  decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
+                                                  decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(Radius.circular(15)),
                                                   ),
                                                   child: Column(
                                                     children: [
                                                       //Image.asset('assets/images/ARTHUR.png', width: 48,),
                                                       Container(
-                                                          padding: EdgeInsets.only(left: 5.0),
+                                                          padding: const EdgeInsets.only(left: 5.0),
                                                           width: MediaQuery.of(context).size.width,
                                                           child: Text("Super défi !",textAlign: TextAlign.left ,style: Styles.challengeDescription)
                                                       ),
@@ -108,13 +108,13 @@ class PresentationDefi extends StatelessWidget {
                                                     width: MediaQuery.of(context).size.width - 90,
                                                     margin: const EdgeInsets.symmetric(horizontal: 10),
                                                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                                    decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
+                                                    decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(Radius.circular(15)),
                                                     ),
                                                     child: Column(
                                                       children: [
                                                         //Image.asset('assets/images/ARTHUR.png', width: 48,),
                                                         Container(
-                                                            padding: EdgeInsets.only(left: 5.0),
+                                                            padding: const EdgeInsets.only(left: 5.0),
                                                             width: MediaQuery.of(context).size.width,
                                                             child: Text("Bonne idée, Will :D",textAlign: TextAlign.left ,style: Styles.challengeDescription)
                                                         ),
@@ -135,12 +135,12 @@ class PresentationDefi extends StatelessWidget {
                                                     width: MediaQuery.of(context).size.width - 90,
                                                     margin: const EdgeInsets.symmetric(horizontal: 10),
                                                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                                    decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
+                                                    decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(const Radius.circular(15)),
                                                     ),
                                                     child: Column(
                                                       children: [
                                                         Container(
-                                                            padding: EdgeInsets.only(left: 5.0),
+                                                            padding: const EdgeInsets.only(left: 5.0),
                                                             width: MediaQuery.of(context).size.width,
                                                             child: Text("Défi à ne pas rater ! :) ",textAlign: TextAlign.left ,style: Styles.challengeDescription)
                                                         ),
@@ -161,12 +161,12 @@ class PresentationDefi extends StatelessWidget {
                                                     width: MediaQuery.of(context).size.width - 90,
                                                     margin: const EdgeInsets.symmetric(horizontal: 10),
                                                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                                    decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
+                                                    decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(Radius.circular(15)),
                                                     ),
                                                     child: Column(
                                                       children: [
                                                         Container(
-                                                            padding: EdgeInsets.only(left: 5.0),
+                                                            padding: const EdgeInsets.only(left: 5.0),
                                                             width: MediaQuery.of(context).size.width,
                                                             child: Text(" 2h n'est pas assez pour ce défi...",textAlign: TextAlign.left ,style: Styles.challengeDescription)
                                                         ),
@@ -180,20 +180,20 @@ class PresentationDefi extends StatelessWidget {
                                 ),
                             ),
                           ),
-                          SizedBox(height: 20),
+                          const SizedBox(height: 20),
 
                           // ----- Description ------
                           Container(
-                              padding: EdgeInsets.only(left: 20.0),
+                              padding: const EdgeInsets.only(left: 20.0),
                               width: MediaQuery.of(context).size.width,
                               child: Text("Description",textAlign: TextAlign.left ,style: Styles.challengeDescription)
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Container(
                             width: MediaQuery.of(context).size.width - 5,
                             margin: const EdgeInsets.symmetric(horizontal: 10),
                             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                            decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
+                            decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(Radius.circular(15)),
                             ),
                             child: Column(
                               children: [
@@ -216,7 +216,7 @@ class PresentationDefi extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(height: 15),
+                          const SizedBox(height: 15),
 
                           // ----- Bouton commencer défi -----
                           SizedBox(
@@ -259,11 +259,11 @@ class PresentationDefi extends StatelessWidget {
                               },
                               color: Styles.accentColor,
                               border: Styles.noBorder,
-                              margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
+                              margin: const EdgeInsets.fromLTRB(60, 0, 60, 0),
                             ),
                             width: MediaQuery.of(context).size.width,
                           ),
-                          SizedBox(height: 15),
+                          const SizedBox(height: 15),
                       ]
                     ),
                     ),

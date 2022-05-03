@@ -44,7 +44,7 @@ class _InscriptionState extends State<Inscription> {
                       Container( // Boîte verte
                         margin: const EdgeInsets.symmetric(horizontal: 10),
                         padding: const EdgeInsets.fromLTRB(30, 30, 30, 24),
-                        decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: const BorderRadius.all(const Radius.circular(20)),),
+                        decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: const BorderRadius.all(Radius.circular(20)),),
                         child: Column(
                           children: [
                             // Champs de texte avec labels

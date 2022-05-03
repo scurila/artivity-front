@@ -1,7 +1,6 @@
 import 'package:artivity_front/screens/widgets/Popup.dart';
 import 'package:artivity_front/screens/widgets/ReusableRoundButton.dart';
 import 'package:artivity_front/theme/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
@@ -47,18 +46,18 @@ class DefiAudio extends StatelessWidget {
 
                 Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
                 SizedBox(height: MediaQuery.of(context).size.height*0.1),
-                ReusableRoundButton(size: 100, image: Icon(Icons.mic_none, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                ReusableRoundButton(size: 100, image: const Icon(Icons.mic_none, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                 SizedBox(height: MediaQuery.of(context).size.height*0.075),
-                ReusableRoundButton(size: 100, image: Icon(Icons.play_arrow, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                ReusableRoundButton(size: 100, image: const Icon(Icons.play_arrow, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                 SizedBox(height: MediaQuery.of(context).size.height*0.075),
 
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ReusableRoundButton(size: 80, image: Icon(Icons.download, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
-                    ReusableRoundButton(size: 80, image: Icon(Icons.upload_file, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
-                    ReusableRoundButton(size: 80, image: Icon(Icons.send, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.download, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.upload_file, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.send, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                   ],
                 ),
 

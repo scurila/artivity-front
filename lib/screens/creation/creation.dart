@@ -1,13 +1,10 @@
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/screens/widgets/ReusableCard.dart';
-import 'package:artivity_front/screens/widgets/ReusableTextField.dart';
-import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 
 import '../../theme/style.dart';
-import '../widgets/ReusableFilledButton.dart';
 
 class Creation extends StatelessWidget {
   const Creation({Key? key}) : super(key: key);
@@ -26,7 +23,7 @@ class Creation extends StatelessWidget {
                   leftContainer: Container(child: ReturnButton()),
                   text: "Un chaton dans la rue",
                   rightContainer: Container(child:
-                    IconButton( onPressed: (){},icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)))),
+                    IconButton( onPressed: (){},icon: const Icon(Icons.expand_circle_down_outlined,color: Colors.black)))),
 
                   ReusableCard(
                     child: Column(
@@ -45,7 +42,7 @@ class Creation extends StatelessWidget {
                         )
                       )],
                     ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Row(
                       //crossAxisAlignment: CrossAxisAlignment.center,
                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,7 +65,7 @@ class Creation extends StatelessWidget {
                           border: InputBorder.none,
                         ),)),
 
-                        IconButton(icon: Icon(Icons.favorite,),iconSize: 40,
+                        IconButton(icon: const Icon(Icons.favorite,),iconSize: 40,
                           color: Colors.grey,
                           splashColor: Colors.black,
                           onPressed: () {},),
@@ -192,7 +189,7 @@ class Creation extends StatelessWidget {
                               ),*/
                           ),
                         ),
-                          IconButton(icon: Icon(Icons.send_rounded),iconSize:MediaQuery.of(context).size.width * 0.05,
+                          IconButton(icon: const Icon(Icons.send_rounded),iconSize:MediaQuery.of(context).size.width * 0.05,
                             color: Colors.grey,
                             splashColor: Colors.black,
                             onPressed: () {},),

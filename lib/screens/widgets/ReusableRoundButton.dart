@@ -1,9 +1,7 @@
-import 'package:artivity_front/screens/widgets/ReusableFilledButton.dart';
 import 'package:flutter/material.dart';
 
 class ReusableRoundButton extends StatelessWidget {
-
-  const ReusableRoundButton({
+  const ReusableRoundButton({Key? key,
     required this.size,
     required this.image,
     required this.onPressed,
@@ -13,7 +11,7 @@ class ReusableRoundButton extends StatelessWidget {
     this.gradient,
     this.align = false,
     this.margin,
-  });
+  }) : super(key: key);
   final double size;
   final Icon image;
   final void Function() onPressed;

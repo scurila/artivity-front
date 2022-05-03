@@ -34,7 +34,7 @@ class ReusableFilledButton extends StatelessWidget {
         border: border,
         borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: (shadow)? [
-          BoxShadow(
+          const BoxShadow(
             color: Color.fromRGBO(0, 0, 0, 0.15),
             blurRadius: 1,
             offset: Offset(0, 2), // position

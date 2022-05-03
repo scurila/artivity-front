@@ -49,7 +49,7 @@ class Defi extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     child: Text(Styles.getChallengeTypeLabel(challengeType), style: Styles.challengeTitle, textAlign: TextAlign.left,),
                 ),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 Container(
                     width: MediaQuery.of(context).size.width,
                     child: Text(invitedByText + invitedBy, style: Styles.challengeTitle,textAlign: TextAlign.left,)

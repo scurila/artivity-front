@@ -4,7 +4,6 @@ import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/services/UserBackendService.dart';
 import 'package:artivity_front/theme/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
@@ -19,7 +18,7 @@ class Connexion extends StatelessWidget {
 
   showAlertDialog(BuildContext context) {
     Widget okButton = TextButton(
-      child: Text("OK"),
+      child: const Text("OK"),
       onPressed: () {
          Navigator.of(context).pop();
       },
@@ -27,8 +26,8 @@ class Connexion extends StatelessWidget {
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: Text("Échec"),
-      content: Text("Données de connection invalides."),
+      title: const Text("Échec"),
+      content: const Text("Données de connection invalides."),
       actions: [
         okButton,
       ],
@@ -52,21 +51,21 @@ class Connexion extends StatelessWidget {
           child: Column(
             children: [
               Headbar(
-                  leftContainer: ReturnButton(),
+                  leftContainer: const ReturnButton(),
                   text: connexionHeadbarText,
                   rightContainer: Container(width: 48,)),
               Container(
                //width: MediaQuery.of(context).size.width-50,
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
-                decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: BorderRadius.all(Radius.circular(20)),
+                decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: const BorderRadius.all(Radius.circular(20)),
                 ),
                 child: Column(
                   children: [
                     FormTextFieldRow(text: inscriptionPseudo, obscured: false, controller: controllerLogin,),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     FormTextFieldRow(text: inscriptionMdp, obscured: true, controller: controllerPwd,),
-                    SizedBox(height: 40),
+                    const SizedBox(height: 40),
                     SizedBox(
                       child: ReusableFilledButton(
                         textStyle: Styles.accentButtonText,
@@ -86,11 +85,11 @@ class Connexion extends StatelessWidget {
                         },
                         color: Styles.accentColor,
                         border: Styles.noBorder,
-                        margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
+                        margin: const EdgeInsets.fromLTRB(60, 0, 60, 0),
                       ),
                       width: MediaQuery.of(context).size.width,
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     InkWell(child: Text(connexionPasInscritText.toUpperCase(),style: Styles.pasInscritText), onTap: () {
                       Navigator.push(
                         context,

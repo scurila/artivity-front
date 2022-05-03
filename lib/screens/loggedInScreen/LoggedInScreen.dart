@@ -13,14 +13,14 @@ class LoggedInScreen extends StatefulWidget {
 }
 
 class _LoggedInScreenState extends State<LoggedInScreen> {
-  static List<Widget> _pages = [
-    Accueil(),
-    Communaute(),
-    PresentationDefi(type: CHALLENGE_TYPE_ECRITURE),
-    PresentationDefi(type: CHALLENGE_TYPE_DESSIN),
-    PresentationDefi(type: CHALLENGE_TYPE_PHOTO),
-    PresentationDefi(type: CHALLENGE_TYPE_VIDEO),
-    PresentationDefi(type: CHALLENGE_TYPE_AUDIO), // todo
+  static final List<Widget> _pages = [
+    const Accueil(),
+    const Communaute(),
+    const PresentationDefi(type: CHALLENGE_TYPE_ECRITURE),
+    const PresentationDefi(type: CHALLENGE_TYPE_DESSIN),
+    const PresentationDefi(type: CHALLENGE_TYPE_PHOTO),
+    const PresentationDefi(type: CHALLENGE_TYPE_VIDEO),
+    const PresentationDefi(type: CHALLENGE_TYPE_AUDIO), // todo
   ];
 
   int _selectedIndex = 0;
@@ -73,7 +73,7 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
           onTap: _onItemTapped,
 
         ),
-        body: AnimatedContainer(child: _pages.elementAt(_selectedIndex), duration: Duration(milliseconds: 500),),
+        body: AnimatedContainer(child: _pages.elementAt(_selectedIndex), duration: const Duration(milliseconds: 500),),
       ),
     );
   }

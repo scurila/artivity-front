@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import '../../../theme/style.dart';
 
 class TypeDefiCard extends StatelessWidget {
-  TypeDefiCard({Key? key, required this.title, required this.description, required this.imgUrl}) : super(key: key);
-  String title;
-  String description;
-  String imgUrl;
+  const TypeDefiCard({Key? key, required this.title, required this.description, required this.imgUrl}) : super(key: key);
+  final String title;
+  final String description;
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {

@@ -17,17 +17,17 @@ class CreationDefi1 extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            child: Headbar(leftContainer: Container(child: ReturnButton()), rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: '✏️ Création d’un défi')
+            child: Headbar(leftContainer: Container(child: const ReturnButton()), rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: '✏️ Création d’un défi')
           ),
 
           Row(
-            children: [
+            children: const [
               TypeDefiCard(title: defiDessin, description: descriptionDefiDessin, imgUrl: 'assets/images/defi_dessin.svg',),
               TypeDefiCard(title: defiEcriture, description: descriptionDefiEcriture, imgUrl: 'assets/images/defi_ecriture.svg',),
             ],
           ),
           Row(
-            children: [
+            children: const [
               TypeDefiCard(title: defiAudio, description: descriptionDefiAudio, imgUrl: 'assets/images/defi_audio.svg',),
               TypeDefiCard(title: defiPhoto, description: descriptionDefiPhoto, imgUrl: 'assets/images/defi_photo.svg',),
             ],
