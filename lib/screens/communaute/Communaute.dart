@@ -1,6 +1,7 @@
 import 'package:artivity_front/screens/communaute/widgets/DefiCard.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
+import 'package:artivity_front/screens/consulter_amis/ConsulterAmis.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
@@ -23,7 +24,16 @@ class Communaute extends StatelessWidget {
               Headbar(
                   leftContainer: ReturnButton(),
                   text: "Communauté",
-                  rightContainer: Image.asset('assets/images/friends.png', width:48/*height: 10,*/)),
+                  rightContainer: InkWell (
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => ConsulterAmis()),
+                                    );
+                                  },
+                                      child:
+                                        Image.asset('assets/images/friends.png', width:48)),
+              ),
               Container(
                 height: MediaQuery.of(context).size.height - 123 - 40,
                 child: Scrollbar(
