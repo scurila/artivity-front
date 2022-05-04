@@ -5,7 +5,7 @@ import '../../theme/constants.dart';
 import '../../theme/style.dart';
 
 class MonProfil extends StatelessWidget {
-  MonProfil({Key? key, required this.name,  required this.age,  required this.mail,  required this.date,  required this.nbDefi,  required this.continuousDays}) : super(key: key);
+  const MonProfil({Key? key, required this.name,  required this.age,  required this.mail,  required this.date,  required this.nbDefi,  required this.continuousDays}) : super(key: key);
   final String name;
   final int age;
   final String mail;
@@ -38,7 +38,7 @@ class MonProfil extends StatelessWidget {
                                 child: SingleChildScrollView(
                                   child: Column(
                                     children: [
-                                      SizedBox(height: 20),
+                                      const SizedBox(height: 20),
                                       // ----- My data -----
                                       Container(
                                         margin: const EdgeInsets.fromLTRB(50, 6, 0, 16),
@@ -65,7 +65,7 @@ class MonProfil extends StatelessWidget {
                                         width: MediaQuery.of(context).size.width,
                                         child:  Text( "Jours en continus :   "+continuousDays.toString(),textAlign: TextAlign.left,style: Styles.profileData),
                                       ),
-                                      SizedBox(height: 20),
+                                      const SizedBox(height: 20),
                                       // ----- Boutons -----
                                       SizedBox(
                                         child: ReusableFilledButton(
@@ -78,7 +78,7 @@ class MonProfil extends StatelessWidget {
                                         ),
                                         width: MediaQuery.of(context).size.width,
                                       ),
-                                      SizedBox(height: 10),
+                                      const SizedBox(height: 10),
                                       SizedBox(
                                         child: ReusableFilledButton(
                                           textStyle: Styles.accentButtonText,
@@ -90,7 +90,7 @@ class MonProfil extends StatelessWidget {
                                         ),
                                         width: MediaQuery.of(context).size.width,
                                       ),
-                                      SizedBox(height: 10),
+                                      const SizedBox(height: 10),
                                       SizedBox(
                                         child: ReusableFilledButton(
                                           textStyle: Styles.accentButtonText,
@@ -102,7 +102,7 @@ class MonProfil extends StatelessWidget {
                                         ),
                                         width: MediaQuery.of(context).size.width,
                                       ),
-                                      SizedBox(height: 40),
+                                      const SizedBox(height: 40),
                                       SizedBox(
                                         child: ReusableFilledButton(
                                           textStyle: Styles.accentButtonText,
@@ -114,7 +114,7 @@ class MonProfil extends StatelessWidget {
                                         ),
                                         width: MediaQuery.of(context).size.width,
                                       ),
-                                      SizedBox(height: 60),
+                                      const SizedBox(height: 60),
                                       SizedBox(
                                         child: ReusableFilledButton(
                                           textStyle: Styles.accentButtonText,
@@ -126,7 +126,7 @@ class MonProfil extends StatelessWidget {
                                         ),
                                         width: MediaQuery.of(context).size.width,
                                       ),
-                                      SizedBox(height: 40),
+                                      const SizedBox(height: 40),
                                         ]
                                       ),
                                     ),

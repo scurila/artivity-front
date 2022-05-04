@@ -64,7 +64,7 @@ class _DefiDessinState extends State<DefiDessin> {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiDessin, leftContainer: BackButton()),
+                Headbar(rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiDessin, leftContainer: const BackButton()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,7 +83,7 @@ class _DefiDessinState extends State<DefiDessin> {
                 Container(height: 2,width: 100,
                   margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(color: Colors.black),),
-                Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
+                Text("2:32", style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
                 const SizedBox(height: 10),
 
 
@@ -106,7 +106,7 @@ class _DefiDessinState extends State<DefiDessin> {
                           currentBgFile = File(image!.path);
                           gKey = GlobalKey<ImagePainterState>(); // refresh
                         });
-                      }, icon: Icon(Icons.camera_alt_outlined)),
+                      }, icon: const Icon(Icons.camera_alt_outlined)),
                       IconButton(onPressed: () async {
 
                         final ImagePicker _picker = ImagePicker();

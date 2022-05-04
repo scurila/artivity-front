@@ -28,7 +28,7 @@ class Communaute extends StatelessWidget {
                                   onTap: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => ConsulterAmis()),
+                                      MaterialPageRoute(builder: (context) => const ConsulterAmis()),
                                     );
                                   },
                                       child:

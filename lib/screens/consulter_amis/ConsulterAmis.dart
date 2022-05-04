@@ -22,7 +22,7 @@ class ConsulterAmis extends StatelessWidget {
             children: [
               // ----- App bar -----
               Headbar(
-                  leftContainer: ReturnButton(),
+                  leftContainer: const ReturnButton(),
                   text: "Mes amis",
                   rightContainer: Image.asset('assets/images/search.png', width:48)),
 
@@ -32,7 +32,7 @@ class ConsulterAmis extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(
                         children: [
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           // ----- Ami -----
                           Friend(name: "Willy Wonka", imgUrl: "assets/images/ARTHUR.png"),
                           Friend(name: "Waluidgi", imgUrl: "assets/images/ARTHUR.png"),

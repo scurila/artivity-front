@@ -1,5 +1,5 @@
 const String CHALLENGE_TYPE_DESSIN = "drawing";
-const String CHALLENGE_TYPE_ECRITURE = "text";
+const String CHALLENGE_TYPE_LITTERAIRE = "text";
 const String CHALLENGE_TYPE_AUDIO = "sound";
 const String CHALLENGE_TYPE_PHOTO = "photo";
 const String CHALLENGE_TYPE_VIDEO = "video";
@@ -54,7 +54,6 @@ const String ecrireCommentaire = "Ecrire un commentaire";
 
 //DefiLitteraire
 const String defiLitteraireText = "Défi littéraire";
-const String timer = "2:32";
 const String uneditableText1 = "Ce texte n'est pas éditable";
 const String uneditableText2 = "Ce texte n'est pas éditable non plus";
 
@@ -87,8 +86,12 @@ const String defiAudio = "Défi audio";
 const String descriptionDefiAudio = "Chanter, raconter, imiter... Crée du son!";
 const String defiDessin = "Défi dessin";
 const String descriptionDefiDessin = "Dessiner, avec ou sans contraintes!";
-const String defiEcriture = "Défi écriture";
-const String descriptionDefiEcriture = "De la poésie, de la prose... De la créativité à l'écrit!";
+const String defiLitteraire = "Défi littéraire";
+const String descriptionDefiLitteraire = "De la poésie, de la prose... De la créativité à l'écrit!";
 const String defiPhoto = "Défi photo";
 const String descriptionDefiPhoto = "Fais découvrir le monde sous ton angle!";
 const String boutonDefiAleatoire = "Défi aléatoire!";
+
+//Timer
+const String timerEndText = "Le temps est écoulé!";
+const String timerEndDescription = "";

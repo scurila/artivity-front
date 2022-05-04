@@ -44,7 +44,7 @@ class DefiVideo extends StatelessWidget {
                   margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(color: Colors.black),),
 
-                Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
+                Text("2:32", style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
 
                 SizedBox(height: MediaQuery.of(context).size.height*0.1),
 

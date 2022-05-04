@@ -26,7 +26,7 @@ class CreationDefi1 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: const [
                     TypeDefiCard(title: defiDessin, description: descriptionDefiDessin, challengeType: CHALLENGE_TYPE_DESSIN,),
-                    TypeDefiCard(title: defiEcriture, description: descriptionDefiEcriture, challengeType: CHALLENGE_TYPE_ECRITURE,),
+                    TypeDefiCard(title: defiLitteraire, description: descriptionDefiLitteraire, challengeType: CHALLENGE_TYPE_LITTERAIRE,),
                   ],
                 ),
                 Row(
