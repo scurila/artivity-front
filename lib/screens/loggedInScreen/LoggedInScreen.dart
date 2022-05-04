@@ -27,7 +27,7 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
     PresentationDefi(type: CHALLENGE_TYPE_LITTERAIRE),
     ResultatDefi(type: "dessin", author: "William J.", date: "23/06/2022",
       description: "Dessine moi un mouton dans un champs, faisant un poirier su run trampoline en tenant un verre de schnaps.",
-      eval: 2, artistsCount: "122345",),*/
+      eval: 2, artistsCount: "122345",),
     MonProfil(name: "William Shakespeare", age:22, mail: "willshakespeare@gmail.com", date:"11/04/2022", nbDefi:42, continuousDays: 24),
     //PresentationDefi(type: CHALLENGE_TYPE_DESSIN),
     //PresentationDefi(type: CHALLENGE_TYPE_PHOTO),
