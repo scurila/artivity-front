@@ -20,9 +20,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         MaterialState.focused,
       };
       if (states.any(interactiveStates.contains)) {
-        return Styles.greyedColor;
+        return Styles.accentColor;
       }
-      return Styles.greyedColor;
+      return Styles.accentColor;
     }
 
     return Checkbox(

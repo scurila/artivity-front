@@ -37,17 +37,11 @@ class Friend extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.only(left: 10.0),
-                width: MediaQuery.of(context).size.width - 15 - 75 -50,
+                width: MediaQuery.of(context).size.width - 15 - 75 -40,
                 child: Text(name,textAlign: TextAlign.left ,style: Styles.nameText),
               ),
-
-              /*Scaffold(
-                body: const Center(
-                  child: MyStatefulWidget(),
-                ),
-              ),*/
-
-
+              // Checkbox
+              MyStatefulWidget()
             ],
           ),
     ]
