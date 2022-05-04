@@ -32,6 +32,30 @@ class UserBackendService {
     }
   }
 
+  static Future<String> signup(String pseudo, String email, String pwd) async {
+    http.Response resp = await http.post(
+        Uri.parse(backendServerBase + '/users'),
+        headers: <String, String>{
+          'Content-Type': "application/json; charset=UTF-8",
+          'Connection': "close",
+        },
+        body: jsonEncode(<String, String>{
+          'pseudo': pseudo,
+          'password': pwd,
+          'email': email,
+        })
+    );
+    print(resp.statusCode);
+    if (resp.statusCode == 200) {
+      return 'inscription réussie';
+
+    } else {
+      throw Exception('LoginError');
+
+    }
+  }
+
+
   static Future<ContentAccueil> loadContentAccueil() async {
 
         ContentAccueil content;
@@ -44,7 +68,7 @@ class UserBackendService {
             'Authorization': "Bearer "+currentToken,
           },);
         if (responseDailyChallenge.statusCode == 200) {
-          //print(response.body);
+          print(responseDailyChallenge.body);
           c = Challenge.fromJson(jsonDecode(responseDailyChallenge.body));
         } else {
           throw Exception('LoadingDailyChallengeError');

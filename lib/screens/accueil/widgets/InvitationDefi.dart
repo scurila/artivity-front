@@ -9,10 +9,11 @@ import '../../../services/UserBackendService.dart';
 import '../../../services/objects/Challenge.dart';
 
 class InvitationDefi extends StatelessWidget {
-  const InvitationDefi({Key? key, required this.challengeType, required this.executionTime, required this.leftTime, required this.eval, required this.artists, required this.id}) : super(key: key);
+  const InvitationDefi({Key? key, required this.challengeType, required this.title, required this.executionTime, required this.leftTime, required this.eval, required this.artists, required this.id}) : super(key: key);
   final String challengeType;
   final String executionTime;
   final String leftTime;
+  final String title;
   final int eval;
   final String artists;
   final int id;
@@ -50,12 +51,13 @@ class InvitationDefi extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 24),
-                child: Text(Styles.getChallengeTypeLabel(challengeType), style: Styles.challengeTitle, textAlign: TextAlign.left,),
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Text(title, style: Styles.challengeTitle, textAlign: TextAlign.left,),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(Styles.getChallengeTypeLabel(challengeType), textAlign: TextAlign.left,),
                   Text(executionTime , style: Styles.challengeTimeBlack),
                   Text(timeLeft + leftTime + " !", style: Styles.challengeTimePink,),
                 ],

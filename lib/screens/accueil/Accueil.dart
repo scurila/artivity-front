@@ -26,7 +26,7 @@ class Accueil extends StatelessWidget {
 
     List <InvitationDefi> invitationsList = <InvitationDefi>[];
     for(int i=0; i < invitations.length; i++){
-      invitationsList.add(InvitationDefi(challengeType: invitations.elementAt(i).typeForFront, executionTime: ((invitations.elementAt(i).timelimit == null? 'Pas de chrono' : (invitations.elementAt(i).timelimit!/60).toString()+ minutes) ) , leftTime:(invitations.elementAt(i).leftTime == null? 'autant de temps que tu veux' : (invitations.elementAt(i).leftTime!/60/60 < 1? (invitations.elementAt(i).leftTime!/60).floor().toString() + " min" : (invitations.elementAt(i).leftTime!/60/60).floor().toString() + "h")), eval: invitations.elementAt(i).rating , artists: invitations.elementAt(i).answer_count.toString(), id: invitations.elementAt(i).id));
+      invitationsList.add(InvitationDefi(title: invitations.elementAt(i).title, challengeType: invitations.elementAt(i).typeForFront, executionTime: ((invitations.elementAt(i).timelimit == null? 'Pas de chrono' : (invitations.elementAt(i).timelimit!/60).toString()+ minutes) ) , leftTime:(invitations.elementAt(i).leftTime == null? 'autant de temps que tu veux' : (invitations.elementAt(i).leftTime!/60/60 < 1? (invitations.elementAt(i).leftTime!/60).floor().toString() + " min" : (invitations.elementAt(i).leftTime!/60/60).floor().toString() + "h")), eval: invitations.elementAt(i).rating , artists: invitations.elementAt(i).answer_count.toString(), id: invitations.elementAt(i).id));
     }
 
 
