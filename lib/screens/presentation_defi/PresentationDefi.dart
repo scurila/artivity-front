@@ -255,7 +255,7 @@ class PresentationDefi extends StatelessWidget {
                                 if(type == CHALLENGE_TYPE_AUDIO){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const DefiAudio(title: "Ambiance sonore feu de bois", description: "",)),
+                                    MaterialPageRoute(builder: (context) => DefiAudio(title: "Ambiance sonore feu de bois", description: "", timeLimitInSeconds: chal!.timelimit ?? 0,)),
                                   );
                                 }
                                 if(type == CHALLENGE_TYPE_VIDEO){
