@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:artivity_front/services/objects/Challenge.dart';
 import 'package:artivity_front/services/objects/ContentAccueil.dart';
@@ -21,6 +22,7 @@ class UserBackendService {
       })
     );
 
+    print(resp.statusCode);
     if (resp.statusCode == 200) {
       var responseJson = json.decode(resp.body.toString());
       currentToken = responseJson['token'];
@@ -29,6 +31,30 @@ class UserBackendService {
       throw Exception('LoginError');
     }
   }
+
+  static Future<String> signup(String pseudo, String email, String pwd) async {
+    http.Response resp = await http.post(
+        Uri.parse(backendServerBase + '/users/'),
+        headers: <String, String>{
+          'Content-Type': "application/json; charset=UTF-8",
+          'Connection': "close",
+        },
+        body: jsonEncode(<String, String>{
+          'pseudo': pseudo,
+          'password': pwd,
+          'email': email,
+        })
+    );
+    print(resp.statusCode);
+    if (resp.statusCode == 200) {
+      return 'inscription réussie';
+
+    } else {
+      throw Exception('LoginError');
+
+    }
+  }
+
 
   static Future<ContentAccueil> loadContentAccueil() async {
 
@@ -42,7 +68,7 @@ class UserBackendService {
             'Authorization': "Bearer "+currentToken,
           },);
         if (responseDailyChallenge.statusCode == 200) {
-          //print(response.body);
+          print(responseDailyChallenge.body);
           c = Challenge.fromJson(jsonDecode(responseDailyChallenge.body));
         } else {
           throw Exception('LoadingDailyChallengeError');
@@ -88,6 +114,38 @@ class UserBackendService {
       return c;
     } else {
       throw Exception('LoadingChallengeError');
+    }
+  }
+
+  static void startChallenge(int id) async {
+    final response = await http.post(Uri.parse(backendServerBase + '/challenge/' + id.toString() + '/start'),
+      headers: <String, String>{
+        'Authorization': "Bearer "+currentToken,
+      },);
+
+    if (response.statusCode == 200) {
+      print(response.body);
+    } else {
+      print(response.statusCode);
+      throw Exception('LoadingChallengeError');
+    }
+  }
+
+  static Future<void> submitChallenge(String b64data, int chalId) async {
+    final response = await http.post(Uri.parse(backendServerBase + '/challenge/' + chalId.toString() + '/submit'),
+      headers: <String, String>{
+        'Authorization': "Bearer "+currentToken,
+        'Content-Type': "application/json; charset=UTF-8",
+      },
+      body: jsonEncode(<String, String>{
+        'data': b64data,
+      }));
+
+    if (response.statusCode == 200) {
+      print(response.body);
+    } else {
+      print(response.statusCode);
+      throw Exception('SubmitChallengeError');
     }
   }
 

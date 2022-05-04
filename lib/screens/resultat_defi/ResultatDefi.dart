@@ -8,14 +8,14 @@ import '../../theme/style.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class ResultatDefi extends StatelessWidget {
-  const ResultatDefi({Key? key, required this.type,required this.author,required this.date,required this.description,required this.eval, required this.artistsCount, required this.evalTaNote}) : super(key: key);
+  ResultatDefi({Key? key, required this.type,required this.author,required this.date,required this.description,required this.eval, required this.artistsCount}) : super(key: key);
   final String type;
   final String author;
   final String date;
   final String description;
   final int eval;
   final String artistsCount;
-  final int evalTaNote;
+  int evalTaNote = 4; // todo : temp
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ResultatDefi extends StatelessWidget {
                 .of(context)
                 .size
                 .width,
-            padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
             decoration: const BoxDecoration(color: Colors.white),
             child: Column(
               children: [

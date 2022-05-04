@@ -1,6 +1,8 @@
 import 'package:artivity_front/screens/Connexion/Connexion.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
+import '../../services/UserBackendService.dart';
 import '../../theme/constants.dart';
 import '../../theme/style.dart';
 import '../widgets/FormTextFieldRow.dart';
@@ -22,6 +24,35 @@ class _InscriptionState extends State<Inscription> {
   final TextEditingController controllerAge = TextEditingController();
   final TextEditingController controllerMail = TextEditingController();
   final TextEditingController controllerPwd = TextEditingController();
+
+
+
+  showAlertDialog(BuildContext context) {
+    Widget okButton = TextButton(
+      child: const Text("OK"),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title:  Text( "Échec"),
+      content: Text("Données d'inscription invalides."),
+      actions: [
+        okButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
 
 
   @override
@@ -68,14 +99,21 @@ class _InscriptionState extends State<Inscription> {
                                 text: inscriptionButtonText.toUpperCase(),
                                 onPressed: () async {
                                   try {
-                                    //await UserBackendService.zerazer(controllerLogin.text, controllerAge.text, controllerMail.text, controllerPwd.text);
+                                    String text = await UserBackendService.signup(controllerLogin.text, controllerMail.text, controllerPwd.text);
+                                    Fluttertoast.showToast(
+                                      msg: "Inscription réussie ! Vous pouvez dès à présent vous connecter",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.SNACKBAR,
+                                      backgroundColor: Styles.accentColor,
+                                      textColor: Colors.black,
+                                    );
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(builder: (context) => Connexion()),
                                     );
                                   } catch (e) {
                                     print(e);
-                                    //showAlertDialog(context);
+                                    showAlertDialog(context);
                                   }
                                 },
                                 color: Styles.accentColor,
