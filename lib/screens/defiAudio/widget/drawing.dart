@@ -35,6 +35,7 @@ class _DessinState extends State<Dessin> {
         //textDelegate: DutchTextDelegate(),
         initialColor: Colors.green,
         initialPaintMode: PaintMode.freeStyle,
+        width: 3,
       );
   }
 }

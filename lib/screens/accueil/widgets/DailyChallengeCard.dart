@@ -23,9 +23,10 @@ class DailyChallengeCard extends StatelessWidget {
       onTap: () async {
         try {
           Challenge c = await UserBackendService.loadChallenge(id);
+          var submissions = await UserBackendService.challengeSubmissions(id);
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) =>  PresentationDefi(type: challengeType, chal: c,)), // todo : temp
+            MaterialPageRoute(builder: (context) =>  PresentationDefi(type: challengeType, chal: c, submissions: submissions,)), // todo : temp
           );
         } catch (e) {
 

@@ -66,7 +66,7 @@ class Defi extends StatelessWidget {
                       Icon(Icons.star, color: (eval >= 3? Styles.accentColor : Styles.greyedOutColor), size: 14),
                       Icon(Icons.star, color: (eval >= 4? Styles.accentColor : Styles.greyedOutColor), size: 14),
                       Icon(Icons.star, color: (eval >= 5? Styles.accentColor : Styles.greyedOutColor), size: 14),
-                      Text(" " + artists + artists, style: Styles.evaluationText, )
+                      Text(" " + artists + " artistes", style: Styles.evaluationText, )
                     ],
                   ),
                 )

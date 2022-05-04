@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:artivity_front/screens/widgets/CountDownTimer.dart';
@@ -8,11 +9,15 @@ import 'package:artivity_front/theme/constants.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
 
+import '../../services/UserBackendService.dart';
+import '../../services/objects/Challenge.dart';
 import '../../theme/constants.dart';
 import '../../theme/style.dart';
+import '../resultat_defi/ResultatDefi.dart';
 import '../widgets/Headbar.dart';
 
 class DefiAudio extends StatefulWidget {
@@ -21,10 +26,12 @@ class DefiAudio extends StatefulWidget {
     required this.title,
     required this.description,
     required this.timeLimitInSeconds,
+    required this.chal,
   }) : super(key: key);
   final String title;
   final String description;
   final int? timeLimitInSeconds;
+  final Challenge chal;
 
   @override
   State<DefiAudio> createState() => _DefiAudioState();
@@ -144,15 +151,57 @@ class _DefiAudioState extends State<DefiAudio> {
                           currentRecordingPath = result.files.single.path!;
                           hasARecording = true;
                         });
-
-
-                        // todo : update state
                       } else {
                         // rien, l'utilisateur a annulé
                       }
 
                     }, color: Styles.accentColor, border: Styles.noBorder),
-                    ReusableRoundButton(size: 80, image: const Icon(Icons.send, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.send, size: 30), onPressed: () async {
+                      File file = File(currentRecordingPath);
+                      final bytes = file.readAsBytesSync();
+                      String audio64 = base64.encode(bytes);
+
+                      try {
+                        await UserBackendService.submitChallenge(audio64, widget.chal.id);
+
+                        Fluttertoast.showToast(
+                          msg: 'Envoi de ta création !',
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.SNACKBAR,
+                          backgroundColor: Styles.accentColor,
+                          textColor: Colors.black,
+                        );
+                        // todo : fermer et peut pas retour (pop)
+                        var submissions = await UserBackendService.challengeSubmissions(widget.chal.id);
+                        Navigator.pop(context);
+                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ResultatDefi(type: Styles.getChallengeTypeLabel(widget.chal.type), author: widget.chal.user_created_pseudo, date: DateFormat('dd-MM-yyyy').format(DateTime.fromMillisecondsSinceEpoch(widget.chal.start_time*1000, isUtc: true)).toString(), description: widget.chal.subject, eval: widget.chal.rating, artistsCount: widget.chal.answer_count.toString(), chalId: widget.chal.id, submissions: submissions, chalType: widget.chal.type,)),
+                        );
+                      } catch (e) {
+                        print(e.toString());
+                        if (e.toString() == "Exception: SubmitChallengeError") {
+                          Fluttertoast.showToast(
+                            msg: 'Vous avez déjà envoyé une solution pour ce défi.',
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.CENTER,
+                            backgroundColor: Styles.accentColor,
+                            textColor: Colors.black,
+                          );
+                        } else {
+                          Fluttertoast.showToast(
+                            msg: 'La création n\'a pas pu être envoyée.',
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.CENTER,
+                            backgroundColor: Styles.accentColor,
+                            textColor: Colors.black,
+                          );
+                        }
+
+                      }
+
+                    }, color: Styles.accentColor, border: Styles.noBorder),
                   ],
                 ),
 

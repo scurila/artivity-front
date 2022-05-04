@@ -1,24 +1,60 @@
+import 'dart:convert';
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:artivity_front/screens/resultat_defi/widget/CreationParticipantsCard.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
+import 'package:artivity_front/services/UserBackendService.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
+import '../../services/objects/ChallengeSubmission.dart';
 import '../../theme/style.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class ResultatDefi extends StatelessWidget {
-  ResultatDefi({Key? key, required this.type,required this.author,required this.date,required this.description,required this.eval, required this.artistsCount}) : super(key: key);
+  ResultatDefi({Key? key, required this.type,required this.author,required this.date,required this.description,required this.eval, required this.artistsCount, required this.chalId, required this.submissions, required this.chalType}) : super(key: key);
   final String type;
   final String author;
   final String date;
   final String description;
   final int eval;
   final String artistsCount;
-  int evalTaNote = 4; // todo : temp
+  final String chalType;
+  int evalTaNote = 0; // todo : temp
+  int chalId;
+  List<ChallengeSubmission> submissions;
 
   @override
   Widget build(BuildContext context) {
+    // load creations
+    List<Widget> submissionCards = [];
+    Widget rowElemA = Container(), rowElemB = Container();
+    for (var i = 0; i < submissions.length; i++) {
+      if (i%2 == 0 && i > 0) {
+        submissionCards.add(Row(
+          children: [rowElemA, rowElemB],
+        ));
+      }
+
+      Uint8List? f = (submissions[i].b64data != null? base64.decode(submissions[i].b64data!) : null);
+      Uint8List? data = f;
+      String? imgPath = null;
+      if (chalType != CHALLENGE_TYPE_DESSIN && chalType != CHALLENGE_TYPE_PHOTO) {
+        f = null;
+        if (chalType == CHALLENGE_TYPE_AUDIO) imgPath = 'assets/images/speaker.png';
+        if (chalType == CHALLENGE_TYPE_LITTERAIRE) imgPath = 'assets/images/Dairy.png';
+      }
+      if (i%2 == 0) {
+        rowElemA = CreationParticipantsCard(isDone: (submissions[i].b64data != null), author: submissions[i].user_pseudo, date: DateFormat('dd-MM-yyyy').format(DateTime.fromMillisecondsSinceEpoch(submissions[i].start_time*1000, isUtc: true)).toString(), imgFile: f, imgUrl: imgPath, data: data, type: chalType);
+      } else {
+        rowElemB = CreationParticipantsCard(isDone: (submissions[i].b64data != null), author: submissions[i].user_pseudo, date: DateFormat('dd-MM-yyyy').format(DateTime.fromMillisecondsSinceEpoch(submissions[i].start_time*1000, isUtc: true)).toString(), imgFile: f, imgUrl: imgPath, data: data, type: chalType);
+      }
+    }
+    if (submissions.length % 2 != 0) submissionCards.add(Row(children: [rowElemA],));
+
     return Material(
         type: MaterialType.transparency,
         child: Container(
@@ -50,7 +86,7 @@ class ResultatDefi extends StatelessWidget {
                               decoration: BoxDecoration(color: Styles.accentColor,borderRadius: const BorderRadius.all(const Radius.circular(15))),
                               child: Column( // cards
                                 children: [
-                                  Text( "Un défi "+type+" de "+author,textAlign: TextAlign.center,style: Styles.challegeResult),
+                                  Text(type+" de "+author,textAlign: TextAlign.center,style: Styles.challegeResult),
                                   const SizedBox(height: 10),
                                   Text( description,textAlign: TextAlign.left,style: Styles.challegeResultDescription)
                                 ],
@@ -109,21 +145,7 @@ class ResultatDefi extends StatelessWidget {
                               margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                               width: MediaQuery.of(context).size.width,
                               child: Column( // cards
-                                children: [
-                                  Row(
-                                    children: [
-                                      CreationParticipantsCard(isDone: true, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
-                                      CreationParticipantsCard(isDone: true, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
-                                      //CreationParticipantsCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      CreationParticipantsCard(isDone: true, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
-                                      CreationParticipantsCard(isDone: false, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
-                                    ],
-                                  )
-                                ],
+                                children: submissionCards
                               ),
                             )
                           ]

@@ -134,7 +134,7 @@ class _DefiDessinState extends State<DefiDessin> {
                         String img64 = base64.encode(bytes);
 
                         try {
-                          UserBackendService.submitChallenge(img64, widget.chal.id);
+                          await UserBackendService.submitChallenge(img64, widget.chal.id);
 
                           Fluttertoast.showToast(
                             msg: 'Envoi de ta création !',
@@ -144,25 +144,34 @@ class _DefiDessinState extends State<DefiDessin> {
                             textColor: Colors.black,
                           );
                           // todo : fermer et peut pas retour (pop)
+                          var submissions = await UserBackendService.challengeSubmissions(widget.chal.id);
                           Navigator.pop(context);
                           Navigator.pop(context);
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => ResultatDefi(type: widget.chal.type, author: 'PLACEHOLDER', date: DateFormat('dd-MM-yyyy – kk:mm').format(DateTime.fromMillisecondsSinceEpoch(widget.chal.start_time*1000, isUtc: true)).toString(), description: widget.chal.subject, eval: widget.chal.rating, artistsCount: widget.chal.answer_count.toString(),)),
+                            MaterialPageRoute(builder: (context) => ResultatDefi(type: Styles.getChallengeTypeLabel(widget.chal.type), author: widget.chal.user_created_pseudo, date: DateFormat('dd-MM-yyyy').format(DateTime.fromMillisecondsSinceEpoch(widget.chal.start_time*1000, isUtc: true)).toString(), description: widget.chal.subject, eval: widget.chal.rating, artistsCount: widget.chal.answer_count.toString(), chalId: widget.chal.id, submissions: submissions, chalType: widget.chal.type,)),
                           );
                         } catch (e) {
-                          Fluttertoast.showToast(
-                            msg: 'La création n\'a pas pu être envoyée.',
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.CENTER,
-                            backgroundColor: Styles.accentColor,
-                            textColor: Colors.black,
-                          );
+                          print(e.toString());
+                          if (e.toString() == "Exception: SubmitChallengeError") {
+                            Fluttertoast.showToast(
+                              msg: 'Vous avez déjà envoyé une solution pour ce défi.',
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.CENTER,
+                              backgroundColor: Styles.accentColor,
+                              textColor: Colors.black,
+                            );
+                          } else {
+                            Fluttertoast.showToast(
+                              msg: 'La création n\'a pas pu être envoyée.',
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.CENTER,
+                              backgroundColor: Styles.accentColor,
+                              textColor: Colors.black,
+                            );
+                          }
+
                         }
-
-                        // todo autres types
-                        // todo gérer edge cases, récupération de l\image pas en string...
-
                       }, icon: const Icon(Icons.send)),
                     ],
                   ),

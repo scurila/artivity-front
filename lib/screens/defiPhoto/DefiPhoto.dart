@@ -1,21 +1,30 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:artivity_front/screens/widgets/Popup.dart';
 import 'package:artivity_front/theme/style.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
 
+import '../../services/UserBackendService.dart';
+import '../../services/objects/Challenge.dart';
 import '../../theme/constants.dart';
+import '../resultat_defi/ResultatDefi.dart';
 import '../widgets/Headbar.dart';
 
 class DefiPhoto extends StatefulWidget {
-  const DefiPhoto({
+  DefiPhoto({
     Key? key,
     required this.title,
     required this.description,
+    required this.chal
   }) : super(key: key);
   final String title;
   final String description;
+  Challenge chal;
 
   @override
   State<DefiPhoto> createState() => _DefiPhotoState();
@@ -84,8 +93,52 @@ class _DefiPhotoState extends State<DefiPhoto> {
                           currentBgFile = File(image!.path);
                         });
                       }, icon: const Icon(Icons.upload_file)),
-                      IconButton(onPressed: (){
+                      IconButton(onPressed: () async {
                         // todo : submit
+                        if (currentBgFile != null) {
+                          final bytes = currentBgFile!.readAsBytesSync();
+                          String img64 = base64.encode(bytes);
+
+                          try {
+                            await UserBackendService.submitChallenge(img64, widget.chal.id);
+
+                            Fluttertoast.showToast(
+                              msg: 'Envoi de ta création !',
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.SNACKBAR,
+                              backgroundColor: Styles.accentColor,
+                              textColor: Colors.black,
+                            );
+                            // todo : fermer et peut pas retour (pop)
+                            var submissions = await UserBackendService.challengeSubmissions(widget.chal.id);
+                            Navigator.pop(context);
+                            Navigator.pop(context);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => ResultatDefi(type: Styles.getChallengeTypeLabel(widget.chal.type), author: widget.chal.user_created_pseudo, date: DateFormat('dd-MM-yyyy').format(DateTime.fromMillisecondsSinceEpoch(widget.chal.start_time*1000, isUtc: true)).toString(), description: widget.chal.subject, eval: widget.chal.rating, artistsCount: widget.chal.answer_count.toString(), chalId: widget.chal.id, submissions: submissions, chalType: widget.chal.type,)),
+                            );
+                          } catch (e) {
+                            print(e.toString());
+                            if (e.toString() == "Exception: SubmitChallengeError") {
+                              Fluttertoast.showToast(
+                                msg: 'Vous avez déjà envoyé une solution pour ce défi.',
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.CENTER,
+                                backgroundColor: Styles.accentColor,
+                                textColor: Colors.black,
+                              );
+                            } else {
+                              Fluttertoast.showToast(
+                                msg: 'La création n\'a pas pu être envoyée.',
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.CENTER,
+                                backgroundColor: Styles.accentColor,
+                                textColor: Colors.black,
+                              );
+                            }
+
+                          }
+                        }
                       }, icon: const Icon(Icons.send)),
                     ],
                   ),

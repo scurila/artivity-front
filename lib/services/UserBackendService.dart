@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:artivity_front/services/objects/Challenge.dart';
+import 'package:artivity_front/services/objects/ChallengeSubmission.dart';
 import 'package:artivity_front/services/objects/ContentAccueil.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:http/http.dart' as http;
@@ -26,6 +27,7 @@ class UserBackendService {
     if (resp.statusCode == 200) {
       var responseJson = json.decode(resp.body.toString());
       currentToken = responseJson['token'];
+
       return currentToken;
     } else {
       throw Exception('LoginError');
@@ -146,6 +148,26 @@ class UserBackendService {
     } else {
       print(response.statusCode);
       throw Exception('SubmitChallengeError');
+    }
+  }
+
+  static Future<List<ChallengeSubmission>> challengeSubmissions(int chalId) async {
+    final response = await http.get(Uri.parse(backendServerBase + '/challenge/' + chalId.toString() + '/answers'),
+        headers: <String, String>{
+          'Authorization': "Bearer "+currentToken,
+        });
+
+    List<ChallengeSubmission> submissions = [];
+    if (response.statusCode == 200) {
+      print(response.body);
+      var submissionsJson = jsonDecode(response.body);
+      for(var i = 0; i < submissionsJson['answers'].length; i++){
+        submissions.add(ChallengeSubmission.fromJson(submissionsJson['answers'][i]));
+      }
+      return submissions;
+    } else {
+      print(response.statusCode);
+      throw Exception('ChallengeSubmissionsError');
     }
   }
 
