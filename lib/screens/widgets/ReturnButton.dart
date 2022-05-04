@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/style.dart';
-
 class ReturnButton extends StatelessWidget {
-  ReturnButton();
+  const ReturnButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +11,7 @@ class ReturnButton extends StatelessWidget {
         onPressed: () {
           Navigator.pop(context);
         },
-        icon: Icon(Icons.arrow_back,color: Colors.black)
+        icon: const Icon(Icons.arrow_back,color: Colors.black)
       ),
     );
 

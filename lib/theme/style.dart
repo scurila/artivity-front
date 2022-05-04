@@ -1,7 +1,5 @@
 import 'package:artivity_front/theme/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class Styles {
   static Color accentColor = const Color.fromRGBO(146, 227, 169, 1);

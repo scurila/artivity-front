@@ -29,15 +29,15 @@ class FormTextFieldRow extends StatelessWidget {
             filled: true,
             focusColor: Styles.accentColor,
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
               borderSide: BorderSide(color: Styles.greyedColor),
             ),
-          focusedBorder: new OutlineInputBorder(
+          focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
                 color: Styles.accentColor
             ),
           ),
-            contentPadding: EdgeInsets.only(
+            contentPadding: const EdgeInsets.only(
               left: 10,
               bottom:  20,
             )

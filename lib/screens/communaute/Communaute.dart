@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
 
-
 class Communaute extends StatelessWidget {
   const Communaute({Key? key}) : super(key: key);
 
@@ -32,7 +31,7 @@ class Communaute extends StatelessWidget {
                     child: Column(
                         children: [
 
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           // ----- Défis en cours -----
                           Row(
                             children: [
@@ -41,28 +40,28 @@ class Communaute extends StatelessWidget {
                                 child: Image.asset('assets/images/inspiration.png', height: 30,),
                               ),
                               Container(
-                                  padding: EdgeInsets.only(left: 10.0),
+                                  padding: const EdgeInsets.only(left: 10.0),
                                   child: Text("Défis en cours",textAlign: TextAlign.left ,style: Styles.challengeDescription)
                               ),
                             ],
                           ),
 
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           // ----- Defis en cours -----
                           Container(
                             margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                            decoration: BoxDecoration(color: Styles.accentColor,borderRadius: BorderRadius.all(Radius.circular(15))),
+                            decoration: BoxDecoration(color: Styles.accentColor,borderRadius: const BorderRadius.all(Radius.circular(15))),
                             child: Column( // cards
                               children: [
                                 Row(
-                                  children: [
+                                  children: const [
                                     DefiCard(title: "Un chaton dans la rue", imgUrl: "assets/images/creation_placeholder.png"),
                                     DefiCard(title: "Abstrait", imgUrl: "assets/images/abstrait.png"),
                                   ],
                                 ),
                                 Row(
-                                  children: [
+                                  children: const [
                                     DefiCard(title: "Un mouton dans le pré", imgUrl: "assets/images/mouton.png"),
                                     //CreationCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
                                   ],
@@ -71,7 +70,7 @@ class Communaute extends StatelessWidget {
                             ),
                           ),
 
-                          SizedBox(height: 20),
+                          const SizedBox(height: 20),
                           // ----- Texte -----
                           Row(
                             children: [
@@ -80,13 +79,13 @@ class Communaute extends StatelessWidget {
                                 child: Image.asset('assets/images/notification.png', height: 25,),
                               ),
                               Container(
-                                  padding: EdgeInsets.only(left: 10.0),
+                                  padding: const EdgeInsets.only(left: 10.0),
                                   child: Text("Notifications",textAlign: TextAlign.left ,style: Styles.challengeDescription)
                               ),
                             ],
                           ),
 
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
 
                           // ----- Notifications + scrollbar -----
                           Container(
@@ -100,14 +99,14 @@ class Communaute extends StatelessWidget {
                                         width: MediaQuery.of(context).size.width - 20,
                                         margin: const EdgeInsets.symmetric(horizontal: 10),
                                         padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
-                                        decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),),
+                                        decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(Radius.circular(15)),),
                                         child: Row(
                                           children: [
                                             Container(
                                               child: Image.asset('assets/images/ARTHUR.png', width: 48,),
                                             ),
                                             Container(
-                                                padding: EdgeInsets.only(left: 5.0),
+                                                padding: const EdgeInsets.only(left: 5.0),
                                                 width: MediaQuery.of(context).size.width - 87,
                                                 child: Text( "Albus D. t’as envoyé un message.",textAlign: TextAlign.left ,style: Styles.notificationDescription)
                                             ),
@@ -115,14 +114,14 @@ class Communaute extends StatelessWidget {
                                         ),
                                       ),
 
-                                      SizedBox(height: 10),
+                                      const SizedBox(height: 10),
 
                                       // ----- Notification -----
                                       Container(
                                         width: MediaQuery.of(context).size.width,
                                         margin: const EdgeInsets.symmetric(horizontal: 10),
                                         padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
-                                        decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),
+                                        decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(Radius.circular(15)),
                                         ),
                                         child: Row(
                                           children: [
@@ -130,7 +129,7 @@ class Communaute extends StatelessWidget {
                                               child: Image.asset('assets/images/ARTHUR.png', width: 48,),
                                             ),
                                             Container(
-                                                padding: EdgeInsets.only(left: 5.0),
+                                                padding: const EdgeInsets.only(left: 5.0),
                                                 width: MediaQuery.of(context).size.width - 87,
                                                 child: Text(" Barbra S. t’as invité à un défi poésie collaborative. Rejoins son équipe ! Sois créatif ! ",textAlign: TextAlign.left ,style: Styles.notificationDescription),
                                             ),
@@ -138,7 +137,7 @@ class Communaute extends StatelessWidget {
                                         ),
                                       ),
 
-                                      SizedBox(height: 10),
+                                      const SizedBox(height: 10),
 
                                       // ----- Notification -----
                                       Container(
@@ -146,14 +145,14 @@ class Communaute extends StatelessWidget {
                                         //height: 100,
                                         margin: const EdgeInsets.symmetric(horizontal: 10),
                                         padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
-                                        decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: BorderRadius.all(Radius.circular(15)),),
+                                        decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(Radius.circular(15)),),
                                         child: Row(
                                           children: [
                                             Container(
                                               child: Image.asset('assets/images/ARTHUR.png', width: 48,),
                                             ),
                                             Container(
-                                                padding: EdgeInsets.only(left: 5.0),
+                                                padding: const EdgeInsets.only(left: 5.0),
                                                 width: MediaQuery.of(context).size.width - 87,
                                                 child: Text(" Il te reste 30 minutes pour le défi littéraire",textAlign: TextAlign.left ,style: Styles.notificationDescription)
                                             ),
@@ -165,7 +164,7 @@ class Communaute extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height: 20),
+                          const SizedBox(height: 20),
                         ]
                     ),
                   ),

@@ -7,6 +7,7 @@ import '../widgets/FormTextFieldRow.dart';
 import '../widgets/Headbar.dart';
 import '../widgets/ReturnButton.dart';
 import '../widgets/ReusableFilledButton.dart';
+import 'package:artivity_front/services/UserBackendService.dart';
 
 class Inscription extends StatefulWidget {
   const Inscription({Key? key}) : super(key: key);
@@ -18,7 +19,11 @@ class Inscription extends StatefulWidget {
 class _InscriptionState extends State<Inscription> {
   bool CUIsSwitched = false;
   bool DataIsSwitched = false;
-  TextEditingController controller = TextEditingController();
+  final TextEditingController controllerLogin = TextEditingController();
+  final TextEditingController controllerAge = TextEditingController();
+  final TextEditingController controllerMail = TextEditingController();
+  final TextEditingController controllerPwd = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,17 +49,17 @@ class _InscriptionState extends State<Inscription> {
                       Container( // Boîte verte
                         margin: const EdgeInsets.symmetric(horizontal: 10),
                         padding: const EdgeInsets.fromLTRB(30, 30, 30, 24),
-                        decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: const BorderRadius.all(const Radius.circular(20)),),
+                        decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: const BorderRadius.all(Radius.circular(20)),),
                         child: Column(
                           children: [
                             // Champs de texte avec labels
-                            FormTextFieldRow(text: inscriptionPseudo, obscured: false, controller: controller,),
+                            FormTextFieldRow(text: inscriptionPseudo, obscured: false, controller: controllerLogin),
                             const SizedBox(height: 20),
-                            FormTextFieldRow(text: inscriptionAge, obscured: false, controller: controller,),
+                            FormTextFieldRow(text: inscriptionAge, obscured: false, controller: controllerAge),
                             const SizedBox(height: 20),
-                            FormTextFieldRow(text: inscriptionMail, obscured: false, controller: controller,),
+                            FormTextFieldRow(text: inscriptionMail, obscured: false, controller: controllerMail),
                             const SizedBox(height: 20),
-                            FormTextFieldRow(text: inscriptionMdp, obscured: true, controller: controller,),
+                            FormTextFieldRow(text: inscriptionMdp, obscured: true, controller: controllerPwd),
                             const SizedBox(height: 20),
 
                             // Bouton inscription
@@ -62,7 +67,18 @@ class _InscriptionState extends State<Inscription> {
                               child: ReusableFilledButton(
                                 textStyle: Styles.accentButtonText,
                                 text: inscriptionButtonText.toUpperCase(),
-                                onPressed: () {},
+                                onPressed: () async {
+                                  try {
+                                    //await UserBackendService.zerazer(controllerLogin.text, controllerAge.text, controllerMail.text, controllerPwd.text);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => Connexion()),
+                                    );
+                                  } catch (e) {
+                                    print(e);
+                                    //showAlertDialog(context);
+                                  }
+                                },
                                 color: Styles.accentColor,
                                 border: Styles.noBorder,
                                 margin: const EdgeInsets.fromLTRB(60, 0, 60, 0),

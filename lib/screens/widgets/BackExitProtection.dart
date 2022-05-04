@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BackExitProtection extends StatefulWidget {
@@ -16,7 +15,7 @@ class _BackExitProtectionState extends State<BackExitProtection> {
   Future<bool> onWillPop() {
     DateTime now = DateTime.now();
     if (lastBackPressTime == null ||
-        now.difference(lastBackPressTime!) > Duration(seconds: 2)) {
+        now.difference(lastBackPressTime!) > const Duration(seconds: 2)) {
       lastBackPressTime = now;
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text(''),

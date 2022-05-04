@@ -7,11 +7,11 @@ import '../../../theme/style.dart';
 import '../../presentation_defi/PresentationDefi.dart';
 
 class DailyChallengeCard extends StatelessWidget {
-  DailyChallengeCard({Key? key, required this.eval, required this.artists, required this.challengeType, required this.challengeTitle}) : super(key: key);
-  int eval;
-  String artists;
-  String challengeTitle;
-  String challengeType;
+  const DailyChallengeCard({Key? key, required this.eval, required this.artists, required this.challengeType, required this.challengeTitle}) : super(key: key);
+  final int eval;
+  final String artists;
+  final String challengeTitle;
+  final String challengeType;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class DailyChallengeCard extends StatelessWidget {
         child: ReusableCard(
             borderRadius: 9,
             backgroundColor: Styles.accentColor,
-            padding: EdgeInsets.only(left: 15, right: 15, bottom: 0, top: 8),
+            padding: const EdgeInsets.only(left: 15, right: 15, bottom: 0, top: 8),
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: 276,
@@ -58,7 +58,7 @@ class DailyChallengeCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: EdgeInsets.only(top: 6, bottom: 12),
+                            padding: const EdgeInsets.only(top: 6, bottom: 12),
                               child: Text(Styles.getChallengeTypeLabel(challengeType), style: Styles.challengeTitle,)),
                           Row(
                             children: [

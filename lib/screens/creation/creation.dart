@@ -1,12 +1,10 @@
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/screens/widgets/ReusableCard.dart';
-import 'package:artivity_front/screens/widgets/ReusableTextField.dart';
-import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 
+
 import '../../theme/style.dart';
-import '../widgets/ReusableFilledButton.dart';
 
 class Creation extends StatelessWidget {
   const Creation({Key? key}) : super(key: key);
@@ -24,11 +22,12 @@ class Creation extends StatelessWidget {
               Headbar(
                   leftContainer: Container(child: ReturnButton()),
                   text: "Un chaton dans la rue",
-                 // rightContainer: Container(child: Icon(Icons.arrow_forward))),
-                  rightContainer: Container()),
-              ReusableCard(
-                child: Column(
-                  children: [
+                  rightContainer: Container(child:
+                    IconButton( onPressed: (){},icon: const Icon(Icons.expand_circle_down_outlined,color: Colors.black)))),
+
+                  ReusableCard(
+                    child: Column(
+                      children: [
                     Row(
 
                      // crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,8 +42,8 @@ class Creation extends StatelessWidget {
                         )
                       )],
                     ),
-                    SizedBox(height: 5),
-                    Row(
+                      const SizedBox(height: 5),
+                      Row(
                       //crossAxisAlignment: CrossAxisAlignment.center,
                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -66,7 +65,7 @@ class Creation extends StatelessWidget {
                           border: InputBorder.none,
                         ),)),
 
-                        IconButton(icon: Icon(Icons.favorite,),iconSize: 40,
+                        IconButton(icon: const Icon(Icons.favorite,),iconSize: 40,
                           color: Colors.grey,
                           splashColor: Colors.black,
                           onPressed: () {},),
@@ -85,110 +84,184 @@ class Creation extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
+               Container(
                   height: MediaQuery.of(context).size.width * 0.4,
                 child: ListView(
-                padding: const EdgeInsets.all(8),
+                  children: [
+                    for (var i = 0; i < 10; i++)...[
+                    Container(
+                      height: MediaQuery.of(context).size.width * 0.1,
+                      color: Colors.white,
 
-                children: <Widget>[
-                  Container(
-                    height: MediaQuery.of(context).size.width * 0.1,
-                    color: Colors.white,
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/ARTHUR.png',
-                          width: 60,
-                          height: 60,
-                        ),
-                        const Center(child: Text('Comment A')),
-                     ],
-                    ),
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.width * 0.1,
-                    color: Colors.white,
                       child: Row(
-                          children:[
-                            Image.asset(
-                              'assets/images/ARTHUR.png',
-                              width: 60,
-                              height: 60,
+                        children:[
+                          Image.asset(
+                          'assets/images/ARTHUR.png',
+                          width: 60,
+                          height: 60,
+                          ),
+                          Center(child:DecoratedBox(
+                            // chat bubble decoration
+                            decoration: BoxDecoration(
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width * 0.05),
                             ),
-                           const Center(child: Text('Comment B')),
-                            ],
-                      ),
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.width * 0.1,
-                    color: Colors.white,
-                    child: Row(
-                      children:[
-                        Image.asset(
-                          'assets/images/ARTHUR.png',
-                          width: 60,
-                          height: 60,
-                        ),
-                        const Center(child: Text('Comment B')),
-                        ],
-                    ),
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.width * 0.1,
-                    color: Colors.white,
-                    child: Row(
-                      children:[
-                        Image.asset(
-                          'assets/images/ARTHUR.png',
-                          width: 60,
-                          height: 60,
-                        ),
-                        const Center(child: Text('Comment B')),
-                        ],
-                    ),
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.width * 0.1,
-                    color: Colors.white,
-                    child: Row(
-                       children:[
-                         Image.asset('assets/images/ARTHUR.png',
-                           width: 60,
-                           height: 60,
-                         ),
-                          const Center(child: Text('Comment B')),
+                            child: Padding(
+                            padding: const EdgeInsets.all(10),
+                              child: Text("comment A",
+                              style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                              color: Colors.black),
+                                         ),
+                                       ),
+                                    ),
+                                  ),
 
-   ],
-    ),
+                                ],
+                              ),
+
+
+                             ),
+                    const SizedBox(width: 10, height:10)
+  ]
+                              ],
+
+
     ),
 
-            ],
-          ),
 
-        ),
-              Container(
-                height: 50,
-                color: Colors.white,
-                child: Row(
-                  children:[
-                    SizedBox(height: 10, width: MediaQuery.of(context).size.width * 0.5,child:TextField( decoration: InputDecoration(
-                      fillColor: Colors.white,
-                      filled: true,
-                      focusColor: Styles.accentColor,
-                      border: InputBorder.none,
-                    ),)),
-                    ReusableTextField(child: Text(ecrireCommentaire, style: Styles.accentButtonText,),),
-                    Image.asset('assets/images/ARTHUR.png',
-                      width: MediaQuery.of(context).size.width * 0.15,
-                      height: 60,
-                    )
-                  ],
                 ),
-              ),
+              //Expanded(
+                /*child:*/Container(
+                  width: MediaQuery.of(context).size.width ,
+                  height: MediaQuery.of(context).size.height * 0.1,
+                  color: Colors.white,
+                  child:
+                  Align(
+                    alignment: Alignment.topRight,
+
+
+
+                       child:Container(
+                            width: 250,
+                          color: Colors.white,
+
+                          child:Row(
+                        children:[DecoratedBox(
+                          // chat bubble decoration
+                          decoration: BoxDecoration(
+                            color: Colors.lightGreen,
+                            borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width * 0.05),
+                          ),
+
+                          child: Padding(
+                              padding: const EdgeInsets.all(10),
+
+                              child:Container(width: 170,
+                                  height: MediaQuery.of(context).size.width * 0.07,
+                                  color: Colors.lightGreen,
+
+                                  child:Column(
+                                      children:const [
+                                        Padding(
+                                          padding:  EdgeInsets.all(0),
+
+                                          child: TextField(
+                                            decoration: InputDecoration(
+                                              contentPadding: EdgeInsets.all(0.0),
+                                              isDense: true,
+                                              border: InputBorder.none,
+                                              hintText: 'Ecrire un commentaire'
+                                            ),
+                                            minLines: 1,
+                                            maxLines: 1,
+                                        ),),
+                                      ]
+
+                                  )
+
+                              )
+                            /*TextField(
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: 'User Name',
+
+                                ),
+                              ),*/
+                          ),
+                        ),
+                          IconButton(icon: const Icon(Icons.send_rounded),iconSize:MediaQuery.of(context).size.width * 0.05,
+                            color: Colors.grey,
+                            splashColor: Colors.black,
+                            onPressed: () {},),
+    ],),
+
+
+                  ),
+
+                  ),
+                ),
+   // ),
+
+              /*Container(
+                width: 100,
+                height: MediaQuery.of(context).size.width * 0.05,
+                color: Colors.white,
+                child: Column(
+                  children:[
+                    IconButton(icon: Icon(Icons.send_rounded),iconSize:MediaQuery.of(context).size.width * 0.05,
+                      color: Colors.grey,
+                      splashColor: Colors.black,
+                      onPressed: () {},),
+                    Center(
+                      child:DecoratedBox(
+                           // chat bubble decoration
+                           decoration: BoxDecoration(
+                           color: Colors.lightGreen,
+                           borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width * 0.05),
+                          ),
+
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+
+                            child:Container(width: 100,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                color: Colors.white,
+                                child:Column(
+                                    children:const [
+                                      TextField(
+                                        decoration: InputDecoration(
+                                          border: OutlineInputBorder(),
+                                          labelText: 'User Name',
+
+                                        ),
+                                      ),
+                                    ]
+
+                                )
+
+                            )
+                            /*TextField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: 'User Name',
+
+                              ),
+                            ),*/
+                          ),
+                     ),
+
+                    ),
+                  ],
+
+                ),
+              ),*/
+
+
 
   ],
     ),
     ),
+
     );
   }
 }

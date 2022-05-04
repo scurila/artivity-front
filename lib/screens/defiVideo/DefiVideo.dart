@@ -1,10 +1,8 @@
 import 'package:artivity_front/screens/widgets/ReusableRoundButton.dart';
 import 'package:artivity_front/theme/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
-import '../widgets/EditBarDefi.dart';
 import '../widgets/Headbar.dart';
 import '../widgets/Popup.dart';
 
@@ -37,7 +35,7 @@ class DefiVideo extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) => Popup(title: title, description: description,),
                         ); },
-                          icon: Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
+                          icon: const Icon(Icons.expand_circle_down_outlined,color: Colors.black)),
 
                     ]
                 ),
@@ -50,18 +48,18 @@ class DefiVideo extends StatelessWidget {
 
                 SizedBox(height: MediaQuery.of(context).size.height*0.1),
 
-                ReusableRoundButton(size: 100, image: Icon(Icons.camera, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                ReusableRoundButton(size: 100, image: const Icon(Icons.camera, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                 SizedBox(height: MediaQuery.of(context).size.height*0.075),
-                ReusableRoundButton(size: 100, image: Icon(Icons.play_arrow, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                ReusableRoundButton(size: 100, image: const Icon(Icons.play_arrow, size: 50), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                 SizedBox(height: MediaQuery.of(context).size.height*0.075),
 
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ReusableRoundButton(size: 80, image: Icon(Icons.download, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
-                    ReusableRoundButton(size: 80, image: Icon(Icons.upload_file, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
-                    ReusableRoundButton(size: 80, image: Icon(Icons.send, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.download, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.upload_file, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.send, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                   ],
                 ),
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ReusableFilledButton extends StatelessWidget {
-  const ReusableFilledButton({
+  const ReusableFilledButton({Key? key,
     required this.textStyle,
     required this.text,
     required this.onPressed,
@@ -13,7 +13,7 @@ class ReusableFilledButton extends StatelessWidget {
     this.gradient,
     this.align = false,
     this.margin,
-  });
+  }) : super(key: key);
   final TextStyle textStyle;
   final String text;
   final void Function() onPressed;
@@ -34,7 +34,7 @@ class ReusableFilledButton extends StatelessWidget {
         border: border,
         borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: (shadow)? [
-          BoxShadow(
+          const BoxShadow(
             color: Color.fromRGBO(0, 0, 0, 0.15),
             blurRadius: 1,
             offset: Offset(0, 2), // position

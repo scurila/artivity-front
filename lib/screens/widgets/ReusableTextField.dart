@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../theme/style.dart';
 
 class ReusableTextField extends StatelessWidget {
-  ReusableTextField(
-      {this.borderRadius = 30.0,
+  const ReusableTextField(
+      {Key? key, this.borderRadius = 30.0,
         required this.child,
         this.padding = const EdgeInsets.all(15.0),
         this.margin = const EdgeInsets.all(0.0),
-        this.backgroundColor = const Color.fromRGBO(255, 255, 255, 1)});
+        this.backgroundColor = const Color.fromRGBO(255, 255, 255, 1)}) : super(key: key);
   final double borderRadius;
   final Widget child;
   final EdgeInsets padding;
