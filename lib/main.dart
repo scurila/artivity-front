@@ -42,7 +42,9 @@ class MyApp extends StatelessWidget {
       title: 'Artivity',
       theme: Styles.baseTheme,
       home:
-        const BackExitProtection(child: Ouverture()),
+
+      const BackExitProtection(child: Ouverture()),
+
            //const  BackExitProtection(child: ConsulterAmis()),
 
     );

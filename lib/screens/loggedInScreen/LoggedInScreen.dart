@@ -23,7 +23,7 @@ class LoggedInScreen extends StatefulWidget {
 class _LoggedInScreenState extends State<LoggedInScreen> {
 
   late List<Widget> _pages = [
-    Accueil(dailyChallenge: widget.contentAccueil.dailyChallenge),
+    Accueil(dailyChallenge: widget.contentAccueil.dailyChallenge, invitations: widget.contentAccueil.invitations),
     Communaute(),
     PresentationDefi(type: CHALLENGE_TYPE_ECRITURE),
     ResultatDefi(type: "dessin", author: "William J.", date: "23/06/2022",

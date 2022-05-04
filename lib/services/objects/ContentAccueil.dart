@@ -2,12 +2,11 @@ import 'package:artivity_front/services/objects/Challenge.dart';
 
 class ContentAccueil {
   final Challenge dailyChallenge;
-  //user
-  //cards
-  //etc
+  final List<Challenge> invitations;
 
   ContentAccueil({
     required this.dailyChallenge,
+    required this.invitations,
 
   });
 
