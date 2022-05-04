@@ -6,6 +6,8 @@ import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/presentation_defi/widgets/Defi.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:artivity_front/screens/resultat_defi/widget/CreationParticipantsCard.dart';
+
 
 import '../../services/objects/Challenge.dart';
 import '../../theme/style.dart';
@@ -58,13 +60,6 @@ class PresentationDefi extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 20),
-
-                          Container(
-                            padding: const EdgeInsets.only(left: 20.0),
-                            width: MediaQuery.of(context).size.width,
-                              child: Text("Commentaires artiste",textAlign: TextAlign.left ,style: Styles.challengeDescription)
-                          ),
-                          const SizedBox(height: 10),
 
                           // ----- Description ------
                           Container(
@@ -166,6 +161,13 @@ class PresentationDefi extends StatelessWidget {
                             width: MediaQuery.of(context).size.width,
                           ),
                           const SizedBox(height: 15),
+
+                          Container(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              width: MediaQuery.of(context).size.width,
+                              child: Text("Commentaires artiste",textAlign: TextAlign.left ,style: Styles.challengeDescription)
+                          ),
+                          const SizedBox(height: 10),
 
                           // ----- Commentaires + scrollbar -----
                           Container(
@@ -285,6 +287,34 @@ class PresentationDefi extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 20),
+
+                          // ----- Créations participants
+                          Container(
+                            margin: const EdgeInsets.fromLTRB(12, 6, 12, 16),
+                            width: MediaQuery.of(context).size.width,
+                            child: Text("Créations des participants", style: Styles.labelText, textAlign: TextAlign.left,),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+                            width: MediaQuery.of(context).size.width,
+                            child: Column( // cards
+                              children: [
+                                Row(
+                                  children: [
+                                    CreationParticipantsCard(isDone: true, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                    CreationParticipantsCard(isDone: true, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                    //CreationParticipantsCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    CreationParticipantsCard(isDone: true, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                    CreationParticipantsCard(isDone: false, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
                         ]
                     ),
                     ),
