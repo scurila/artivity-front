@@ -229,7 +229,7 @@ class PresentationDefi extends StatelessWidget {
                               onPressed: () {
                                 //TODO : defi par type
                                 print(type);
-                                if(type == CHALLENGE_TYPE_ECRITURE){
+                                if(type == CHALLENGE_TYPE_LITTERAIRE){
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'", description: "Pour ceux qui ont la ref ;)",)),

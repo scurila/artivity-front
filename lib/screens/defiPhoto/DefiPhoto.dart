@@ -3,14 +3,9 @@ import 'dart:io';
 import 'package:artivity_front/screens/widgets/Popup.dart';
 import 'package:artivity_front/theme/style.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:gallery_saver/gallery_saver.dart';
-import 'package:image_painter/image_painter.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:path_provider/path_provider.dart';
 
 import '../../theme/constants.dart';
-import '../defiAudio/widget/drawing.dart';
 import '../widgets/Headbar.dart';
 
 class DefiPhoto extends StatefulWidget {
@@ -56,7 +51,7 @@ class _DefiPhotoState extends State<DefiPhoto> {
                 Container(height: 2,width: 100,
                   margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(color: Colors.black),),
-                Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
+                Text("2:32", style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
                 const SizedBox(height: 10),
 
 

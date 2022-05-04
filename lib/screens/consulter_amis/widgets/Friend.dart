@@ -1,4 +1,3 @@
-import 'package:artivity_front/screens/consulter_amis/widgets/MyStatefulWidget.dart';
 import 'package:flutter/material.dart';
 import '../../../theme/style.dart';
 

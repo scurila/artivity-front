@@ -50,7 +50,7 @@ class Challenge {
       case "video":
         return CHALLENGE_TYPE_VIDEO;
       case "text":
-        return CHALLENGE_TYPE_ECRITURE;
+        return CHALLENGE_TYPE_LITTERAIRE;
       case "drawing":
         return CHALLENGE_TYPE_DESSIN;
       case "sound":

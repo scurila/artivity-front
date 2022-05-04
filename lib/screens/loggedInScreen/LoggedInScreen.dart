@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:artivity_front/screens/Communaute/Communaute.dart';
 import 'package:artivity_front/screens/mon_profil/MonProfil.dart';
 
-import '../../services/objects/Challenge.dart';
 import '../../theme/style.dart';
 import '../accueil/Accueil.dart';
 class LoggedInScreen extends StatefulWidget {
@@ -25,7 +24,7 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
   late List<Widget> _pages = [
     Accueil(dailyChallenge: widget.contentAccueil.dailyChallenge),
     Communaute(),
-    PresentationDefi(type: CHALLENGE_TYPE_ECRITURE),
+    PresentationDefi(type: CHALLENGE_TYPE_LITTERAIRE),
     ResultatDefi(type: "dessin", author: "William J.", date: "23/06/2022",
       description: "Dessine moi un mouton dans un champs, faisant un poirier su run trampoline en tenant un verre de schnaps.",
       eval: 2, artistsCount: "122345", evalTaNote: 3,),
