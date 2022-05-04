@@ -7,7 +7,6 @@ import 'package:artivity_front/services/AudioPlayerService.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
@@ -21,9 +20,11 @@ class DefiAudio extends StatefulWidget {
     Key? key,
     required this.title,
     required this.description,
+    required this.timeLimitInSeconds,
   }) : super(key: key);
   final String title;
   final String description;
+  final int? timeLimitInSeconds;
 
   @override
   State<DefiAudio> createState() => _DefiAudioState();
@@ -44,7 +45,7 @@ class _DefiAudioState extends State<DefiAudio> {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiAudio, leftContainer: BackButton()),
+                Headbar(rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiAudio, leftContainer: const BackButton()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,10 +66,10 @@ class _DefiAudioState extends State<DefiAudio> {
                   margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(color: Colors.black),),
 
-                CountDownTimer(secondsRemaining: 30),
+                if(widget.timeLimitInSeconds! > 0) const CountDownTimer(secondsRemaining: 30),
                 SizedBox(height: MediaQuery.of(context).size.height*0.1),
                 AnimatedContainer(
-                  duration: Duration(milliseconds: 500),
+                  duration: const Duration(milliseconds: 500),
                   child: ReusableRoundButton(size: 100, image: Icon(Icons.mic_none, size: 50, color: (recording? Colors.white : Colors.black),), onPressed: () async {
                       // record
                     setState(() {
@@ -96,7 +97,7 @@ class _DefiAudioState extends State<DefiAudio> {
                     }
                   }, color: (recording? Colors.red : Styles.accentColor), border: Styles.noBorder),
                 ),
-                Container(child: Text((recording? "Enregistrement en cours ..." : (hasARecording? "Enregistrement prêt.\nRelancer un enregistrement écrasera le précédent !" : "")), style: Styles.TimerText, textAlign: TextAlign.center), margin: EdgeInsets.only(top: 12),),
+                Container(child: Text((recording? "Enregistrement en cours ..." : (hasARecording? "Enregistrement prêt.\nRelancer un enregistrement écrasera le précédent !" : "")), style: Styles.TimerText, textAlign: TextAlign.center), margin: const EdgeInsets.only(top: 12),),
                 SizedBox(height: MediaQuery.of(context).size.height*0.075),
                 ReusableRoundButton(size: 100, image: Icon((playing? Icons.multitrack_audio_rounded : Icons.play_arrow), size: 50), onPressed: (){
                   if (hasARecording && !playing) {
@@ -123,7 +124,7 @@ class _DefiAudioState extends State<DefiAudio> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ReusableRoundButton(size: 80, image: Icon(Icons.download, size: 30), onPressed: (){
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.download, size: 30), onPressed: (){
                       if (hasARecording) {
                         Fluttertoast.showToast(
                           msg: "Création enregistrée sur l'appareil !",
@@ -134,7 +135,7 @@ class _DefiAudioState extends State<DefiAudio> {
                         );
                       }
                     }, color: (hasARecording? Styles.accentColor : Styles.greyedOutColor), border: Styles.noBorder),
-                    ReusableRoundButton(size: 80, image: Icon(Icons.upload_file, size: 30), onPressed: () async {
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.upload_file, size: 30), onPressed: () async {
                       FilePickerResult? result = await FilePicker.platform.pickFiles(type: FileType.audio );
                       if (result != null) {
                         File file = File(result.files.single.path!);
@@ -151,7 +152,7 @@ class _DefiAudioState extends State<DefiAudio> {
                       }
 
                     }, color: Styles.accentColor, border: Styles.noBorder),
-                    ReusableRoundButton(size: 80, image: Icon(Icons.send, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
+                    ReusableRoundButton(size: 80, image: const Icon(Icons.send, size: 30), onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder),
                   ],
                 ),
 

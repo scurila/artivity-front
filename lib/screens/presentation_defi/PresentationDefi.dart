@@ -136,7 +136,7 @@ class PresentationDefi extends StatelessWidget {
                                 if(type == CHALLENGE_TYPE_AUDIO){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const DefiAudio(title: "Ambiance sonore feu de bois", description: "",)),
+                                    MaterialPageRoute(builder: (context) => const DefiAudio(title: "Ambiance sonore feu de bois", description: "",timeLimitInSeconds: 600,)),
                                   );
                                 }
                                 if(type == CHALLENGE_TYPE_VIDEO){
@@ -285,9 +285,7 @@ class PresentationDefi extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 20),
-
-
-                      ]
+                        ]
                     ),
                     ),
                   ),
