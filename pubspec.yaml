@@ -45,6 +45,7 @@ dependencies:
   record: ^3.0.4
   just_audio: ^0.9.20
   file_picker: ^4.5.1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
