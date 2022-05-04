@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Defi extends StatelessWidget {
-  Defi({Key? key, required this.challengeType, required this.executionTime, required this.leftTime, required this.eval, required this.artists}) : super(key: key);
+  const Defi({Key? key, required this.challengeType, required this.executionTime, required this.leftTime, required this.eval, required this.artists}) : super(key: key);
   final String challengeType;
   final String executionTime;
   final String leftTime;

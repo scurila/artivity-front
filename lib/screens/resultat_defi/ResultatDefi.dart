@@ -8,7 +8,7 @@ import '../../theme/style.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class ResultatDefi extends StatelessWidget {
-  ResultatDefi({Key? key, required this.type,required this.author,required this.date,required this.description,required this.eval, required this.artistsCount, required this.evalTaNote}) : super(key: key);
+  const ResultatDefi({Key? key, required this.type,required this.author,required this.date,required this.description,required this.eval, required this.artistsCount, required this.evalTaNote}) : super(key: key);
   final String type;
   final String author;
   final String date;
@@ -32,7 +32,7 @@ class ResultatDefi extends StatelessWidget {
               children: [
                 // ----- App bar -----
                 Headbar(
-                    leftContainer: ReturnButton(),
+                    leftContainer: const ReturnButton(),
                     text: "Résultats du défi",
                     rightContainer: Image.asset('assets/images/ARTHUR.png', width:48)),
                 Container(
@@ -41,25 +41,25 @@ class ResultatDefi extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             // ----- Defi -----
                             Container(
                               margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                               padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                               width: MediaQuery.of(context).size.width - 20,
-                              decoration: BoxDecoration(color: Styles.accentColor,borderRadius: BorderRadius.all(Radius.circular(15))),
+                              decoration: BoxDecoration(color: Styles.accentColor,borderRadius: const BorderRadius.all(const Radius.circular(15))),
                               child: Column( // cards
                                 children: [
                                   Text( "Un défi "+type+" de "+author,textAlign: TextAlign.center,style: Styles.challegeResult),
-                                  SizedBox(height: 10),
+                                  const SizedBox(height: 10),
                                   Text( description,textAlign: TextAlign.left,style: Styles.challegeResultDescription)
                                 ],
                               ),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Text( "En attente de participants jusqu’au "+date+"...",textAlign: TextAlign.center,style: Styles.challengeResultWait),
 
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
 
                             // ----- Evaluation -----
                             Padding(
@@ -83,11 +83,11 @@ class ResultatDefi extends StatelessWidget {
                                   ],
                                 ),
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Container(
                               margin: const EdgeInsets.fromLTRB(20, 0, 10, 10),
                               child:
-                                TextField (
+                                const TextField (
                                   //margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                                   decoration: InputDecoration(
                                       border: InputBorder.none,
@@ -98,7 +98,7 @@ class ResultatDefi extends StatelessWidget {
                     // ----- Inviter -----
                             SizedBox(child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: "Inviter des amis", onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),), width: MediaQuery.of(context).size.width
                               ,),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             // ----- Créations participants
                             Container(
                               margin: const EdgeInsets.fromLTRB(12, 6, 12, 16),

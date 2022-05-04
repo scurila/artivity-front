@@ -25,7 +25,7 @@ class Friend extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       margin: const EdgeInsets.fromLTRB(2,5, 5, 2),
       padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
-      decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: BorderRadius.all(Radius.circular(15)),
+      decoration: BoxDecoration(color: Styles.accentColorLight,borderRadius: const BorderRadius.all(Radius.circular(15)),
       ),
       child: Column(
         children:
@@ -36,12 +36,12 @@ class Friend extends StatelessWidget {
                 child: Image.asset(imgUrl, width: 60,),
               ),
               Container(
-                padding: EdgeInsets.only(left: 10.0),
+                padding: const EdgeInsets.only(left: 10.0),
                 width: MediaQuery.of(context).size.width - 15 - 75 -40,
                 child: Text(name,textAlign: TextAlign.left ,style: Styles.nameText),
               ),
               // Checkbox
-             MyStatefulWidget()
+             const MyStatefulWidget()
             ],
           ),
     ]

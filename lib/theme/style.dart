@@ -67,7 +67,7 @@ class Styles {
     color: greyedOutTextColor,
   );
 
-  static TextStyle evaluationChallengeText = TextStyle(
+  static TextStyle evaluationChallengeText = const TextStyle(
     fontSize: 13,
     color: Colors.black,
   );
