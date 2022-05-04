@@ -3,12 +3,24 @@ import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/consulter_amis/widgets/Friend.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 
+import '../../services/objects/User.dart';
+
 
 class ConsulterAmis extends StatelessWidget {
-  const ConsulterAmis({Key? key}) : super(key: key);
+  const ConsulterAmis({
+    Key? key,
+    required this.friends
+  }) : super(key: key);
+
+  final List<User> friends;
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> friendWidgets = [];
+    for(var i = 0; i < friends.length; i++) {
+      friendWidgets.add(Friend(name: friends[i].pseudo, imgUrl: "assets/images/ARTHUR.png"));
+    }
+
     return Material(
       type: MaterialType.transparency,
       child: Container(
@@ -31,10 +43,10 @@ class ConsulterAmis extends StatelessWidget {
                 child: Scrollbar(
                   child: SingleChildScrollView(
                     child: Column(
-                        children: [
-                          const SizedBox(height: 10),
+                        children: friendWidgets /*[
+                          //const SizedBox(height: 10),
                           // ----- Ami -----
-                          Friend(name: "Willy Wonka", imgUrl: "assets/images/ARTHUR.png"),
+                          /*Friend(name: "Willy Wonka", imgUrl: "assets/images/ARTHUR.png"),
                           Friend(name: "Waluidgi", imgUrl: "assets/images/ARTHUR.png"),
                           Friend(name: "Oh Wait", imgUrl: "assets/images/ARTHUR.png"),
                           Friend(name: "Albus Dumbledore", imgUrl: "assets/images/ARTHUR.png"),
@@ -42,10 +54,10 @@ class ConsulterAmis extends StatelessWidget {
                           Friend(name: "Alex Martin", imgUrl: "assets/images/ARTHUR.png"),
                           Friend(name: "Harry Potter", imgUrl: "assets/images/ARTHUR.png"),
                           Friend(name: "Toto", imgUrl: "assets/images/ARTHUR.png"),
-                          Friend(name: "Alexander", imgUrl: "assets/images/ARTHUR.png"),
+                          Friend(name: "Alexander", imgUrl: "assets/images/ARTHUR.png"),*/
 
 
-                        ]
+                        ]*/
                     ),
                   ),
                 ),

@@ -2,6 +2,7 @@ import 'package:artivity_front/screens/communaute/widgets/DefiCard.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/screens/consulter_amis/ConsulterAmis.dart';
+import 'package:artivity_front/services/UserBackendService.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
@@ -25,10 +26,12 @@ class Communaute extends StatelessWidget {
                   leftContainer: ReturnButton(),
                   text: "Communauté",
                   rightContainer: InkWell (
-                                  onTap: () {
+                                  onTap: () async {
+
+                                    final friends = await UserBackendService.getFriends();
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => const ConsulterAmis()),
+                                      MaterialPageRoute(builder: (context) => ConsulterAmis(friends: friends)),
                                     );
                                   },
                                       child:

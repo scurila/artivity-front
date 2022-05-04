@@ -7,6 +7,8 @@ import 'package:artivity_front/services/objects/ContentAccueil.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:http/http.dart' as http;
 
+import 'objects/User.dart';
+
 
 class UserBackendService {
   static String currentToken = "";
@@ -172,4 +174,25 @@ class UserBackendService {
     }
   }
 
+  static Future<List<User>> getFriends() async {
+    final response = await http.get(Uri.parse(backendServerBase + '/users/friends'),
+      headers: <String, String>{
+        'Authorization': 'Bearer ' + currentToken,
+      }
+    );
+
+    List<User> friends = [];
+    if(response.statusCode == 200) {
+      print(response.body);
+      var friendsJson = jsonDecode(response.body);
+      for(var i = 0; i < friendsJson.length; i++) {
+        friends.add(User.fromJson(friendsJson[i]));
+      }
+      return friends;
+    }
+    else {
+      print(response.statusCode);
+      throw Exception("GetFriendsError");
+    }
+  }
 }
