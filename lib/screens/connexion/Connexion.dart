@@ -7,7 +7,6 @@ import 'package:artivity_front/services/objects/ContentAccueil.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../services/objects/Challenge.dart';
 import '../../theme/style.dart';
 import '../loggedInScreen/LoggedInScreen.dart';
 import '../widgets/ReusableFilledButton.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BackExitProtection extends StatefulWidget {
-  const BackExitProtection({required this.child});
+   const BackExitProtection({Key? key, required this.child}) : super(key: key);
 
   final Widget child;
 

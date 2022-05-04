@@ -12,6 +12,7 @@ import '../../services/UserBackendService.dart';
 import '../../services/objects/Challenge.dart';
 import '../../theme/style.dart';
 import '../defiDessin/DefiDessin.dart';
+import '../resultat_defi/widget/CreationParticipantsCard.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class PresentationDefi extends StatelessWidget {
@@ -61,9 +62,110 @@ class PresentationDefi extends StatelessWidget {
                           ),
                           const SizedBox(height: 20),
 
+                          // ----- Description ------
                           Container(
-                            padding: const EdgeInsets.only(left: 20.0),
+                              padding: const EdgeInsets.only(left: 20.0),
+                              width: MediaQuery.of(context).size.width,
+                              child: Text("Description",textAlign: TextAlign.left ,style: Styles.challengeDescription)
+                          ),
+                          const SizedBox(height: 10),
+                          Container(
+                            width: MediaQuery.of(context).size.width - 5,
+                            margin: const EdgeInsets.symmetric(horizontal: 10),
+                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                            decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(Radius.circular(15)),
+                            ),
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: MediaQuery.of(context).size.width - 15,
+                                  padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          const Text('Titre : ', style: TextStyle(fontWeight: FontWeight.bold),),
+                                          Text(chal!.title + '\n')
+                                        ],
+                                      ),
+                                      Row(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          const Text('Énoncé : ', style: const TextStyle(fontWeight: FontWeight.bold),),
+                                          Text(chal!.subject)
+                                        ],
+                                      ),
+                                      //Text( + '\n\n' + chal!.title + '\n\n' + chal!.subject),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 15),
+
+                          // ----- Bouton commencer défi -----
+                          SizedBox(
+                            child: ReusableFilledButton(
+                              textStyle: Styles.accentButtonText,
+                              text: presentationDefiCommencer.toUpperCase(),
+                              onPressed: () {
+                                //TODO : defi par type
+                                print(type);
+                                if(type == CHALLENGE_TYPE_LITTERAIRE){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'", description: "Pour ceux qui ont la ref ;)",)),
+                                  );
+                                }
+                                /*if(type == CHALLENGE_TYPE_DESSIN){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiDessin(title: "Dessine moi un mouton")),
+                                  );
+                                }*/
+                                if(type == CHALLENGE_TYPE_AUDIO){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiAudio(title: "Ambiance sonore feu de bois", description: "",timeLimitInSeconds: 600,)),
+                                  );
+                                }
+                                if(type == CHALLENGE_TYPE_VIDEO){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiVideo(title: "Video emotion", description: "Sometimes the best caption, is no caption at all...",)),
+                                  );
+                                }
+                                if(type == CHALLENGE_TYPE_PHOTO){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiPhoto(title: "Clair obscur", description: "Rembrandt représente",)),
+                                  );
+                                }
+                                if (type == CHALLENGE_TYPE_DESSIN) {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => DefiDessin(title: "Clair obscur", description: "Rembrandt représente", chal: chal!,)),
+                                  );
+                                }
+
+                              },
+                              color: Styles.accentColor,
+                              border: Styles.noBorder,
+                              margin: const EdgeInsets.fromLTRB(60, 0, 60, 0),
+                            ),
                             width: MediaQuery.of(context).size.width,
+                          ),
+                          const SizedBox(height: 15),
+
+                          Container(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              width: MediaQuery.of(context).size.width,
                               child: Text("Commentaires artiste",textAlign: TextAlign.left ,style: Styles.challengeDescription)
                           ),
                           const SizedBox(height: 10),
@@ -187,117 +289,34 @@ class PresentationDefi extends StatelessWidget {
                           ),
                           const SizedBox(height: 20),
 
-                          // ----- Description ------
+                          // ----- Créations participants
                           Container(
-                              padding: const EdgeInsets.only(left: 20.0),
-                              width: MediaQuery.of(context).size.width,
-                              child: Text("Description",textAlign: TextAlign.left ,style: Styles.challengeDescription)
+                            margin: const EdgeInsets.fromLTRB(12, 6, 12, 16),
+                            width: MediaQuery.of(context).size.width,
+                            child: Text("Créations des participants", style: Styles.labelText, textAlign: TextAlign.left,),
                           ),
-                          const SizedBox(height: 10),
                           Container(
-                            width: MediaQuery.of(context).size.width - 5,
-                            margin: const EdgeInsets.symmetric(horizontal: 10),
-                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                            decoration: BoxDecoration(color: Styles.greyedOutColor,borderRadius: const BorderRadius.all(Radius.circular(15)),
-                            ),
-                            child: Column(
+                            margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+                            width: MediaQuery.of(context).size.width,
+                            child: Column( // cards
                               children: [
-                                Container(
-                                  width: MediaQuery.of(context).size.width - 15,
-                                  padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: Column(
-                                      children: [
-                                        Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            const Text('Titre : ', style: TextStyle(fontWeight: FontWeight.bold),),
-                                            Text(chal!.title + '\n')
-                                          ],
-                                        ),
-                                        Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            const Text('Énoncé : ', style: const TextStyle(fontWeight: FontWeight.bold),),
-                                            Text(chal!.subject)
-                                          ],
-                                        ),
-                                        //Text( + '\n\n' + chal!.title + '\n\n' + chal!.subject),
-                                      ],
-                                    ),
+                                Row(
+                                  children: [
+                                    CreationParticipantsCard(isDone: true, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                    CreationParticipantsCard(isDone: true, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                    //CreationParticipantsCard(title: "Un chaton dans la rue", author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                  ],
                                 ),
+                                Row(
+                                  children: [
+                                    CreationParticipantsCard(isDone: true, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                    CreationParticipantsCard(isDone: false, author: "Jean C.", date: "14/02/2022", imgUrl: "assets/images/creation_placeholder.png"),
+                                  ],
+                                )
                               ],
                             ),
-                          ),
-                          const SizedBox(height: 15),
-
-                          // ----- Bouton commencer défi -----
-                          SizedBox(
-                            child: ReusableFilledButton(
-                              textStyle: Styles.accentButtonText,
-                              text: presentationDefiCommencer.toUpperCase(),
-                              onPressed: () {
-                                //TODO : defi par type
-                                print(type);
-                                try {
-                                  UserBackendService.startChallenge(chal!.id);
-                                  if(type == CHALLENGE_TYPE_ECRITURE){
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'", description: "Pour ceux qui ont la ref ;)",)),
-                                    );
-                                  }
-                                  /*if(type == CHALLENGE_TYPE_DESSIN){
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => const DefiDessin(title: "Dessine moi un mouton")),
-                                  );
-                                }*/
-                                  if(type == CHALLENGE_TYPE_AUDIO){
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => const DefiAudio(title: "Ambiance sonore feu de bois", description: "",)),
-                                    );
-                                  }
-                                  if(type == CHALLENGE_TYPE_VIDEO){
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => const DefiVideo(title: "Video emotion", description: "Sometimes the best caption, is no caption at all...",)),
-                                    );
-                                  }
-                                  if(type == CHALLENGE_TYPE_PHOTO){
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => const DefiPhoto(title: "Clair obscur", description: "Rembrandt représente",)),
-                                    );
-                                  }
-                                  if (type == CHALLENGE_TYPE_DESSIN) {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => DefiDessin(title: "Clair obscur", description: "Rembrandt représente", chal: chal!,)),
-                                    );
-                                  }
-                                } catch (e) {
-                                  Fluttertoast.showToast(
-                                    msg: 'Erreur - le défi n\'a pas pu être démarré !',
-                                    toastLength: Toast.LENGTH_SHORT,
-                                    gravity: ToastGravity.CENTER,
-                                    backgroundColor: Styles.accentColor,
-                                    textColor: Colors.black,
-                                  );
-                                }
-                              },
-                              color: Styles.accentColor,
-                              border: Styles.noBorder,
-                              margin: const EdgeInsets.fromLTRB(60, 0, 60, 0),
-                            ),
-                            width: MediaQuery.of(context).size.width,
-                          ),
-                          const SizedBox(height: 15),
-                      ]
+                          )
+                        ]
                     ),
                     ),
                   ),
