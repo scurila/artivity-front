@@ -26,9 +26,9 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
     Accueil(dailyChallenge: widget.contentAccueil.dailyChallenge),
     Communaute(),
     PresentationDefi(type: CHALLENGE_TYPE_ECRITURE),
-    ResultatDefi(type: "dessin", author: "William J.", date: "23/06/2022",
+    /*ResultatDefi(type: "dessin", author: "William J.", date: "23/06/2022",
       description: "Dessine moi un mouton dans un champs, faisant un poirier su run trampoline en tenant un verre de schnaps.",
-      eval: 2, artistsCount: "122345", evalTaNote: 3,),
+      eval: 2, artistsCount: "122345",),*/
     MonProfil(name: "William Shakespeare", age:22, mail: "willshakespeare@gmail.com", date:"11/04/2022", nbDefi:42, continuousDays: 24),
     //PresentationDefi(type: CHALLENGE_TYPE_DESSIN),
     //PresentationDefi(type: CHALLENGE_TYPE_PHOTO),
@@ -72,11 +72,11 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
                 icon: Icon(Icons.people_outline),
                 label: 'Communauté'
             ),
-            BottomNavigationBarItem(
+            /*BottomNavigationBarItem(
               icon: Icon(Icons.edit_outlined),
               label: 'Défis',
               backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-            ),
+            ),*/
             BottomNavigationBarItem(
               icon: Icon(Icons.image_outlined),
               label: 'Créations',

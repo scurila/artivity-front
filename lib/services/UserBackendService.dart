@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:artivity_front/services/objects/Challenge.dart';
 import 'package:artivity_front/services/objects/ContentAccueil.dart';
@@ -85,6 +86,38 @@ class UserBackendService {
       return c;
     } else {
       throw Exception('LoadingChallengeError');
+    }
+  }
+
+  static void startChallenge(int id) async {
+    final response = await http.post(Uri.parse(backendServerBase + '/challenge/' + id.toString() + '/start'),
+      headers: <String, String>{
+        'Authorization': "Bearer "+currentToken,
+      },);
+
+    if (response.statusCode == 200) {
+      print(response.body);
+    } else {
+      print(response.statusCode);
+      throw Exception('LoadingChallengeError');
+    }
+  }
+
+  static Future<void> submitChallenge(String b64data, int chalId) async {
+    final response = await http.post(Uri.parse(backendServerBase + '/challenge/' + chalId.toString() + '/submit'),
+      headers: <String, String>{
+        'Authorization': "Bearer "+currentToken,
+        'Content-Type': "application/json; charset=UTF-8",
+      },
+      body: jsonEncode(<String, String>{
+        'data': b64data,
+      }));
+
+    if (response.statusCode == 200) {
+      print(response.body);
+    } else {
+      print(response.statusCode);
+      throw Exception('SubmitChallengeError');
     }
   }
 

@@ -6,7 +6,9 @@ import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/presentation_defi/widgets/Defi.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
+import '../../services/UserBackendService.dart';
 import '../../services/objects/Challenge.dart';
 import '../../theme/style.dart';
 import '../defiDessin/DefiDessin.dart';
@@ -240,43 +242,53 @@ class PresentationDefi extends StatelessWidget {
                               onPressed: () {
                                 //TODO : defi par type
                                 print(type);
-                                if(type == CHALLENGE_TYPE_ECRITURE){
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'", description: "Pour ceux qui ont la ref ;)",)),
-                                  );
-                                }
-                                /*if(type == CHALLENGE_TYPE_DESSIN){
+                                try {
+                                  UserBackendService.startChallenge(chal!.id);
+                                  if(type == CHALLENGE_TYPE_ECRITURE){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => const DefiLitteraire(title: "Un texte sans 'e'", description: "Pour ceux qui ont la ref ;)",)),
+                                    );
+                                  }
+                                  /*if(type == CHALLENGE_TYPE_DESSIN){
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(builder: (context) => const DefiDessin(title: "Dessine moi un mouton")),
                                   );
                                 }*/
-                                if(type == CHALLENGE_TYPE_AUDIO){
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => const DefiAudio(title: "Ambiance sonore feu de bois", description: "",)),
+                                  if(type == CHALLENGE_TYPE_AUDIO){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => const DefiAudio(title: "Ambiance sonore feu de bois", description: "",)),
+                                    );
+                                  }
+                                  if(type == CHALLENGE_TYPE_VIDEO){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => const DefiVideo(title: "Video emotion", description: "Sometimes the best caption, is no caption at all...",)),
+                                    );
+                                  }
+                                  if(type == CHALLENGE_TYPE_PHOTO){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => const DefiPhoto(title: "Clair obscur", description: "Rembrandt représente",)),
+                                    );
+                                  }
+                                  if (type == CHALLENGE_TYPE_DESSIN) {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => DefiDessin(title: "Clair obscur", description: "Rembrandt représente", chal: chal!,)),
+                                    );
+                                  }
+                                } catch (e) {
+                                  Fluttertoast.showToast(
+                                    msg: 'Erreur - le défi n\'a pas pu être démarré !',
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.CENTER,
+                                    backgroundColor: Styles.accentColor,
+                                    textColor: Colors.black,
                                   );
                                 }
-                                if(type == CHALLENGE_TYPE_VIDEO){
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => const DefiVideo(title: "Video emotion", description: "Sometimes the best caption, is no caption at all...",)),
-                                  );
-                                }
-                                if(type == CHALLENGE_TYPE_PHOTO){
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => const DefiPhoto(title: "Clair obscur", description: "Rembrandt représente",)),
-                                  );
-                                }
-                                if (type == CHALLENGE_TYPE_DESSIN) {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => const DefiDessin(title: "Clair obscur", description: "Rembrandt représente",)),
-                                  );
-                                }
-
                               },
                               color: Styles.accentColor,
                               border: Styles.noBorder,

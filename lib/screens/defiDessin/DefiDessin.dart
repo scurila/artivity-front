@@ -1,12 +1,17 @@
+import 'dart:convert';
 import 'dart:io';
 
+import 'package:artivity_front/screens/resultat_defi/ResultatDefi.dart';
 import 'package:artivity_front/screens/widgets/Popup.dart';
+import 'package:artivity_front/services/UserBackendService.dart';
+import 'package:artivity_front/services/objects/Challenge.dart';
 import 'package:artivity_front/theme/style.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 import 'package:image_painter/image_painter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../../theme/constants.dart';
@@ -18,9 +23,11 @@ class DefiDessin extends StatefulWidget {
     Key? key,
     required this.title,
     required this.description,
+    required this.chal
   }) : super(key: key);
   final String title;
   final String description;
+  final Challenge chal;
 
   @override
   State<DefiDessin> createState() => _DefiDessinState();
@@ -114,8 +121,48 @@ class _DefiDessinState extends State<DefiDessin> {
                       IconButton(onPressed: (){
                           saveImage();
                       }, icon: const Icon(Icons.download)),
-                      IconButton(onPressed: (){
+                      IconButton(onPressed: () async {
                         // todo : submit
+                        final image = await gKey.currentState?.exportImage();
+                        final directory = (await getApplicationDocumentsDirectory()).path;
+                        await Directory('$directory/sample').create(recursive: true);
+                        final fullPath =
+                        '$directory/sample/${DateTime.now().millisecondsSinceEpoch}.png';
+                        final imgFile = File('$fullPath');
+                        imgFile.writeAsBytesSync(image!);
+                        final bytes = imgFile.readAsBytesSync();
+                        String img64 = base64.encode(bytes);
+
+                        try {
+                          UserBackendService.submitChallenge(img64, widget.chal.id);
+
+                          Fluttertoast.showToast(
+                            msg: 'Envoi de ta création !',
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.SNACKBAR,
+                            backgroundColor: Styles.accentColor,
+                            textColor: Colors.black,
+                          );
+                          // todo : fermer et peut pas retour (pop)
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ResultatDefi(type: widget.chal.type, author: 'PLACEHOLDER', date: DateFormat('dd-MM-yyyy – kk:mm').format(DateTime.fromMillisecondsSinceEpoch(widget.chal.start_time*1000, isUtc: true)).toString(), description: widget.chal.subject, eval: widget.chal.rating, artistsCount: widget.chal.answer_count.toString(),)),
+                          );
+                        } catch (e) {
+                          Fluttertoast.showToast(
+                            msg: 'La création n\'a pas pu être envoyée.',
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.CENTER,
+                            backgroundColor: Styles.accentColor,
+                            textColor: Colors.black,
+                          );
+                        }
+
+                        // todo autres types
+                        // todo gérer edge cases, récupération de l\image pas en string...
+
                       }, icon: const Icon(Icons.send)),
                     ],
                   ),
