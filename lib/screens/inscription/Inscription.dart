@@ -37,7 +37,7 @@ class _InscriptionState extends State<Inscription> {
             Headbar(
                 leftContainer: ReturnButton(),
                 text: inscriptionHeader,
-                rightContainer: Container()
+                rightContainer: Container(height: 48, width: 48,)
             ),
 
             Container(

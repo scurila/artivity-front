@@ -76,7 +76,7 @@ class Accueil extends StatelessWidget {
 
                     //DailyChallengeCard(eval: 4, artists: "193", challengeType: CHALLENGE_TYPE_PHOTO, challengeTitle: "Montre moi ton coucher de soleil !",),
 
-                    DailyChallengeCard(eval:dailyChallenge.rating , artists: dailyChallenge.answer_count.toString(), challengeType: dailyChallenge.typeForFront, challengeTitle: dailyChallenge.title),
+                    DailyChallengeCard(eval:dailyChallenge.rating , artists: dailyChallenge.answer_count.toString(), challengeType: dailyChallenge.typeForFront, challengeTitle: dailyChallenge.title, id: dailyChallenge.id),
 
                     Container(
                       margin: const EdgeInsets.fromLTRB(12, 6, 12, 16),

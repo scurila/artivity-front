@@ -1,5 +1,7 @@
 
 
+import '../../theme/constants.dart';
+
 class Challenge {
   final int id;
   final String title;
@@ -46,15 +48,15 @@ class Challenge {
   associateType(){
     switch(this.type){
       case "video":
-        return "CHALLENGE_TYPE_VIDEO";
+        return CHALLENGE_TYPE_VIDEO;
       case "text":
-        return "CHALLENGE_TYPE_ECRITURE";
+        return CHALLENGE_TYPE_ECRITURE;
       case "drawing":
-        return "CHALLENGE_TYPE_DESSIN";
+        return CHALLENGE_TYPE_DESSIN;
       case "sound":
-        return "CHALLENGE_TYPE_AUDIO";
+        return CHALLENGE_TYPE_AUDIO;
       case "photo":
-        return "CHALLENGE_TYPE_PHOTO";
+        return CHALLENGE_TYPE_PHOTO;
       default:
         return "ERROR";
     }

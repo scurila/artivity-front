@@ -23,7 +23,7 @@ class DefiLitteraire extends StatelessWidget {
             decoration: const BoxDecoration(color: Colors.white),
             child: Column(
                 children: [
-                  Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiLitteraireText, rightContainer: Container()),
+                  Headbar(rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiLitteraireText, leftContainer: BackButton()),
 
                   Row(
                       crossAxisAlignment: CrossAxisAlignment.center,

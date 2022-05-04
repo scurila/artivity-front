@@ -1,8 +1,8 @@
-const String CHALLENGE_TYPE_DESSIN = "DESSIN";
-const String CHALLENGE_TYPE_ECRITURE = "LITTERAIRE";
-const String CHALLENGE_TYPE_AUDIO = "AUDIO";
-const String CHALLENGE_TYPE_PHOTO = "PHOTO";
-const String CHALLENGE_TYPE_VIDEO = "VIDEO";
+const String CHALLENGE_TYPE_DESSIN = "drawing";
+const String CHALLENGE_TYPE_ECRITURE = "text";
+const String CHALLENGE_TYPE_AUDIO = "sound";
+const String CHALLENGE_TYPE_PHOTO = "photo";
+const String CHALLENGE_TYPE_VIDEO = "video";
 
 const String backendServerBase = "http://vps.dblasko.fr:5000/api";
 

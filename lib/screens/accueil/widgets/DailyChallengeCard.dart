@@ -1,4 +1,6 @@
 import 'package:artivity_front/screens/widgets/ReusableCard.dart';
+import 'package:artivity_front/services/UserBackendService.dart';
+import 'package:artivity_front/services/objects/Challenge.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -7,21 +9,27 @@ import '../../../theme/style.dart';
 import '../../presentation_defi/PresentationDefi.dart';
 
 class DailyChallengeCard extends StatelessWidget {
-  const DailyChallengeCard({Key? key, required this.eval, required this.artists, required this.challengeType, required this.challengeTitle}) : super(key: key);
+  const DailyChallengeCard({Key? key, required this.eval, required this.artists, required this.challengeType, required this.challengeTitle, required this.id}) : super(key: key);
   final int eval;
   final String artists;
   final String challengeTitle;
   final String challengeType;
+  final int id;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(9),
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) =>  PresentationDefi(type: challengeType)), // todo : temp
-        );
+      onTap: () async {
+        try {
+          Challenge c = await UserBackendService.loadChallenge(id);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) =>  PresentationDefi(type: challengeType, chal: c,)), // todo : temp
+          );
+        } catch (e) {
+
+        }
       },
       child: Container(
         margin: const EdgeInsets.fromLTRB(10, 8, 10, 8),

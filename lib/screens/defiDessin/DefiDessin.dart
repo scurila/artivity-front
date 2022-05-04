@@ -57,7 +57,7 @@ class _DefiDessinState extends State<DefiDessin> {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiDessin, rightContainer: Container(width: 48, height: 48,)),
+                Headbar(rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiDessin, leftContainer: BackButton()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,

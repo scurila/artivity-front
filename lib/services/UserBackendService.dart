@@ -51,7 +51,7 @@ class UserBackendService {
         }
 
         // LOAD INVITATIONS
-        final responseInvitations = await http.get(Uri.parse(backendServerBase+"users/challenges/invites/received"),
+        /*final responseInvitations = await http.get(Uri.parse(backendServerBase+"users/challenges/invites/received"),
           headers: <String, String>{
           'Authorization': "Bearer "+currentToken,
         },);
@@ -62,6 +62,8 @@ class UserBackendService {
           throw Exception('LoadingInvitationsError');
         }
 
+         */
+
 
 
         content= ContentAccueil(dailyChallenge: c);
@@ -69,5 +71,21 @@ class UserBackendService {
 
   }
 
+  static Future<Challenge> loadChallenge(int id) async {
+    Challenge c;
+
+    final response = await http.get(Uri.parse(backendServerBase + '/challenge/' + id.toString()),
+    headers: <String, String>{
+      'Authorization': "Bearer "+currentToken,
+    },);
+
+    if (response.statusCode == 200) {
+      print(response.body);
+      c = Challenge.fromJson(jsonDecode(response.body));
+      return c;
+    } else {
+      throw Exception('LoadingChallengeError');
+    }
+  }
 
 }

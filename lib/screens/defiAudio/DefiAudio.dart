@@ -44,7 +44,7 @@ class _DefiAudioState extends State<DefiAudio> {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiAudio, rightContainer: Container(width: 48, height: 48,)),
+                Headbar(rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiAudio, leftContainer: BackButton()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,

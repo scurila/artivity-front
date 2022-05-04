@@ -7,15 +7,19 @@ import 'package:artivity_front/screens/presentation_defi/widgets/Defi.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../../services/objects/Challenge.dart';
 import '../../theme/style.dart';
+import '../defiDessin/DefiDessin.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class PresentationDefi extends StatelessWidget {
   const PresentationDefi({
     Key? key,
     required this.type,
+    this.chal,
   }) : super(key: key);
   final String type;
+  final Challenge? chal;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class PresentationDefi extends StatelessWidget {
         type: MaterialType.transparency,
         child: Container(
           width: MediaQuery.of(context).size.width - 5,
-          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
           decoration: const BoxDecoration(color: Colors.white),
 
           child: Column(
@@ -31,11 +35,11 @@ class PresentationDefi extends StatelessWidget {
 
               // ----- App bar -----
               Headbar(
-                  leftContainer: Image.asset('assets/images/ARTHUR.png', height: 48,),
+                  leftContainer: BackButton(),
                   text: "William Shakespeare",
-                  rightContainer: Container()),
+                  rightContainer: Image.asset('assets/images/ARTHUR.png', height: 48,)),
               Container(
-                height: MediaQuery.of(context).size.height - 123 - 40,
+                height: MediaQuery.of(context).size.height - 123 ,
                   child: Scrollbar(
                     child: SingleChildScrollView(
                       child: Column(
@@ -49,7 +53,7 @@ class PresentationDefi extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                Defi(challengeType: CHALLENGE_TYPE_ECRITURE, invitedBy: "Chris D.", executionTime: "2", leftTime: "2h", eval: 2, artists: "122345",),
+                                Defi(challengeType: chal!.type, invitedBy: "Chris D.", executionTime: (chal!.timelimit == null? 'Pas de chrono' : chal!.timelimit!.toString() + ' sec'), leftTime: "2h", eval: 2, artists: "122345",),
                               ],
                             ),
                           ),
@@ -64,7 +68,7 @@ class PresentationDefi extends StatelessWidget {
 
                           // ----- Commentaires + scrollbar -----
                           Container(
-                            height: 120,
+                            height: 140,
                             child: Scrollbar(
                               child: SingleChildScrollView(
                                     child: Column(
@@ -224,6 +228,7 @@ class PresentationDefi extends StatelessWidget {
                               text: presentationDefiCommencer.toUpperCase(),
                               onPressed: () {
                                 //TODO : defi par type
+                                print(type);
                                 if(type == CHALLENGE_TYPE_ECRITURE){
                                   Navigator.push(
                                     context,
@@ -252,6 +257,12 @@ class PresentationDefi extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(builder: (context) => const DefiPhoto(title: "Clair obscur", description: "Rembrandt représente",)),
+                                  );
+                                }
+                                if (type == CHALLENGE_TYPE_DESSIN) {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const DefiDessin(title: "Clair obscur", description: "Rembrandt représente",)),
                                   );
                                 }
 
