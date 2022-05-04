@@ -8,6 +8,7 @@ import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
+import '../creationDefi/CreationDefi1.dart';
 
 class Accueil extends StatelessWidget {
   Accueil({
@@ -52,7 +53,12 @@ class Accueil extends StatelessWidget {
               rightContainer: IconButton(onPressed: () {}, icon: const Icon(Icons.message)),
               text: bienvenueHeader + "William" + ' !',
           ),
-          SizedBox(child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: createChallengeButtonText, onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),), width: MediaQuery.of(context).size.width
+          SizedBox(child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: createChallengeButtonText, onPressed: (){
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) =>  CreationDefi1()), // temporaire stp procure API
+          );
+            }, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),), width: MediaQuery.of(context).size.width
             ,),
           Container(
             height: MediaQuery.of(context).size.height - 179 - 56,
