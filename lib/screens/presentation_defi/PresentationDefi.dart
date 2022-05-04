@@ -53,7 +53,7 @@ class PresentationDefi extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                Defi(challengeType: chal!.type, executionTime: (chal!.timelimit == null? 'Pas de chrono' : chal!.timelimit!.toString() + ' sec'), leftTime: (chal!.leftTime == null? 'autant de temps que tu veux' : (chal!.leftTime!/60/60 < 1? (chal!.leftTime!/60).toString() + " min" : (chal!.leftTime!/60/60).toString() + "h")), eval: 2, artists: "122345",),
+                                Defi(challengeType: chal!.type, executionTime: (chal!.timelimit == null? 'Pas de chrono' : chal!.timelimit!.toString() + ' sec'), leftTime: (chal!.leftTime == null? 'autant de temps que tu veux' : (chal!.leftTime!/60/60 < 1? (chal!.leftTime!/60).floor().toString() + " min" : (chal!.leftTime!/60/60).floor().toString() + "h")), eval: chal!.rating, artists: chal!.answer_count.toString(),),
                               ],
                             ),
                           ),
@@ -209,10 +209,21 @@ class PresentationDefi extends StatelessWidget {
                                   ),
                                   child: Column(
                                       children: [
-                                        Text("Jean V. " + Defi.descriptionDefiInvitation + "poésie collaborative"
-                                        + Defi.descriptionDefiCollaboratifJoin +"(Alexandre R., Maria T., Kevin B.)"
-                                        + Defi.descriptionDefiCollaboratifCompose + " une poésie unique et créative sur « musique, sons, sonorités »." + "\n"
-                                        + Defi.descriptionDefiTexteCollaboratif),
+                                        Row(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text('Titre : ', style: TextStyle(fontWeight: FontWeight.bold),),
+                                            Text(chal!.title + '\n')
+                                          ],
+                                        ),
+                                        Row(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text('Énoncé : ', style: TextStyle(fontWeight: FontWeight.bold),),
+                                            Text(chal!.subject)
+                                          ],
+                                        ),
+                                        //Text( + '\n\n' + chal!.title + '\n\n' + chal!.subject),
                                       ],
                                     ),
                                 ),
