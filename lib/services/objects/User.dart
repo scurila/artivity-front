@@ -2,11 +2,11 @@
 
 import '../../theme/constants.dart';
 
-class User {
+class  User {
   final int id;
   final String pseudo;
 
-  User({
+  const User({
     required this.id,
     required this.pseudo,
 
