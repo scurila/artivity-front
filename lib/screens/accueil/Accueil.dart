@@ -62,19 +62,17 @@ class Accueil extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 10),
                           scrollDirection: Axis.horizontal,
                           children: const [
-                            InvitationDefi(challengeType: CHALLENGE_TYPE_DESSIN, invitedBy: "Élodie C.", executionTime: "5", leftTime: "22h", eval: 4, artists: "12345",),
-                            InvitationDefi(challengeType: CHALLENGE_TYPE_PHOTO, invitedBy: "Jean V.", executionTime: "10", leftTime: "12h", eval: 1, artists: "203",),
-                            InvitationDefi(challengeType: CHALLENGE_TYPE_LITTERAIRE, invitedBy: "Chris C.", executionTime: "2", leftTime: "2h", eval: 2, artists: "122345",),
-                            InvitationDefi(challengeType: CHALLENGE_TYPE_AUDIO, invitedBy: "Math C.", executionTime: "1", leftTime: "10h", eval: 3, artists: "125",),
-                            InvitationDefi(challengeType: CHALLENGE_TYPE_DESSIN, invitedBy: "Ellie C.", executionTime: "9", leftTime: "1h", eval: 5, artists: "1345",),
-                            InvitationDefi(challengeType: CHALLENGE_TYPE_PHOTO, invitedBy: "Eric C.", executionTime: "8", leftTime: "4h", eval: 4, artists: "5",),
-                            InvitationDefi(challengeType: CHALLENGE_TYPE_LITTERAIRE, invitedBy: "Ed C.", executionTime: "5", leftTime: "23h", eval: 4, artists: "45",),
+                            InvitationDefi(challengeType: CHALLENGE_TYPE_DESSIN, invitedBy: "Élodie C.", executionTime: "5", leftTime: "22h", eval: 4, artists: "12345", id:1,),
+                            InvitationDefi(challengeType: CHALLENGE_TYPE_PHOTO, invitedBy: "Jean V.", executionTime: "10", leftTime: "12h", eval: 1, artists: "203",id:1,),
+                            InvitationDefi(challengeType: CHALLENGE_TYPE_ECRITURE, invitedBy: "Chris C.", executionTime: "2", leftTime: "2h", eval: 2, artists: "122345",id:1,),
+                            InvitationDefi(challengeType: CHALLENGE_TYPE_AUDIO, invitedBy: "Math C.", executionTime: "1", leftTime: "10h", eval: 3, artists: "125",id:1,),
+                            InvitationDefi(challengeType: CHALLENGE_TYPE_DESSIN, invitedBy: "Ellie C.", executionTime: "9", leftTime: "1h", eval: 5, artists: "1345",id:1,),
+                            InvitationDefi(challengeType: CHALLENGE_TYPE_PHOTO, invitedBy: "Eric C.", executionTime: "8", leftTime: "4h", eval: 4, artists: "5",id:1,),
+                            InvitationDefi(challengeType: CHALLENGE_TYPE_ECRITURE, invitedBy: "Ed C.", executionTime: "5", leftTime: "23h", eval: 4, artists: "45",id:1,),
                           ],
                         ),
                       ),
                     ),
-
-                    //DailyChallengeCard(eval: 4, artists: "193", challengeType: CHALLENGE_TYPE_PHOTO, challengeTitle: "Montre moi ton coucher de soleil !",),
 
                     DailyChallengeCard(eval:dailyChallenge.rating , artists: dailyChallenge.answer_count.toString(), challengeType: dailyChallenge.typeForFront, challengeTitle: dailyChallenge.title, id: dailyChallenge.id),
 

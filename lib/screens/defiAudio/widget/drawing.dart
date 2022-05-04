@@ -24,7 +24,7 @@ class _DessinState extends State<Dessin> {
         initialStrokeWidth: 2,
         //textDelegate: DutchTextDelegate(),
         initialColor: Colors.green,
-        initialPaintMode: PaintMode.line,
+        initialPaintMode: PaintMode.freeStyle,
       )
         :
       ImagePainter.file(
@@ -34,7 +34,7 @@ class _DessinState extends State<Dessin> {
         initialStrokeWidth: 2,
         //textDelegate: DutchTextDelegate(),
         initialColor: Colors.green,
-        initialPaintMode: PaintMode.line,
+        initialPaintMode: PaintMode.freeStyle,
       );
   }
 }
