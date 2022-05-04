@@ -65,7 +65,7 @@ class Accueil extends StatelessWidget {
                       margin: const EdgeInsets.fromLTRB(12, 0, 12, 16),
                       child: Text(invitationsHeader, style: Styles.labelText, textAlign: TextAlign.left,),
                     ),
-                    (invitations.length>0?
+                    (invitations.isNotEmpty?
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: 280,
