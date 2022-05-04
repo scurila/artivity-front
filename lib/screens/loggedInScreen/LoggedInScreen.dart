@@ -5,6 +5,7 @@ import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:artivity_front/screens/Communaute/Communaute.dart';
 import 'package:artivity_front/screens/mon_profil/MonProfil.dart';
+import 'package:artivity_front/screens/galerie/Galerie.dart';
 
 import '../../theme/style.dart';
 import '../accueil/Accueil.dart';
@@ -24,7 +25,7 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
   late List<Widget> _pages = [
     Accueil(dailyChallenge: widget.contentAccueil.dailyChallenge, invitations: widget.contentAccueil.invitations),
     Communaute(),
-    Communaute(),
+    Galerie(),
     /*ResultatDefi(type: "dessin", author: "William J.", date: "23/06/2022",
       description: "Dessine moi un mouton dans un champs, faisant un poirier su run trampoline en tenant un verre de schnaps.",
       eval: 2, artistsCount: "122345",),*/

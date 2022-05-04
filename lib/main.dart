@@ -29,8 +29,6 @@ class MyApp extends StatelessWidget {
       theme: Styles.baseTheme,
       home:
       const BackExitProtection(child: Ouverture()),
-            //BackExitProtection(child: Communaute()),
-           //const  BackExitProtection(child: ConsulterAmis()),
 
     );
   }
