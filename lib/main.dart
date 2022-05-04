@@ -41,8 +41,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Artivity',
       theme: Styles.baseTheme,
-      home: const BackExitProtection(child: Communaute()),
-
+      home:
+        const BackExitProtection(child: Ouverture()),
+           //const  BackExitProtection(child: ConsulterAmis()),
 
     );
   }
