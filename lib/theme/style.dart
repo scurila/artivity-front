@@ -151,7 +151,7 @@ class Styles {
       return "assets/images/defi_dessin.svg";
     } else if (challengeType == CHALLENGE_TYPE_AUDIO) {
       return "assets/images/defi_audio.svg";
-    } else if (challengeType == CHALLENGE_TYPE_ECRITURE) {
+    } else if (challengeType == CHALLENGE_TYPE_LITTERAIRE) {
       return "assets/images/defi_ecriture.svg";
     } else {
       // photo
@@ -164,7 +164,7 @@ class Styles {
       return "assets/images/daily_dessin.svg";
     } else if (challengeType == CHALLENGE_TYPE_AUDIO) {
       return "assets/images/daily_audio.svg";
-    } else if (challengeType == CHALLENGE_TYPE_ECRITURE) {
+    } else if (challengeType == CHALLENGE_TYPE_LITTERAIRE) {
       return "assets/images/daily_ecriture.svg";
     } else {
       // photo
@@ -177,7 +177,7 @@ class Styles {
       return invitationDefiDessinTitle;
     } else if (challengeType == CHALLENGE_TYPE_AUDIO) {
       return invitationDefiAudioTitle;
-    } else if (challengeType == CHALLENGE_TYPE_ECRITURE) {
+    } else if (challengeType == CHALLENGE_TYPE_LITTERAIRE) {
       return invitationDefiTexteTitle;
     } else {
       // photo

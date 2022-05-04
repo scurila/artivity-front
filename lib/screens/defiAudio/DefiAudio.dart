@@ -1,14 +1,14 @@
 import 'dart:io';
 
+import 'package:artivity_front/screens/widgets/CountDownTimer.dart';
 import 'package:artivity_front/screens/widgets/Popup.dart';
 import 'package:artivity_front/screens/widgets/ReusableRoundButton.dart';
 import 'package:artivity_front/services/AudioPlayerService.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+//import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:gallery_saver/gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
 import '../../theme/constants.dart';
@@ -65,7 +65,7 @@ class _DefiAudioState extends State<DefiAudio> {
                   margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(color: Colors.black),),
 
-                Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
+                CountDownTimer(secondsRemaining: 30),
                 SizedBox(height: MediaQuery.of(context).size.height*0.1),
                 AnimatedContainer(
                   duration: Duration(milliseconds: 500),

@@ -7,7 +7,6 @@ import '../widgets/FormTextFieldRow.dart';
 import '../widgets/Headbar.dart';
 import '../widgets/ReturnButton.dart';
 import '../widgets/ReusableFilledButton.dart';
-import 'package:artivity_front/services/UserBackendService.dart';
 
 class Inscription extends StatefulWidget {
   const Inscription({Key? key}) : super(key: key);

@@ -41,7 +41,7 @@ class Friend extends StatelessWidget {
                 child: Text(name,textAlign: TextAlign.left ,style: Styles.nameText),
               ),
               // Checkbox
-              MyStatefulWidget()
+             MyStatefulWidget()
             ],
           ),
     ]
