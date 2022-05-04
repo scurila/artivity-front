@@ -41,7 +41,9 @@ class _DefiPhotoState extends State<DefiPhoto> {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiDessin, leftContainer: const BackButton()),
+                Headbar(rightContainer: Image.asset('assets/images/Artivity.png', width: 44,),//Image.asset('assets/images/ARTHUR.png', width: 48,),
+                    text: defiDessin,
+                    leftContainer: const BackButton()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,

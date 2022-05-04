@@ -23,7 +23,9 @@ class DefiVideo extends StatelessWidget {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiVideoText, rightContainer: Container()),
+                Headbar(leftContainer: Image.asset('assets/images/Artivity.png', width: 44,),//Image.asset('assets/images/ARTHUR.png', width: 48,),
+                    text: defiVideoText,
+                    rightContainer: Container()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
