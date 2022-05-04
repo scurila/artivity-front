@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
-import '../../theme/constants.dart';
 
+import '../../theme/constants.dart';
 import '../../theme/style.dart';
 import '../widgets/Headbar.dart';
 
@@ -66,7 +66,7 @@ class _DefiAudioState extends State<DefiAudio> {
                   margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(color: Colors.black),),
 
-                if(widget.timeLimitInSeconds! > 0) const CountDownTimer(secondsRemaining: 30),
+                if(widget.timeLimitInSeconds! > 0) CountDownTimer(secondsRemaining: widget.timeLimitInSeconds!),
                 SizedBox(height: MediaQuery.of(context).size.height*0.1),
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 500),
