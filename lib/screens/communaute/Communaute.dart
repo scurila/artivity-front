@@ -1,15 +1,10 @@
-import 'package:artivity_front/screens/defiLitteraire/DefiLitteraire.dart';
-import 'package:artivity_front/screens/presentation_defi/widgets/Defi.dart';
-import 'package:artivity_front/screens/accueil/widgets/CreationCard.dart';
 import 'package:artivity_front/screens/communaute/widgets/DefiCard.dart';
-
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
-import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
-import '../widgets/ReusableFilledButton.dart';
+
 
 class Communaute extends StatelessWidget {
   const Communaute({Key? key}) : super(key: key);

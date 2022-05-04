@@ -76,3 +76,15 @@ const String defiPhotoText = "Défi photo";
 const String titrePopup = "Détails du défi";
 const String enoncePopup = "Enoncé: ";
 const String descriptionPopup = "Description: ";
+
+// Résultats defi
+const String gradeLabel = "TA NOTE : ";
+const String creationOfDefi = "Création de ";
+const String yourCreation = "Ta création";
+const String waitingCreationOf = "En attente de la création de ";
+const String modifButtonText = "Modifier le mot de passe";
+const String consulterAmisText = "Consulter amis";
+const String consulterGalerieText = "Consulter la galerie";
+const String consulterDeconnecterText = "Se deconnecter";
+const String deleteAccountText = "Supprimer le compte";
+

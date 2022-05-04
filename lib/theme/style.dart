@@ -10,6 +10,7 @@ class Styles {
   static Color greyedColor = const Color.fromRGBO(219, 219, 219, 1);
   static Color greyedOutTextColor = const Color.fromRGBO(127, 127, 127, 1);
   static Color greyedNavbarButton = const Color.fromRGBO(169, 169, 169, 1);
+  static Color redColorLight = const Color.fromRGBO(242, 143, 143, 1);
 
   static String loginBackgroundPath = 'assets/images/bg.png';
   static String loginLogoPath = 'assets/images/Worldline_logo_blue_bg.png';
@@ -68,6 +69,11 @@ class Styles {
     color: greyedOutTextColor,
   );
 
+  static TextStyle evaluationChallengeText = TextStyle(
+    fontSize: 13,
+    color: Colors.black,
+  );
+
   static TextStyle TimerText = TextStyle(
     fontSize: 18,
     color: greyedOutTextColor
@@ -110,6 +116,31 @@ class Styles {
 
   static TextStyle notificationDescription = const TextStyle(
       fontSize: 12,
+      color: Colors.black
+  );
+
+  static TextStyle challegeResult = const TextStyle(
+      fontSize: 18,
+      color: Colors.white
+  );
+  static TextStyle challegeResultDescription = const TextStyle(
+      fontSize: 14,
+      color: Colors.white
+  );
+
+  static TextStyle challengeResultWait = const TextStyle(
+      fontSize: 14,
+      color: Colors.black,
+      fontStyle: FontStyle.italic
+  );
+
+  static TextStyle profileData = const TextStyle(
+      fontSize: 16,
+      color: Colors.black
+  );
+
+  static TextStyle nameText = const TextStyle(
+      fontSize: 20,
       color: Colors.black
   );
 
