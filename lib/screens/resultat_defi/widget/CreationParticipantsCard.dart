@@ -32,7 +32,7 @@ class CreationParticipantsCard extends StatelessWidget {
               ),
             ),
             Text( (isDone ? creationOfDefi : waitingCreationOf) + author, style: Styles.challengeInvitedBy,),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Text("Le "+date)
           ],
         ),

@@ -32,7 +32,7 @@ class _DefiPhotoState extends State<DefiPhoto> {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiDessin, leftContainer: BackButton()),
+                Headbar(rightContainer: Image.asset('assets/images/ARTHUR.png', width: 48,), text: defiDessin, leftContainer: const BackButton()),
 
                 Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,7 +73,7 @@ class _DefiPhotoState extends State<DefiPhoto> {
                         setState(() {
                           currentBgFile = File(image!.path);
                         });
-                      }, icon: Icon(Icons.camera_alt_outlined)),
+                      }, icon: const Icon(Icons.camera_alt_outlined)),
                       IconButton(onPressed: () async {
 
                         final ImagePicker _picker = ImagePicker();

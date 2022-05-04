@@ -9,7 +9,7 @@ import 'package:artivity_front/screens/mon_profil/MonProfil.dart';
 import '../../theme/style.dart';
 import '../accueil/Accueil.dart';
 class LoggedInScreen extends StatefulWidget {
-   LoggedInScreen({Key? key,
+   const LoggedInScreen({Key? key,
      required this.contentAccueil
   }) : super(key: key);
   final ContentAccueil contentAccueil;

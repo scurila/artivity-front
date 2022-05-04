@@ -3,8 +3,6 @@ import 'dart:convert';
 import 'package:artivity_front/services/objects/Challenge.dart';
 import 'package:artivity_front/services/objects/ContentAccueil.dart';
 import 'package:artivity_front/theme/constants.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 
