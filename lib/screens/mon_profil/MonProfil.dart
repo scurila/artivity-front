@@ -1,6 +1,9 @@
+import 'package:artivity_front/screens/consulter_amis/ConsulterAmis.dart';
 import 'package:flutter/material.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReusableFilledButton.dart';
+import 'package:artivity_front/screens/ouverture/Ouverture.dart';
+import 'package:artivity_front/screens/galerie/Galerie.dart';
 import '../../theme/constants.dart';
 import '../../theme/style.dart';
 
@@ -83,7 +86,12 @@ class MonProfil extends StatelessWidget {
                                         child: ReusableFilledButton(
                                           textStyle: Styles.accentButtonText,
                                           text: consulterAmisText.toUpperCase(),
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) => const ConsulterAmis()),
+                                            );
+                                          },
                                           color: Styles.accentColor,
                                           border: Styles.noBorder,
                                           margin: const EdgeInsets.fromLTRB(90, 0, 90, 0),
@@ -95,7 +103,12 @@ class MonProfil extends StatelessWidget {
                                         child: ReusableFilledButton(
                                           textStyle: Styles.accentButtonText,
                                           text: consulterGalerieText.toUpperCase(),
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) => const Galerie()),
+                                            );
+                                          },
                                           color: Styles.accentColor,
                                           border: Styles.noBorder,
                                           margin: const EdgeInsets.fromLTRB(90, 0, 90, 0),
@@ -103,11 +116,17 @@ class MonProfil extends StatelessWidget {
                                         width: MediaQuery.of(context).size.width,
                                       ),
                                       const SizedBox(height: 40),
+
                                       SizedBox(
                                         child: ReusableFilledButton(
                                           textStyle: Styles.accentButtonText,
                                           text: consulterDeconnecterText.toUpperCase(),
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) => const Ouverture()),
+                                            );
+                                          },
                                           color: Styles.accentColor,
                                           border: Styles.noBorder,
                                           margin: const EdgeInsets.fromLTRB(90, 0, 90, 0),

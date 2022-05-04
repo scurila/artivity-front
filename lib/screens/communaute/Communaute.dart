@@ -32,7 +32,7 @@ class Communaute extends StatelessWidget {
                                     );
                                   },
                                       child:
-                                        Image.asset('assets/images/friends.png', width:48)),
+                                        Image.asset('assets/images/friends.png', width:30)),
               ),
               Container(
                 height: MediaQuery.of(context).size.height - 123 - 40,
