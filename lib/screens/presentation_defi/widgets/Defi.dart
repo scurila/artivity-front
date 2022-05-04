@@ -4,9 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Defi extends StatelessWidget {
-  Defi({Key? key, required this.challengeType, required this.invitedBy, required this.executionTime, required this.leftTime, required this.eval, required this.artists}) : super(key: key);
+  Defi({Key? key, required this.challengeType, required this.executionTime, required this.leftTime, required this.eval, required this.artists}) : super(key: key);
   final String challengeType;
-  final String invitedBy;
   final String executionTime;
   final String leftTime;
   final int eval;
@@ -43,21 +42,18 @@ class Defi extends StatelessWidget {
             Expanded(
               child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                     width: MediaQuery.of(context).size.width,
                     child: Text(Styles.getChallengeTypeLabel(challengeType), style: Styles.challengeTitle, textAlign: TextAlign.left,),
                 ),
                 const SizedBox(height: 24),
-                Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(invitedByText + invitedBy, style: Styles.challengeTitle,textAlign: TextAlign.left,)
-                ),
-                Row(
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(executionTime + minutes, style: Styles.challengeTimeBlack),
-                    const Text(" • "),
-                    Text(timeLeft + leftTime + " !", style: Styles.challengeTimePink,),
+                    Text(executionTime, style: Styles.challengeTimeBlack, textAlign: TextAlign.start,),
+                    Text(timeLeft + leftTime + " !", style: Styles.challengeTimePink, textAlign: TextAlign.start,),
                   ],
                 ),
                 Padding(

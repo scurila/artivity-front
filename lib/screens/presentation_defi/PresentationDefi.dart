@@ -53,7 +53,7 @@ class PresentationDefi extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                Defi(challengeType: chal!.type, invitedBy: "Chris D.", executionTime: (chal!.timelimit == null? 'Pas de chrono' : chal!.timelimit!.toString() + ' sec'), leftTime: "2h", eval: 2, artists: "122345",),
+                                Defi(challengeType: chal!.type, executionTime: (chal!.timelimit == null? 'Pas de chrono' : chal!.timelimit!.toString() + ' sec'), leftTime: (chal!.leftTime == null? 'autant de temps que tu veux' : (chal!.leftTime!/60/60 < 1? (chal!.leftTime!/60).toString() + " min" : (chal!.leftTime!/60/60).toString() + "h")), eval: 2, artists: "122345",),
                               ],
                             ),
                           ),

@@ -11,10 +11,10 @@ class Challenge {
   final int start_time;
   final int? end_time;
   final int? timelimit;
+  final int? leftTime;
   //final String user_created;
   final int rating;
   final int answer_count;
-
 
   Challenge({
     required this.id,
@@ -27,7 +27,8 @@ class Challenge {
     //required this.user_created,
     this.rating = 0,
     required this.answer_count,
-    this.typeForFront=" "
+    this.typeForFront=" ",
+    this.leftTime,
   }){typeForFront=associateType();}
 
   factory Challenge.fromJson(Map<String, dynamic> json) {
@@ -42,6 +43,7 @@ class Challenge {
       //user_created: json['challenge']['user_created'],
       rating: json ['challenge']['rating'],
       answer_count: json ['challenge']['answer_count'],
+      leftTime: json['challenge']['time_remaining'],
     );
   }
 
