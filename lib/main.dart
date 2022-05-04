@@ -1,10 +1,17 @@
+
+import 'package:artivity_front/screens/accueil/Accueil.dart';
+import 'package:artivity_front/screens/consulter_amis/ConsulterAmis.dart';
+import 'package:artivity_front/screens/creation/creation.dart';
 import 'package:artivity_front/screens/defiAudio/DefiAudio.dart';
 import 'package:artivity_front/screens/ouverture/Ouverture.dart';
+import 'package:artivity_front/screens/mon_profil/MonProfil.dart';
+import 'package:artivity_front/screens/presentation_defi/PresentationDefi.dart';
+import 'package:artivity_front/screens/resultat_defi/ResultatDefi.dart';
+import 'package:artivity_front/screens/consulter_amis/widgets/MyStatefulWidget.dart';
 import 'package:artivity_front/screens/widgets/BackExitProtection.dart';
 import 'package:artivity_front/theme/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'screens/defiDessin/DefiDessin.dart';
 
 void main() {
@@ -30,7 +37,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Artivity',
       theme: Styles.baseTheme,
-      home: const BackExitProtection(child: Ouverture()),
+      home:
+            const BackExitProtection(child: Ouverture()),
+           //const  BackExitProtection(child: ConsulterAmis()),
+      /*Scaffold(
+        body: const Center(
+          child: MyStatefulWidget(),
+        ),
+      ),*/
     );
   }
 }
