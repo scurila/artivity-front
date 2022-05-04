@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/consulter_amis/widgets/Friend.dart';
-import 'package:artivity_front/screens/widgets/ReusableFilledButton.dart';
-import '../../theme/constants.dart';
-import '../../theme/style.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 
 
