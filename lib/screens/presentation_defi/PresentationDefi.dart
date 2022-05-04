@@ -35,7 +35,7 @@ class PresentationDefi extends StatelessWidget {
 
               // ----- App bar -----
               Headbar(
-                  leftContainer: BackButton(),
+                  leftContainer: const BackButton(),
                   text: "William Shakespeare",
                   rightContainer: Image.asset('assets/images/ARTHUR.png', height: 48,)),
               Container(
@@ -212,14 +212,14 @@ class PresentationDefi extends StatelessWidget {
                                         Row(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text('Titre : ', style: TextStyle(fontWeight: FontWeight.bold),),
+                                            const Text('Titre : ', style: TextStyle(fontWeight: FontWeight.bold),),
                                             Text(chal!.title + '\n')
                                           ],
                                         ),
                                         Row(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text('Énoncé : ', style: TextStyle(fontWeight: FontWeight.bold),),
+                                            const Text('Énoncé : ', style: const TextStyle(fontWeight: FontWeight.bold),),
                                             Text(chal!.subject)
                                           ],
                                         ),
