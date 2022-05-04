@@ -4,6 +4,7 @@ import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReusableFilledButton.dart';
 import 'package:artivity_front/screens/ouverture/Ouverture.dart';
 import 'package:artivity_front/screens/galerie/Galerie.dart';
+import 'package:artivity_front/services/UserBackendService.dart';
 import '../../theme/constants.dart';
 import '../../theme/style.dart';
 
@@ -86,10 +87,12 @@ class MonProfil extends StatelessWidget {
                                         child: ReusableFilledButton(
                                           textStyle: Styles.accentButtonText,
                                           text: consulterAmisText.toUpperCase(),
-                                          onPressed: () {
+                                          onPressed: () async {
+
+                                            final friends = await UserBackendService.getFriends();
                                             Navigator.push(
                                               context,
-                                              MaterialPageRoute(builder: (context) => const ConsulterAmis()),
+                                              MaterialPageRoute(builder: (context) => ConsulterAmis(friends: friends)),
                                             );
                                           },
                                           color: Styles.accentColor,
