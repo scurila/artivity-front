@@ -50,15 +50,19 @@ class InvitationDefi extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Text(title, style: Styles.challengeTitle, textAlign: TextAlign.left,),
+              SizedBox(
+                width:160,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Text(title, style: Styles.challengeTitle, textAlign: TextAlign.left, maxLines: 2, textWidthBasis:  TextWidthBasis.parent),
+                ),
               ),
+
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(Styles.getChallengeTypeLabel(challengeType), textAlign: TextAlign.left,),
-                  Text(executionTime , style: Styles.challengeTimeBlack),
+                  Text(Styles.getChallengeTypeLabel(challengeType), textAlign: TextAlign.left),
+                 // Text(executionTime , style: Styles.challengeTimeBlack),//TODO: à fixer
                   Text(timeLeft + leftTime + " !", style: Styles.challengeTimePink,),
                 ],
               ),

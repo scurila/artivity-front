@@ -39,8 +39,8 @@ class PresentationDefi extends StatelessWidget {
               // ----- App bar -----
               Headbar(
                   leftContainer: const BackButton(),
-                  text: "William Shakespeare",
-                  rightContainer: Image.asset('assets/images/ARTHUR.png', height: 48,)),
+                  text: UserBackendService.currentPseudo,
+                  rightContainer: Image.asset('assets/images/Artivity.png', height: 44,)),
               Container(
                 height: MediaQuery.of(context).size.height - 123 ,
                   child: Scrollbar(

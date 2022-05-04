@@ -18,6 +18,7 @@ class ReusableCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+          
           padding: padding,
           child: InkWell(child: Ink(child: child),
               borderRadius: BorderRadius.circular(8)),

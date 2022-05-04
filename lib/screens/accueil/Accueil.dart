@@ -3,6 +3,7 @@ import 'package:artivity_front/screens/accueil/widgets/DailyChallengeCard.dart';
 import 'package:artivity_front/screens/accueil/widgets/InvitationDefi.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReusableFilledButton.dart';
+import 'package:artivity_front/services/UserBackendService.dart';
 import 'package:artivity_front/services/objects/Challenge.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
@@ -49,9 +50,11 @@ class Accueil extends StatelessWidget {
             ),
           ),*/
           Headbar(
-              leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,),
+              //leftContainer: Image.asset('assets/images/ARTHUR.png', width: 48,),
+              leftContainer: Image.asset('assets/images/Artivity.png', width: 44,),
               rightContainer: IconButton(onPressed: () {}, icon: const Icon(Icons.message)),
-              text: bienvenueHeader + "William" + ' !',
+              //text: bienvenueHeader + "William" + ' !',
+              text: bienvenueHeader + UserBackendService.currentPseudo + ' !',
           ),
           SizedBox(child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: createChallengeButtonText, onPressed: (){
             Navigator.push(

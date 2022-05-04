@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 
 class UserBackendService {
   static String currentToken = "";
+  static String currentPseudo="";
 
   static Future<String> login(String pseudo, String pwd) async {
     http.Response resp = await http.post(
@@ -26,6 +27,7 @@ class UserBackendService {
     if (resp.statusCode == 200) {
       var responseJson = json.decode(resp.body.toString());
       currentToken = responseJson['token'];
+      currentPseudo = pseudo;
       return currentToken;
     } else {
       throw Exception('LoginError');
