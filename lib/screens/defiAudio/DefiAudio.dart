@@ -65,7 +65,7 @@ class _DefiAudioState extends State<DefiAudio> {
                   margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(color: Colors.black),),
 
-                Text(timer, style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
+                CountDownTimer(secondsRemaining: 30),
                 SizedBox(height: MediaQuery.of(context).size.height*0.1),
                 AnimatedContainer(
                   duration: Duration(milliseconds: 500),
