@@ -21,6 +21,7 @@ class UserBackendService {
       })
     );
 
+    print(resp.statusCode);
     if (resp.statusCode == 200) {
       var responseJson = json.decode(resp.body.toString());
       currentToken = responseJson['token'];
@@ -32,7 +33,7 @@ class UserBackendService {
 
   static Future<String> signup(String pseudo, String email, String pwd) async {
     http.Response resp = await http.post(
-        Uri.parse(backendServerBase + '/users'),
+        Uri.parse(backendServerBase + '/users/'),
         headers: <String, String>{
           'Content-Type': "application/json; charset=UTF-8",
           'Connection': "close",

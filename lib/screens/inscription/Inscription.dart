@@ -1,5 +1,6 @@
 import 'package:artivity_front/screens/Connexion/Connexion.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../services/UserBackendService.dart';
 import '../../theme/constants.dart';
@@ -26,7 +27,7 @@ class _InscriptionState extends State<Inscription> {
 
 
 
-  showAlertDialog(BuildContext context, String title, content) {
+  showAlertDialog(BuildContext context) {
     Widget okButton = TextButton(
       child: const Text("OK"),
       onPressed: () {
@@ -36,8 +37,8 @@ class _InscriptionState extends State<Inscription> {
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title:  Text(title),
-      content: Text(content),
+      title:  Text( "Échec"),
+      content: Text("Données d'inscription invalides."),
       actions: [
         okButton,
       ],
@@ -99,14 +100,20 @@ class _InscriptionState extends State<Inscription> {
                                 onPressed: () async {
                                   try {
                                     String text = await UserBackendService.signup(controllerLogin.text, controllerMail.text, controllerPwd.text);
-                                    showAlertDialog(context,text ,"Vous pouvez dès maintenant vous connecter");
+                                    Fluttertoast.showToast(
+                                      msg: "Inscription réussie ! Vous pouvez dès à présent vous connecter",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.SNACKBAR,
+                                      backgroundColor: Styles.accentColor,
+                                      textColor: Colors.black,
+                                    );
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(builder: (context) => Connexion()),
                                     );
                                   } catch (e) {
                                     print(e);
-                                    showAlertDialog(context, "Échec", "Données d'inscription invalides.");
+                                    showAlertDialog(context);
                                   }
                                 },
                                 color: Styles.accentColor,
