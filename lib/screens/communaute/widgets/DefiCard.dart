@@ -12,7 +12,7 @@ class DefiCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 5, bottom: 5, left: 5, right: 5),
-      height: 170,
+      height: 175,
       width: MediaQuery.of(context).size.width/2 - 35,
       child: ReusableCard(
         borderRadius: 9,
