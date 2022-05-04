@@ -1,3 +1,4 @@
+import 'package:artivity_front/screens/consulter_amis/widgets/MyStatefulWidget.dart';
 import 'package:flutter/material.dart';
 import '../../../theme/style.dart';
 
@@ -40,7 +41,7 @@ class Friend extends StatelessWidget {
                 child: Text(name,textAlign: TextAlign.left ,style: Styles.nameText),
               ),
               // Checkbox
-              MyStatefulWidget()
+             MyStatefulWidget()
             ],
           ),
     ]
