@@ -64,7 +64,7 @@ class _CountDownTimerState extends State<CountDownTimer>
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed ||
             status == AnimationStatus.dismissed) {
-          whenTimeExpires();
+          whenTimeExpires;
         }
       });
   }
@@ -84,7 +84,7 @@ class _CountDownTimerState extends State<CountDownTimer>
           ..reverse(from: widget.secondsRemaining.toDouble())
           ..addStatusListener((status) {
             if (status == AnimationStatus.completed) {
-              whenTimeExpires();
+              whenTimeExpires;
             }
           });
       });

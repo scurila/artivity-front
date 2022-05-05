@@ -106,7 +106,7 @@ class PresentationDefi extends StatelessWidget {
                                 if(type == CHALLENGE_TYPE_AUDIO){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => DefiAudio(title: chal!.title, description: chal!.subject, timeLimitInSeconds: (chal!.timelimit ?? 0), chal: chal!,)),
+                                    MaterialPageRoute(builder: (context) => DefiAudio(title: chal!.title, description: chal!.subject, chal: chal!,)),
                                   );
                                 }
                                 if(type == CHALLENGE_TYPE_VIDEO){
