@@ -40,7 +40,7 @@ class DailyChallengeCard extends StatelessWidget {
             padding: const EdgeInsets.only(left: 15, right: 15, bottom: 0, top: 8),
             child: Container(
               width: MediaQuery.of(context).size.width,
-              height: 276,
+              height: 280,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

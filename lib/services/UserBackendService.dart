@@ -13,6 +13,8 @@ import 'objects/User.dart';
 class UserBackendService {
   static String currentToken = "";
   static String currentPseudo="";
+  static String currentEmail="";
+  static String currentAge="";
 
   static Future<String> login(String pseudo, String pwd) async {
     http.Response resp = await http.post(
@@ -37,7 +39,7 @@ class UserBackendService {
     }
   }
 
-  static Future<String> signup(String pseudo, String email, String pwd) async {
+  static Future<String> signup(String pseudo, String email, String pwd, String age) async {
     http.Response resp = await http.post(
         Uri.parse(backendServerBase + '/users/'),
         headers: <String, String>{
@@ -48,10 +50,13 @@ class UserBackendService {
           'pseudo': pseudo,
           'password': pwd,
           'email': email,
+          'age': age,
         })
     );
     print(resp.statusCode);
     if (resp.statusCode == 200) {
+      currentEmail=email;
+      currentAge=age;
       return 'inscription réussie';
 
     } else {
