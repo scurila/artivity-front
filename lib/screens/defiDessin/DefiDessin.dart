@@ -64,7 +64,7 @@ class _DefiDessinState extends State<DefiDessin> {
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
               children: [
-                Headbar(rightContainer: Image.asset('assets/images/Artivity.png', width: 44,),//Image.asset('assets/images/ARTHUR.png', width: 48,),
+                Headbar(rightContainer: /*Image.asset('assets/images/Artivity.png', width: 44,),*/Image.asset('assets/images/ARTHUR.png', width: 48,),
                     text: defiDessin,
                     leftContainer: const BackButton()),
 
@@ -91,7 +91,7 @@ class _DefiDessinState extends State<DefiDessin> {
                 Container(
                   child: Dessin(bgFile: currentBgFile, bgPath: currentBgPath, gKey: gKey,),
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.67,
                 ),
 
                 Container(
