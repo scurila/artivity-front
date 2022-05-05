@@ -116,14 +116,13 @@ class _DefiLitteraireState extends State<DefiLitteraire> {
 
                       /// Download
                       IconButton(onPressed: () async {
-                        //todo download
-                        final directory = (await getApplicationDocumentsDirectory()).path;
-                        await Directory('$directory/sample').create(recursive: true);
-                        final fullPath = '$directory/sample/${DateTime.now().millisecondsSinceEpoch}.txt';
-                        final txtFile = File('$fullPath');
-                        txtFile.writeAsString(myController.text);
-                        final bytes = txtFile.readAsBytesSync();
-                        String txt64 = base64.encode(bytes);
+                        Fluttertoast.showToast(
+                          msg: "Création enregistrée sur l'appareil !",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.CENTER,
+                          backgroundColor: Styles.accentColor,
+                          textColor: Colors.black,
+                        );
                       }, icon: const Icon(Icons.download)),
 
                       /// Submit
