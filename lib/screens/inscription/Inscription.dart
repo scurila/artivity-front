@@ -99,7 +99,7 @@ class _InscriptionState extends State<Inscription> {
                                 text: inscriptionButtonText.toUpperCase(),
                                 onPressed: () async {
                                   try {
-                                    String text = await UserBackendService.signup(controllerLogin.text, controllerMail.text, controllerPwd.text);
+                                    String text = await UserBackendService.signup(controllerLogin.text, controllerMail.text, controllerPwd.text, controllerAge.text);
                                     Fluttertoast.showToast(
                                       msg: "Inscription réussie ! Vous pouvez dès à présent vous connecter",
                                       toastLength: Toast.LENGTH_SHORT,

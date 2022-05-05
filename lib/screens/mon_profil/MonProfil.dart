@@ -11,7 +11,7 @@ import '../../theme/style.dart';
 class MonProfil extends StatelessWidget {
   const MonProfil({Key? key, required this.name,  required this.age,  required this.mail,  required this.date,  required this.nbDefi,  required this.continuousDays}) : super(key: key);
   final String name;
-  final int age;
+  final String age;
   final String mail;
   final String date;
   final int nbDefi;
@@ -32,9 +32,9 @@ class MonProfil extends StatelessWidget {
                     children: [
                     // ----- App bar -----
                           Headbar(
-                            leftContainer: Image.asset('assets/images/ARTHUR.png', width:70),
+                            leftContainer: Image.asset('assets/images/Artivity.png', width:44),
                             text: name,
-                            rightContainer: Image.asset('assets/images/note.png', width:48)),
+                            rightContainer: Image.asset('assets/images/note.png', width:44)),
 
                           Container(
                               height: MediaQuery.of(context).size.height - 123 - 40-21,
@@ -47,7 +47,7 @@ class MonProfil extends StatelessWidget {
                                       Container(
                                         margin: const EdgeInsets.fromLTRB(50, 6, 0, 16),
                                         width: MediaQuery.of(context).size.width,
-                                        child:  Text( "Âge :   " + age.toString(),textAlign: TextAlign.left,style: Styles.profileData),
+                                        child:  Text( "Âge :   " + age,textAlign: TextAlign.left,style: Styles.profileData),
                                       ),
                                       Container(
                                         margin: const EdgeInsets.fromLTRB(50, 2, 0, 16),
