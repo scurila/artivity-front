@@ -54,7 +54,7 @@ class DefiLitteraire extends StatelessWidget {
                         child: SingleChildScrollView(
                           child: Column(
                             children:[
-                            Text(uneditableText1, style: Styles.challengeTimePink),
+                            //Text(uneditableText1, style: Styles.challengeTimePink),
                             Container(
                               width: MediaQuery.of(context).size.width*85/100,
                                 child: TextField(maxLines: null,
@@ -65,7 +65,7 @@ class DefiLitteraire extends StatelessWidget {
                                   border: InputBorder.none,
                                 ),)
                             ),
-                            Text(uneditableText2, style: Styles.challengeTimePink),
+                            //Text(uneditableText2, style: Styles.challengeTimePink),
                               Container(
                                   width: MediaQuery.of(context).size.width*85/100,
                                   child: TextField(maxLines: null,
