@@ -99,6 +99,7 @@ class _DefiDessinState extends State<DefiDessin> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
+                      /// Take a photo
                       IconButton(onPressed: () async {
                         final ImagePicker _picker = ImagePicker();
                         // Pick an image
@@ -108,6 +109,7 @@ class _DefiDessinState extends State<DefiDessin> {
                           gKey = GlobalKey<ImagePainterState>(); // refresh
                         });
                       }, icon: const Icon(Icons.camera_alt_outlined)),
+                      /// Upload
                       IconButton(onPressed: () async {
 
                         final ImagePicker _picker = ImagePicker();
@@ -119,9 +121,11 @@ class _DefiDessinState extends State<DefiDessin> {
                           gKey = GlobalKey<ImagePainterState>(); // refresh
                         });
                       }, icon: const Icon(Icons.upload_file)),
+                      /// Download
                       IconButton(onPressed: (){
                           saveImage();
                       }, icon: const Icon(Icons.download)),
+                      /// Submit
                       IconButton(onPressed: () async {
                         // todo : submit
                         final image = await gKey.currentState?.exportImage();

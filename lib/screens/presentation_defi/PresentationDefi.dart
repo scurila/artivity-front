@@ -9,7 +9,6 @@ import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/presentation_defi/widgets/Defi.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 
 import '../../services/UserBackendService.dart';
@@ -94,7 +93,7 @@ class PresentationDefi extends StatelessWidget {
                                 if(type == CHALLENGE_TYPE_LITTERAIRE){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => DefiLitteraire(title: chal!.title, description: chal!.subject,)),
+                                    MaterialPageRoute(builder: (context) => DefiLitteraire(title: chal!.title, description: chal!.subject, chal: chal!,)),
                                   );
                                 }
                                 /*if(type == CHALLENGE_TYPE_DESSIN){

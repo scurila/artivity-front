@@ -11,7 +11,9 @@ class EditBarDefi extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
 
-            IconButton(onPressed: (){}, icon: const Icon(Icons.delete_outline)),
+            IconButton(onPressed: (){
+
+              }, icon: const Icon(Icons.delete_outline)),
             IconButton(onPressed: (){}, icon: const Icon(Icons.arrow_back)),
             IconButton(onPressed: (){}, icon: const Icon(Icons.arrow_forward)),
             IconButton(onPressed: (){}, icon: const Icon(Icons.upload_file)),
