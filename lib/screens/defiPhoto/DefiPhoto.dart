@@ -62,7 +62,6 @@ class _DefiPhotoState extends State<DefiPhoto> {
                 Container(height: 2,width: 100,
                   margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(color: Colors.black),),
-                Text("2:32", style: Styles.TimerText, textAlign: TextAlign.center),// todo timer !!
                 const SizedBox(height: 10),
 
 

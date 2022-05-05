@@ -25,12 +25,10 @@ class DefiAudio extends StatefulWidget {
     Key? key,
     required this.title,
     required this.description,
-    required this.timeLimitInSeconds,
     required this.chal,
   }) : super(key: key);
   final String title;
   final String description;
-  final int? timeLimitInSeconds;
   final Challenge chal;
 
   @override
@@ -75,7 +73,7 @@ class _DefiAudioState extends State<DefiAudio> {
                   margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(color: Colors.black),),
 
-                if(widget.timeLimitInSeconds! > 0) CountDownTimer(secondsRemaining: widget.timeLimitInSeconds!),
+                ///CountDownTimer(secondsRemaining: widget.chal.timelimit!),
                 SizedBox(height: MediaQuery.of(context).size.height*0.1),
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 500),
