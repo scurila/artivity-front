@@ -3,10 +3,12 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:artivity_front/screens/resultat_defi/widget/CreationParticipantsCard.dart';
+import 'package:artivity_front/screens/resultat_defi/widget/InviteFriendsToChallengeDialog.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/services/UserBackendService.dart';
 import 'package:artivity_front/theme/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -26,6 +28,16 @@ class ResultatDefi extends StatelessWidget {
   int evalTaNote = 0; // todo : temp
   int chalId;
   List<ChallengeSubmission> submissions;
+
+  showInviteFriendsDialog(BuildContext context) async {
+    var friends = await UserBackendService.getFriends();
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return InviteFriendsToChallengeDialog(friends: friends, challengeId: chalId,);
+        }
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -132,8 +144,19 @@ class ResultatDefi extends StatelessWidget {
                                 ),
                             ),
                     // ----- Inviter -----
-                            SizedBox(child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: "Inviter des amis", onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),), width: MediaQuery.of(context).size.width
-                              ,),
+                            SizedBox(
+                              child: ReusableFilledButton(
+                                textStyle: Styles.accentButtonText,
+                                text: "Inviter des amis",
+                                onPressed: (){
+                                  showInviteFriendsDialog(context);
+                                },
+                                color: Styles.accentColor,
+                                border: Styles.noBorder,
+                                margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),
+                              ),
+                              width: MediaQuery.of(context).size.width,
+                            ),
                             const SizedBox(height: 10),
                             // ----- Créations participants
                             Container(

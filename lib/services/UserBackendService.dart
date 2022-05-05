@@ -195,4 +195,26 @@ class UserBackendService {
       throw Exception("GetFriendsError");
     }
   }
+
+  static Future<void> inviteToChallenge(int userToInviteId, int challengeId) async {
+    final response = await http.put(
+      Uri.parse(backendServerBase + "/challenge/" + challengeId.toString() + "/invite"),
+      headers: <String, String>{
+        'Authorization': 'Bearer ' + currentToken,
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, int>{
+        'user_id': userToInviteId,
+      })
+    );
+
+    if(response.statusCode == 200) {
+      print(response.body);
+      return;
+    }
+    else {
+      print(response.statusCode);
+      throw Exception("InviteToChallengeError");
+    }
+  }
 }

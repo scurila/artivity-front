@@ -17,6 +17,7 @@ import '../../services/objects/ChallengeSubmission.dart';
 import '../../theme/style.dart';
 import '../defiDessin/DefiDessin.dart';
 import '../resultat_defi/widget/CreationParticipantsCard.dart';
+import '../resultat_defi/widget/InviteFriendsToChallengeDialog.dart';
 import '../widgets/ReusableFilledButton.dart';
 
 class PresentationDefi extends StatelessWidget {
@@ -29,6 +30,16 @@ class PresentationDefi extends StatelessWidget {
   final String type;
   final Challenge? chal;
   List<ChallengeSubmission> submissions;
+
+  showInviteFriendsDialog(BuildContext context) async {
+    var friends = await UserBackendService.getFriends();
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return InviteFriendsToChallengeDialog(friends: friends, challengeId: chal!.id,);
+        }
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -131,6 +142,21 @@ class PresentationDefi extends StatelessWidget {
                               color: Styles.accentColor,
                               border: Styles.noBorder,
                               margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                            ),
+                            width: MediaQuery.of(context).size.width,
+                          ),
+                          const SizedBox(height: 10),
+                          // ----- Inviter des amis -----
+                          SizedBox(
+                            child: ReusableFilledButton(
+                              textStyle: Styles.accentButtonTextDark,
+                              text: "Inviter des amis",
+                              color: Styles.greyedColor,
+                              border: Styles.noBorder,
+                              margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                              onPressed: () {
+                                showInviteFriendsDialog(context);
+                              },
                             ),
                             width: MediaQuery.of(context).size.width,
                           ),
