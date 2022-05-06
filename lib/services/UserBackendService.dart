@@ -50,7 +50,7 @@ class UserBackendService {
           'pseudo': pseudo,
           'password': pwd,
           'email': email,
-          'age': age,
+          //'age': age,
         })
     );
     print(resp.statusCode);
