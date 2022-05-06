@@ -3,10 +3,12 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:artivity_front/screens/resultat_defi/widget/CreationParticipantsCard.dart';
+import 'package:artivity_front/screens/resultat_defi/widget/InviteFriendsToChallengeDialog.dart';
 import 'package:artivity_front/screens/widgets/Headbar.dart';
 import 'package:artivity_front/screens/widgets/ReturnButton.dart';
 import 'package:artivity_front/services/UserBackendService.dart';
 import 'package:artivity_front/theme/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -27,12 +29,28 @@ class ResultatDefi extends StatelessWidget {
   int chalId;
   List<ChallengeSubmission> submissions;
 
+  showInviteFriendsDialog(BuildContext context) async {
+    var friends = await UserBackendService.getFriends();
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return InviteFriendsToChallengeDialog(friends: friends, challengeId: chalId,);
+        }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // load creations
     List<Widget> submissionCards = [];
     Widget rowElemA = Container(), rowElemB = Container();
     for (var i = 0; i < submissions.length; i++) {
+      if (i%2 == 0 && i > 0) {
+        submissionCards.add(Row(
+          children: [rowElemA, rowElemB],
+        ));
+      }
+
       Uint8List? f = (submissions[i].b64data != null? base64.decode(submissions[i].b64data!) : null);
       Uint8List? data = f;
       String? imgPath = null;
@@ -46,12 +64,6 @@ class ResultatDefi extends StatelessWidget {
       } else {
         rowElemB = CreationParticipantsCard(isDone: (submissions[i].b64data != null), author: submissions[i].user_pseudo, date: DateFormat('dd-MM-yyyy').format(DateTime.fromMillisecondsSinceEpoch(submissions[i].start_time*1000, isUtc: true)).toString(), imgFile: f, imgUrl: imgPath, data: data, type: chalType);
       }
-      if (i%2 != 0 && i > 0) {
-        submissionCards.add(Row(
-          children: [rowElemA, rowElemB],
-        ));
-      }
-
     }
     if (submissions.length % 2 != 0) submissionCards.add(Row(children: [rowElemA],));
 
@@ -132,8 +144,19 @@ class ResultatDefi extends StatelessWidget {
                                 ),
                             ),
                     // ----- Inviter -----
-                            SizedBox(child: ReusableFilledButton(textStyle: Styles.accentButtonText, text: "Inviter des amis", onPressed: (){}, color: Styles.accentColor, border: Styles.noBorder, margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),), width: MediaQuery.of(context).size.width
-                              ,),
+                            SizedBox(
+                              child: ReusableFilledButton(
+                                textStyle: Styles.accentButtonText,
+                                text: "Inviter des amis",
+                                onPressed: (){
+                                  showInviteFriendsDialog(context);
+                                },
+                                color: Styles.accentColor,
+                                border: Styles.noBorder,
+                                margin: const EdgeInsets.fromLTRB(10, 8, 10, 10),
+                              ),
+                              width: MediaQuery.of(context).size.width,
+                            ),
                             const SizedBox(height: 10),
                             // ----- Créations participants
                             Container(

@@ -1,5 +1,6 @@
 import 'package:artivity_front/screens/presentation_defi/PresentationDefi.dart';
 import 'package:artivity_front/screens/resultat_defi/ResultatDefi.dart';
+import 'package:artivity_front/services/UserBackendService.dart';
 import 'package:artivity_front/services/objects/ContentAccueil.dart';
 import 'package:artivity_front/theme/constants.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
     /*ResultatDefi(type: "dessin", author: "William J.", date: "23/06/2022",
       description: "Dessine moi un mouton dans un champs, faisant un poirier su run trampoline en tenant un verre de schnaps.",
       eval: 2, artistsCount: "122345",),*/
-    MonProfil(name: "William Shakespeare", age:22, mail: "willshakespeare@gmail.com", date:"11/04/2022", nbDefi:42, continuousDays: 24),
+    MonProfil(name: UserBackendService.currentPseudo, age:UserBackendService.currentAge, mail: UserBackendService.currentEmail, date:"06/05/2022", nbDefi:4, continuousDays: 1),
     //PresentationDefi(type: CHALLENGE_TYPE_DESSIN),
     //PresentationDefi(type: CHALLENGE_TYPE_PHOTO),
     //PresentationDefi(type: CHALLENGE_TYPE_VIDEO),
