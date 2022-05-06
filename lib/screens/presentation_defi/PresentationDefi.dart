@@ -37,24 +37,23 @@ class PresentationDefi extends StatelessWidget {
     List<Widget> submissionCards = [];
     Widget rowElemA = Container(), rowElemB = Container();
     for (var i = 0; i < submissions.length; i++) {
-      if (i%2 == 0 && i > 0) {
-        submissionCards.add(Row(
-          children: [rowElemA, rowElemB],
-        ));
-      }
-
       Uint8List? f = (submissions[i].b64data != null? base64.decode(submissions[i].b64data!) : null);
       Uint8List? data = f;
       String? imgPath = null;
       if (chal!.type != CHALLENGE_TYPE_DESSIN && chal!.type != CHALLENGE_TYPE_PHOTO) {
         f = null;
         if (chal!.type == CHALLENGE_TYPE_AUDIO) imgPath = 'assets/images/speaker.png';
-        if (chal!.type == CHALLENGE_TYPE_LITTERAIRE) imgPath = 'assets/images /Dairy.png';
+        if (chal!.type == CHALLENGE_TYPE_LITTERAIRE) imgPath = 'assets/images/Dairy.png';
       }
       if (i%2 == 0) {
         rowElemA = CreationParticipantsCard(isDone: (submissions[i].b64data != null), author: submissions[i].user_pseudo, date: DateFormat('dd-MM-yyyy').format(DateTime.fromMillisecondsSinceEpoch(submissions[i].start_time*1000, isUtc: true)).toString(), imgFile: f, imgUrl: imgPath, data: data, type: chal!.type);
       } else {
         rowElemB = CreationParticipantsCard(isDone: (submissions[i].b64data != null), author: submissions[i].user_pseudo, date: DateFormat('dd-MM-yyyy').format(DateTime.fromMillisecondsSinceEpoch(submissions[i].start_time*1000, isUtc: true)).toString(), imgFile: f, imgUrl: imgPath, data: data, type: chal!.type);
+      }
+      if (i%2 != 0 && i > 0) {
+        submissionCards.add(Row(
+          children: [rowElemA, rowElemB],
+        ));
       }
     }
     if (submissions.length % 2 != 0) submissionCards.add(Row(children: [rowElemA],));

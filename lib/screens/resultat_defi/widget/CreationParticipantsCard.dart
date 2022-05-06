@@ -34,6 +34,7 @@ class CreationParticipantsCard extends StatelessWidget {
             );
           }
           if (type == CHALLENGE_TYPE_AUDIO && data != null) {
+            print('PLAYING');
             String dir = (await getTemporaryDirectory()).path;
             File temp = File('$dir/temp.mp4');
             temp.writeAsBytesSync(data!);
@@ -71,7 +72,7 @@ class CreationParticipantsCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 5,),
-              Text( (isDone ? creationOfDefi : waitingCreationOf) + author, style: Styles.challengeInvitedBy,),
+              Container(height: 40, child: Text( (isDone ? creationOfDefi : waitingCreationOf) + author, style: Styles.challengeInvitedBy,)),
               const SizedBox(height: 5),
               Text("Le "+date)
             ],
